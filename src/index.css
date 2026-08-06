@@ -1,0 +1,33 @@
+:root {
+  --raspberry: #e2456f;
+  --raspberry-deep: #b23a56;
+  --raspberry-light: #f6b9cd;
+  --pistachio: #5e9a7b;
+  --pistachio-light: #c6e3d2;
+  --honey: #f0b23e;
+  --honey-light: #fbe0a3;
+  --lavender: #9e7ebb;
+  --lavender-light: #e1d2ed;
+  --paper: #fbf1e1;
+  --kraft: #e7d3ac;
+  --ink: #332420;
+  --ink-soft: #6e5a4e;
+  --dark: #2b1f1a;
+
+  --ff-display: "Unbounded", sans-serif;
+  --ff-body: "Nunito", sans-serif;
+
+  --radius-sm: 10px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-pill: 100px;
+  --space-xs: 6px;
+  --space-sm: 12px;
+  --space-md: 16px;
+  --space-lg: 22px;
+  --space-xl: 40px;
+
+  --border: 2px solid var(--ink);
+  --shadow-card: 3px 4px 0 var(--ink);
+  --shadow-badge: 2px 3px 0 var(--ink);
+}
