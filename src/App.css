@@ -1,5 +1,5 @@
-body {
-  background-color: #fbf1e1;
+* {
+  box-sizing: border-box;
 }
 
 .container {
@@ -7,8 +7,7 @@ body {
   max-width: 480px;
   margin-inline: auto;
   padding-inline: 18px;
-
-  border: 0.2px solid rgb(99, 98, 98);
+  background-color: #fbf1e1;
 }
 
 .btn {
@@ -21,6 +20,7 @@ body {
   align-items: center;
   justify-content: center;
   gap: 8px;
+  box-shadow: 2px 3px 0 var(--ink);
 }
 .btn-primary {
   background: var(--raspberry);
@@ -97,7 +97,7 @@ body {
   font-weight: 700;
   font-size: 10.5px;
   text-transform: uppercase;
-  padding: 5px 10px;
+  padding: 4px 10px;
   border-radius: 4px;
 }
 

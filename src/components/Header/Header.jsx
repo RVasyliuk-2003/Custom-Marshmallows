@@ -13,7 +13,6 @@ const Header = () => {
 
         <img className="imgMenu" src={Menu} alt="Menu" />
       </nav>
-      ;
     </>
   );
 };
