@@ -1,5 +1,6 @@
 import MainPage from "./MainPage/MainPage";
 import WhyMarshmallows from "./WhyMarshmallows/WhyMarshmallows";
+import CatalogScroll from "./CatalogScroll/CatalogScroll";
 
 const Main = () => {
   return (
@@ -7,6 +8,7 @@ const Main = () => {
       <main>
         <MainPage />
         <WhyMarshmallows />
+        <CatalogScroll />
       </main>
     </>
   );
