@@ -1,0 +1,77 @@
+.whyMarshmaContainer {
+  margin-top: 30px;
+
+  padding: 36px 18px;
+  position: relative;
+  background: var(--kraft);
+
+  display: flex;
+  flex-direction: column;
+}
+
+.types {
+  max-width: 110px;
+  width: 100%;
+}
+
+.whyMarshmaBox {
+  > h2 {
+    margin-top: 10px;
+    font-size: 24px;
+
+    font-family: var(--ff-display);
+    font-weight: 700;
+    line-height: 1.12;
+    letter-spacing: -0.01em;
+  }
+}
+
+.containerMarsh {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.boxMarsh {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  background: #fff;
+  border: 2px solid var(--ink);
+  border-radius: 16px;
+  padding: 14px;
+  box-shadow: 3px 4px 0 var(--ink);
+}
+
+.boxMarsh:nth-child(2) {
+  transform: rotate(-1deg);
+}
+
+.boxMarsh:nth-child(3) {
+  transform: rotate(1deg);
+}
+
+.positionImgbox {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  > img {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+  }
+
+  > div > h6 {
+    font-family: var(--ff-body);
+    font-size: 15px;
+    margin-bottom: 3px;
+    font-weight: 700;
+  }
+
+  > div > p {
+    font-size: 12px;
+    color: var(--ink-soft);
+  }
+}
