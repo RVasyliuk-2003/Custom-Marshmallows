@@ -59,7 +59,6 @@ main {
   box-shadow: 3px 4px 0 var(--ink);
 }
 
-/* легкий "живий" нахил для карток у списку — чергуй: */
 .card:nth-child(odd) {
   transform: rotate(-0.6deg);
 }
@@ -67,7 +66,6 @@ main {
   transform: rotate(0.6deg);
 }
 
-/* цінник-бирка з "дірочкою" зліва */
 .tag {
   position: relative;
   background: var(--dark);
@@ -91,7 +89,6 @@ main {
   transform: translateY(-50%);
 }
 
-/* чорна плашка-eyebrow під кутом */
 .eyebrow {
   transform: rotate(-2deg);
   background: var(--dark);
@@ -104,14 +101,12 @@ main {
   border-radius: 4px;
 }
 
-/* кругла наліпка під кутом (типу "100% їстівно") */
 .sticker {
   border-radius: 50%;
   transform: rotate(-8deg);
   box-shadow: 0 6px 14px -6px rgba(0, 0, 0, 0.35);
 }
 
-/* стрічка-скотч (декор) */
 .tape {
   background: rgba(255, 255, 255, 0.7);
   border: 1px dashed rgba(51, 36, 32, 0.5);
