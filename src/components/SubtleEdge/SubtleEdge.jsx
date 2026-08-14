@@ -1,8 +1,9 @@
-import style from "./subtleEdge.module.css";
+import "./subtleEdge.css";
 
-const SubtleEdge = ({ flip = false }) => (
+const SubtleEdge = ({ flip = false, color }) => (
   <svg
-    className={`${style.subtleEdge} ${flip ? style.flip : ""}`}
+    className={`subtleEdge ${flip ? "flip" : ""}`}
+    style={color ? { "--edge-color": color } : undefined}
     viewBox="0 0 375 16"
     preserveAspectRatio="none"
   >
@@ -11,4 +12,3 @@ const SubtleEdge = ({ flip = false }) => (
 );
 
 export default SubtleEdge;
-
