@@ -1,4 +1,4 @@
-import "./whyMarshmallows.css";
+import style from "./whyMarshmallows.module.css";
 import img from "./../../../assets/logo.png";
 import SubtleEdge from "../../SubtleEdge/SubtleEdge";
 
@@ -6,18 +6,17 @@ const WhyMarshmallows = () => {
   return (
     <section>
       <div className="container">
-        
-        <div className="whyMarshmaContainer">
+        <div className={style.whyMarshmaContainer}>
           <SubtleEdge />
-          <div className="whyMarshmaBox">
-            <p className="eyebrow types">Чому Зефірка?</p>
+          <div className={style.whyMarshmaBox}>
+            <p className={`eyebrow ${style.types}`}>Чому Зефірка?</p>
             <h2>
               Маленька цукрова <br /> скульптура
             </h2>
 
-            <div className="containerMarsh">
-              <div className="boxMarsh">
-                <div className="positionImgbox">
+            <div className={style.containerMarsh}>
+              <div className={style.boxMarsh}>
+                <div className={style.positionImgbox}>
                   <img src={img} alt="img" />
                   <div>
                     <h6>Ручна робота</h6>
@@ -25,8 +24,8 @@ const WhyMarshmallows = () => {
                   </div>
                 </div>
               </div>
-              <div className="boxMarsh">
-                <div className="positionImgbox">
+              <div className={style.boxMarsh}>
+                <div className={style.positionImgbox}>
                   <img src={img} alt="img" />
                   <div>
                     <h6>Без хімії</h6>
@@ -34,8 +33,8 @@ const WhyMarshmallows = () => {
                   </div>
                 </div>
               </div>
-              <div className="boxMarsh">
-                <div className="positionImgbox">
+              <div className={style.boxMarsh}>
+                <div className={style.positionImgbox}>
                   <img src={img} alt="img" />
                   <div>
                     <h6>Не в'яне 5 днів</h6>
