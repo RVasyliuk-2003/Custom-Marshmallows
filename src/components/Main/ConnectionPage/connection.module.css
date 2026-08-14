@@ -1,0 +1,37 @@
+.connectiMainContainer {
+  background-color: var(--raspberry);
+  text-align: center;
+  padding: 42px 22px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  position: relative;
+
+  > span {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 20px;
+  }
+}
+
+.h2Mr {
+  margin: 12px 0 10px;
+}
+
+.wigth {
+  max-width: 140px;
+  width: 100%;
+}
+
+.styleBtn1 {
+  color: var(--raspberry-deep);
+}
+
+.styleBtn2 {
+  margin-top: 8px;
+  color: white;
+  border-color: #fff;
+  box-shadow: 3px 4px 0 rgba(0, 0, 0, 0.3);
+}
