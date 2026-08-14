@@ -2,10 +2,13 @@ import style from "./header.module.css";
 import Logo from "./../../assets/logo.png";
 import Menu from "./../../assets/menu.png";
 
+import Drawer from "./MenuDrawer/Drawer";
+
 const Header = () => {
   return (
     <>
       <nav className={`container ${style.navContainer}`}>
+        <Drawer />
         <div className={style.NavLogoBox}>
           <img src={Logo} alt="Logo" />
           <h4>Зефірка</h4>
