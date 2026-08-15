@@ -3,7 +3,7 @@ import "./App.css";
 import "./index.css";
 
 import Header from "./components/Header/Header";
-import Main from "./components/Main/Main";
+import MainPage from "./components/Main/MainPage";
 import Footer from "./components/Footer/Footer";
 
 function App() {
@@ -16,7 +16,7 @@ function App() {
   return (
     <>
       <Header isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
-      <Main />
+      <MainPage />
       <Footer />
     </>
   );

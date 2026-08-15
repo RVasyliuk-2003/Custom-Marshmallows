@@ -5,7 +5,7 @@ import HowToOrder from "./HowToOrder/HowToOrder";
 import Reviews from "./ReviewsPage/Reviews";
 import Contact from "./Contact/Contact";
 
-const Main = () => {
+const MainPage = () => {
   return (
     <>
       <main>
@@ -20,4 +20,4 @@ const Main = () => {
   );
 };
 
-export default Main;
+export default MainPage;
