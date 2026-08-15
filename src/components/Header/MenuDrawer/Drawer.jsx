@@ -20,7 +20,10 @@ const Drawer = ({ isMenuOpen, setIsMenuOpen }) => {
 
         <span className={`tape ${style.typeSize}`}>МЕНЮ</span>
 
-        <nav className={style.spanContainer}>
+        <nav
+          className={style.spanContainer}
+          onClick={() => setIsMenuOpen(false)}
+        >
           <Link className={style.driwerLink} to="/">
             Головна <span>→</span>
           </Link>
