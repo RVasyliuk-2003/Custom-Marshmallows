@@ -1,7 +1,7 @@
 import style from "./mainPage.module.css";
-import "./../../../App.css";
+import "./../../../../App.css";
 
-import LogoImg from "./../../../assets/logo.png";
+import LogoImg from "./../../../../assets/logo.png";
 
 const MainPage = () => {
   return (

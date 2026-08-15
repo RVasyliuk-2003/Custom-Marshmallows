@@ -1,5 +1,5 @@
 import style from "./connection.module.css";
-import SubtleEdge from "./../../SubtleEdge/SubtleEdge.jsx";
+import SubtleEdge from "../../SubtleEdge/SubtleEdge.jsx";
 
 const Connection = () => {
   return (

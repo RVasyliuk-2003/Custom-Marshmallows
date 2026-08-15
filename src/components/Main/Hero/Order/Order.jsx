@@ -1,5 +1,5 @@
 import style from "./order.module.css";
-import SubtleEdge from "./../../SubtleEdge/SubtleEdge.jsx";
+import SubtleEdge from "../../SubtleEdge/SubtleEdge.jsx";
 
 const Order = () => {
   return (

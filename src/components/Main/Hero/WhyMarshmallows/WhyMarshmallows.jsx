@@ -1,6 +1,6 @@
 import style from "./whyMarshmallows.module.css";
-import img from "./../../../assets/logo.png";
-import SubtleEdge from "../../SubtleEdge/SubtleEdge";
+import img from "./../../../../assets/logo.png";
+import SubtleEdge from "../../SubtleEdge/SubtleEdge.jsx";
 
 const WhyMarshmallows = () => {
   return (
