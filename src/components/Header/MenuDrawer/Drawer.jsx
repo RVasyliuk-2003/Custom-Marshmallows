@@ -1,6 +1,8 @@
 import style from "./drawer.module.css";
 import logo from "./../../../assets/logo.png";
 
+import { Link } from "react-router-dom";
+
 const Drawer = ({ isMenuOpen, setIsMenuOpen }) => {
   return (
     <>
@@ -19,24 +21,24 @@ const Drawer = ({ isMenuOpen, setIsMenuOpen }) => {
         <span className={`tape ${style.typeSize}`}>МЕНЮ</span>
 
         <nav className={style.spanContainer}>
-          <a className={style.driwerLink} href="#">
+          <Link className={style.driwerLink} to="/">
             Головна <span>→</span>
-          </a>
-          <a className={style.driwerLink} href="#">
+          </Link>
+          <Link className={style.driwerLink} to="/AboutUs">
             Про нас <span>→</span>
-          </a>
-          <a className={style.driwerLink} href="#">
+          </Link>
+          <Link className={style.driwerLink} to="/Catalog">
             Каталог <span>→</span>
-          </a>
-          <a className={style.driwerLink} href="#">
+          </Link>
+          <Link className={style.driwerLink} to="/HowToOrder">
             Як замовити <span>→</span>
-          </a>
-          <a className={style.driwerLink} href="#">
+          </Link>
+          <Link className={style.driwerLink} to="/Reviews">
             Відгуки <span>→</span>
-          </a>
-          <a className={style.driwerLink} href="#">
+          </Link>
+          <Link className={style.driwerLink} to="/Contact">
             Контакти <span>→</span>
-          </a>
+          </Link>
         </nav>
 
         <div className={style.btnBox}>

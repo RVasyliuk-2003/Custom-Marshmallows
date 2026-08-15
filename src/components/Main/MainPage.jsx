@@ -5,16 +5,20 @@ import HowToOrder from "./HowToOrder/HowToOrder";
 import Reviews from "./ReviewsPage/Reviews";
 import Contact from "./Contact/Contact";
 
+import { Route, Routes } from "react-router-dom";
+
 const MainPage = () => {
   return (
     <>
       <main>
-        <Hero />
-        <AboutUs />
-        <Catalog />
-        <HowToOrder />
-        <Reviews />
-        <Contact />
+        <Routes>
+          <Route path="/" element={<Hero />} />
+          <Route path="/AboutUs" element={<AboutUs />} />
+          <Route path="/Catalog" element={<Catalog />} />
+          <Route path="/HowToOrder" element={<HowToOrder />} />
+          <Route path="/Reviews" element={<Reviews />} />
+          <Route path="/Contact" element={<Contact />} />
+        </Routes>
       </main>
     </>
   );

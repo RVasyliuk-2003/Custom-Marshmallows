@@ -8,10 +8,6 @@ const Header = ({ isMenuOpen, setIsMenuOpen }) => {
   return (
     <>
       <nav className={`container ${style.navContainer}`}>
-        {/* {isMenuOpen ? (
-          <Drawer isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
-        ) : null} */}
-
         <Drawer isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
 
         <div className={style.NavLogoBox}>
