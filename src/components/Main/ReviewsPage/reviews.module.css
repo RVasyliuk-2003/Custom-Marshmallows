@@ -1,0 +1,65 @@
+.mainContainer {
+  padding: 14px 18px 44px;
+}
+
+.ratingBox {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: var(--honey);
+  border: 2px solid var(--ink);
+  border-radius: 18px;
+  padding: 16px;
+  margin-top: 16px;
+  box-shadow: 3px 4px 0 var(--ink);
+
+  > h5 {
+    font-family: var(--ff-display);
+    font-weight: 800;
+    font-size: 30px;
+    color: var(--ink);
+  }
+
+  .rating {
+    font-weight: 800;
+    font-size: 12px;
+  }
+
+  .ratingCount {
+    margin-top: 3px;
+    font-size: 11px;
+    color: var(--ink);
+  }
+}
+
+.card {
+  margin-top: 14px;
+  flex-shrink: 0;
+  width: 100%;
+  background: #fff;
+  border: 2px solid var(--ink);
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 3px 4px 0 var(--ink);
+
+  > img {
+    max-width: 15px;
+    width: 100%;
+    margin-bottom: 8px;
+  }
+
+  > p {
+    font-size: 12.5px;
+    margin-bottom: 10px;
+  }
+
+  > h5 {
+    font-weight: 800;
+    font-size: 12.5px;
+  }
+
+  > span {
+    font-size: 11px;
+    color: var(--ink-soft);
+  }
+}
