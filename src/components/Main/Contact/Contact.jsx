@@ -1,6 +1,37 @@
 import style from "./contact.module.css";
+import { useState } from "react";
 
 const Contact = () => {
+  const [error, setError] = useState(null);
+  const [inptName, setInptName] = useState("");
+  const [phoneOrNik, setPhoneOrNik] = useState("");
+  const [comment, setComment] = useState("");
+
+  const isNameValid = /^[а-яА-ЯіІїЇєЄa-zA-Z\s]{2,}$/;
+
+  const isContactValid = /^(\+?\d{9,13}|@[\w]{3,})$/;
+
+  const resultContactForm = () => {
+    if (!inptName || !phoneOrNik || !comment) {
+      setError("ЗАПОМНІТЬ УСІ ПОЛЯ");
+      return;
+    }
+    if (!isNameValid.test(inptName)) {
+      setError("НЕПРАВИЛЬНО ВВЕДЕННО ІМ'Я");
+      return;
+    }
+    if (!isContactValid.test(phoneOrNik)) {
+      setError("НЕПРАВИЛЬНО ВВЕДЕННИЙ НОМЕР ТЕЛЕФОНУ АБО НІКНЕЙМ");
+      return;
+    } else {
+      setError("ФОРМУ ВІДПРАВЛЕННО");
+      setInptName("");
+      setPhoneOrNik("");
+      setComment("");
+      return;
+    }
+  };
+
   return (
     <section>
       <div className="container">
@@ -58,6 +89,8 @@ const Contact = () => {
           <div className={style.mesageBox}>
             <label htmlFor="userName">ІМ'Я</label>
             <input
+              onChange={(e) => setInptName(e.target.value)}
+              value={inptName}
               className={style.inpt}
               type="name"
               placeholder="Як до вас звертатись"
@@ -67,6 +100,8 @@ const Contact = () => {
           <div className={style.mesageBox}>
             <label htmlFor="userPhone">ТЕЛЕФОН АБО TELEGRAM</label>
             <input
+              onChange={(e) => setPhoneOrNik(e.target.value)}
+              value={phoneOrNik}
               id="userPhone"
               className={style.inpt}
               type="text"
@@ -77,6 +112,8 @@ const Contact = () => {
           <div className={style.mesageBox}>
             <label htmlFor="userName">ПОВІДОМЛЕННЯ</label>
             <textarea
+              onChange={(e) => setComment(e.target.value)}
+              value={comment}
               className={style.inpt}
               name=""
               id=""
@@ -84,7 +121,25 @@ const Contact = () => {
             ></textarea>
           </div>
 
-          <button style={{ marginTop: "16px" }} className="btn btn-primary">
+          {error !== null ? (
+            <p
+              className={style.errorInfo}
+              style={{
+                color:
+                  error === "ФОРМУ ВІДПРАВЛЕННО"
+                    ? "var(--pistachio)"
+                    : "var(--raspberry-deep)",
+              }}
+            >
+              {error}
+            </p>
+          ) : null}
+
+          <button
+            onClick={() => resultContactForm()}
+            style={{ marginTop: "16px" }}
+            className="btn btn-primary"
+          >
             Надіслати
           </button>
         </div>

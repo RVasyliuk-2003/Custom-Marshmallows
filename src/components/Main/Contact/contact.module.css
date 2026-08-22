@@ -88,3 +88,12 @@
     outline: none;
   }
 }
+
+.errorInfo {
+  margin-top: 10px;
+  font-family: var(--ff-body); /* Nunito */
+  font-weight: 700;
+  font-size: 12.5px;
+
+  text-align: center;
+}
