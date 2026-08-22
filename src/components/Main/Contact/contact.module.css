@@ -86,12 +86,14 @@
 
   > textarea {
     outline: none;
+    resize: none;
+    min-height: 100px;
   }
 }
 
 .errorInfo {
   margin-top: 10px;
-  font-family: var(--ff-body); /* Nunito */
+  font-family: var(--ff-body);
   font-weight: 700;
   font-size: 12.5px;
 
