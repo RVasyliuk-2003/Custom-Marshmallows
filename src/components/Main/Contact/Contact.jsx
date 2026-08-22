@@ -65,6 +65,16 @@ const Contact = () => {
           </div>
 
           <div className={style.mesageBox}>
+            <label htmlFor="userPhone">ТЕЛЕФОН АБО TELEGRAM</label>
+            <input
+              id="userPhone"
+              className={style.inpt}
+              type="text"
+              placeholder="+380... або @нікнейм"
+            />
+          </div>
+
+          <div className={style.mesageBox}>
             <label htmlFor="userName">ПОВІДОМЛЕННЯ</label>
             <textarea
               className={style.inpt}
