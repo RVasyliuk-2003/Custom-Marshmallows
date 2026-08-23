@@ -115,6 +115,17 @@ const Catalog = () => {
               Букети
             </p>
             <p
+              onClick={() => setBoxProd("Завитки")}
+              className={style.categoryClick}
+              style={{
+                backgroundColor: boxProd === "Завитки" ? "var(--ink)" : "#fff",
+                color:
+                  boxProd === "Завитки" ? "var(--paper)" : "var(--ink-soft)",
+              }}
+            >
+              Завитки
+            </p>
+            <p
               onClick={() => setBoxProd("Індивідуальний")}
               className={style.categoryClick}
               style={{
@@ -124,17 +135,6 @@ const Catalog = () => {
                   boxProd === "Індивідуальний"
                     ? "var(--paper)"
                     : "var(--ink-soft)",
-              }}
-            >
-              Завитки
-            </p>
-            <p
-              onClick={() => setBoxProd("Завитки")}
-              className={style.categoryClick}
-              style={{
-                backgroundColor: boxProd === "Завитки" ? "var(--ink)" : "#fff",
-                color:
-                  boxProd === "Завитки" ? "var(--paper)" : "var(--ink-soft)",
               }}
             >
               Індивідуально
