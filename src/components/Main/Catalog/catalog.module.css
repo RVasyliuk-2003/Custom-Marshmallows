@@ -20,6 +20,7 @@
   border: 2px solid var(--ink);
   color: var(--ink-soft);
   white-space: nowrap;
+  cursor: pointer;
 }
 
 .sizeCard {
