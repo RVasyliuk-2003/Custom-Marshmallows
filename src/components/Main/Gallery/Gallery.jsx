@@ -1,0 +1,1 @@
+import "./gallery.module.css";
