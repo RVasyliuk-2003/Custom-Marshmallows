@@ -1,6 +1,9 @@
 import style from "./gallery.module.css";
 import logo from "./../../../assets/logo.png";
 
+import sizeContainer from "./../../data/sizeContainer";
+import bouquetDesigns from "./../../data/bouquetDesigns";
+
 const Gallery = () => {
   return (
     <section>
@@ -31,7 +34,23 @@ const Gallery = () => {
             <p className={`${style.categoryClick} ${style.sizeClick}`}>30</p>
           </div>
 
-          <div className={style.mainGalleryBoxCard}></div>
+          <div className={style.flexContanerCard}>
+            {bouquetDesigns.map((ell) => {
+              return (
+                <div key={ell.id} className={style.mainGalleryBoxCard}>
+                  <div className={style.positionImg}>
+                    <img src={ell.photo} alt={ell.name} />
+                    <span>{ell.type}</span>
+                  </div>
+
+                  <div className={style.photoText}>
+                    <h4>{ell.name}</h4>
+                    <span>{ell.name}</span>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
 
           <div className={style.customLine}></div>
 
