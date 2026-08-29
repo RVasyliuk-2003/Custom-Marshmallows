@@ -7,10 +7,17 @@ import { useState } from "react";
 
 const Gallery = () => {
   const [typeFilt, setTypeFilt] = useState("Усі");
+  const [sizeFilt, setSizeFilt] = useState(0);
 
   const renderType = bouquetDesigns.filter((ell) => {
-    if (typeFilt === "Усі") return true;
-    else if (typeFilt === ell.type) return true;
+    const matchesType = typeFilt === "Усі" || typeFilt === ell.type;
+
+    const matchesSize =
+      sizeFilt === 0 ||
+      ell.availableSizes?.includes(sizeFilt) ||
+      ell.availableSizes === null;
+
+    return matchesType && matchesSize;
   });
 
   return (
@@ -74,12 +81,83 @@ const Gallery = () => {
 
           <p className={style.filtTabl}>РОЗМІР</p>
           <div className={style.filters}>
-            <p className={`${style.categoryClick} ${style.sizeClick}`}>10</p>
-            <p className={`${style.categoryClick} ${style.sizeClick}`}>16</p>
-            <p className={`${style.categoryClick} ${style.sizeClick}`}>18</p>
-            <p className={`${style.categoryClick} ${style.sizeClick}`}>20</p>
-            <p className={`${style.categoryClick} ${style.sizeClick}`}>25</p>
-            <p className={`${style.categoryClick} ${style.sizeClick}`}>30</p>
+            <button
+              style={
+                sizeFilt === 0
+                  ? { color: "var(--paper)", backgroundColor: "var(--ink)" }
+                  : null
+              }
+              onClick={(e) => setSizeFilt(0)}
+              className={`${style.categoryClick} ${style.sizeClick}`}
+            >
+              Усі
+            </button>
+            <button
+              style={
+                sizeFilt === 10
+                  ? { color: "var(--paper)", backgroundColor: "var(--ink)" }
+                  : null
+              }
+              onClick={(e) => setSizeFilt(10)}
+              className={`${style.categoryClick} ${style.sizeClick}`}
+            >
+              10
+            </button>
+            <button
+              style={
+                sizeFilt === 16
+                  ? { color: "var(--paper)", backgroundColor: "var(--ink)" }
+                  : null
+              }
+              onClick={(e) => setSizeFilt(16)}
+              className={`${style.categoryClick} ${style.sizeClick}`}
+            >
+              16
+            </button>
+            <button
+              style={
+                sizeFilt === 18
+                  ? { color: "var(--paper)", backgroundColor: "var(--ink)" }
+                  : null
+              }
+              onClick={(e) => setSizeFilt(18)}
+              className={`${style.categoryClick} ${style.sizeClick}`}
+            >
+              18
+            </button>
+            <button
+              style={
+                sizeFilt === 20
+                  ? { color: "var(--paper)", backgroundColor: "var(--ink)" }
+                  : null
+              }
+              onClick={(e) => setSizeFilt(20)}
+              className={`${style.categoryClick} ${style.sizeClick}`}
+            >
+              20
+            </button>
+            <button
+              style={
+                sizeFilt === 25
+                  ? { color: "var(--paper)", backgroundColor: "var(--ink)" }
+                  : null
+              }
+              onClick={(e) => setSizeFilt(25)}
+              className={`${style.categoryClick} ${style.sizeClick}`}
+            >
+              25
+            </button>
+            <button
+              style={
+                sizeFilt === 30
+                  ? { color: "var(--paper)", backgroundColor: "var(--ink)" }
+                  : null
+              }
+              onClick={(e) => setSizeFilt(30)}
+              className={`${style.categoryClick} ${style.sizeClick}`}
+            >
+              30
+            </button>
           </div>
 
           <div className={style.flexContanerCard}>
