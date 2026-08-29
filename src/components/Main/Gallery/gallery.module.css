@@ -1,0 +1,73 @@
+.mainGalleryContainet {
+  padding: 12px 18px 110px;
+  position: relative;
+}
+
+.filtTabl {
+  font-size: 10.5px;
+  font-weight: 800;
+  color: var(--ink-soft);
+  margin-top: 14px;
+  margin-bottom: 6px;
+}
+
+.filters {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding-bottom: 6px;
+}
+
+.categoryClick {
+  flex-shrink: 0;
+  padding: 7px 14px;
+  border-radius: 100px;
+  font-size: 11.5px;
+  font-weight: 800;
+  background-color: #fff;
+  border: 2px solid var(--ink);
+  color: var(--ink-soft);
+  white-space: nowrap;
+}
+
+.sizeClick {
+  min-width: 40px;
+  text-align: center;
+}
+
+.customLine {
+  position: sticky;
+  bottom: 0;
+  margin-top: 22px;
+  background: var(--paper);
+  padding: 14px 0 6px;
+  border-top: 2px dashed var(--ink);
+}
+
+.dopInfoBox {
+  background-color: var(--lavender-light);
+  border: 2px solid var(--ink);
+  border-radius: 16px;
+  padding: 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 3px 4px 0 var(--ink);
+  margin-bottom: 10px;
+
+  img {
+    max-width: 20px;
+    width: 100%;
+  }
+
+  h4 {
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 2px;
+  }
+
+  p {
+    font-size: 11px;
+    color: var(--ink-soft);
+  }
+}
