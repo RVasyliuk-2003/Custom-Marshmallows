@@ -1,5 +1,8 @@
 import style from "./catalogScroll.module.css";
 
+import sizeContainer from "../../../data/sizeContainer";
+import bouquetDesigns from "../../../data/bouquetDesigns";
+
 const CatalogScroll = () => {
   return (
     <section>
@@ -11,21 +14,24 @@ const CatalogScroll = () => {
           </h2>
           <p className={style["flip-p"]}> Гортай праворуч →</p>
           <div className={style.scrollContainer}>
-            <div className={style.scrollCard}>
-              <div className={style.cardImg}></div>
-              <h4>Класика</h4>
-              <p className={`${style.tag} ${style.wigthTag}`}>450 грн</p>
-            </div>
-            <div className={style.scrollCard}>
-              <div className={style.cardImg}></div>
-              <h4>День народж.</h4>
-              <p className={`${style.tag} ${style.wigthTag}`}>850 грн</p>
-            </div>
-            <div className={style.scrollCard}>
-              <div className={style.cardImg}></div>
-              <h4>Весільний</h4>
-              <p className={`${style.tag} ${style.wigthTag}`}>560грн</p>
-            </div>
+            {bouquetDesigns.slice(0, 3).map((desEll) => {
+              const minSize = desEll.availableSizes
+                ? Math.min(...desEll.availableSizes)
+                : null;
+              const priceInfo = sizeContainer.find((el) => el.size === minSize);
+
+              return (
+                <div key={desEll.id} className={style.scrollCard}>
+                  <img
+                    src={desEll.photo}
+                    alt={desEll.name}
+                    className={style.img}
+                  />
+                  <h4>{desEll.name}</h4>
+                  <p className={style.wigthTag}>від {priceInfo?.price} грн</p>
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>
