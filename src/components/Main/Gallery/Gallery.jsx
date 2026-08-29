@@ -3,8 +3,16 @@ import logo from "./../../../assets/logo.png";
 
 import sizeContainer from "./../../data/sizeContainer";
 import bouquetDesigns from "./../../data/bouquetDesigns";
+import { useState } from "react";
 
 const Gallery = () => {
+  const [typeFilt, setTypeFilt] = useState("Усі");
+
+  const renderType = bouquetDesigns.filter((ell) => {
+    if (typeFilt === "Усі") return true;
+    else if (typeFilt === ell.type) return true;
+  });
+
   return (
     <section>
       <div className="container">
@@ -18,10 +26,50 @@ const Gallery = () => {
           <p className={style.filtTabl}>ТИП</p>
 
           <div className={style.filters}>
-            <p className={style.categoryClick}>Усі</p>
-            <p className={style.categoryClick}>Букети</p>
-            <p className={style.categoryClick}>Завитки</p>
-            <p className={style.categoryClick}>Індивідуальний</p>
+            <button
+              style={
+                typeFilt === "Усі"
+                  ? { color: "var(--paper)", backgroundColor: "var(--ink)" }
+                  : null
+              }
+              onClick={(e) => setTypeFilt("Усі")}
+              className={style.categoryClick}
+            >
+              Усі
+            </button>
+            <button
+              style={
+                typeFilt === "bouquet"
+                  ? { color: "var(--paper)", backgroundColor: "var(--ink)" }
+                  : null
+              }
+              onClick={(e) => setTypeFilt("bouquet")}
+              className={style.categoryClick}
+            >
+              Букети
+            </button>
+            <button
+              style={
+                typeFilt === "curl"
+                  ? { color: "var(--paper)", backgroundColor: "var(--ink)" }
+                  : null
+              }
+              onClick={(e) => setTypeFilt("curl")}
+              className={style.categoryClick}
+            >
+              Завитки
+            </button>
+            <button
+              style={
+                typeFilt === "Індивідуальний"
+                  ? { color: "var(--paper)", backgroundColor: "var(--ink)" }
+                  : null
+              }
+              onClick={(e) => setTypeFilt("Індивідуальний")}
+              className={style.categoryClick}
+            >
+              Індивідуальний
+            </button>
           </div>
 
           <p className={style.filtTabl}>РОЗМІР</p>
@@ -35,7 +83,7 @@ const Gallery = () => {
           </div>
 
           <div className={style.flexContanerCard}>
-            {bouquetDesigns.map((ell) => {
+            {renderType.map((ell) => {
               return (
                 <div key={ell.id} className={style.mainGalleryBoxCard}>
                   <div className={style.positionImg}>
