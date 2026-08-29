@@ -33,7 +33,7 @@ const CatalogScroll = () => {
                     alt={desEll.name}
                     className={style.img}
                   />
-                  <h4>{desEll.name}</h4>
+                  <h4>Дізнатись більше →</h4>
                   <p className={style.wigthTag}>від {priceInfo?.price} грн</p>
                 </Link>
               );
