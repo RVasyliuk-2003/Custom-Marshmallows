@@ -188,7 +188,15 @@ const Gallery = () => {
             </div>
           </div>
 
-          <button className="btn btn-outline">Замовити індивідуально</button>
+          <button
+            className={
+              typeFilt === "Індивідуальний"
+                ? "btn btn-primary"
+                : "btn btn-outline"
+            }
+          >
+            Замовити індивідуально
+          </button>
         </div>
       </div>
     </section>
