@@ -51,6 +51,9 @@
   padding: 10px 10px 26px;
   box-shadow: 0 10px 20px -12px rgba(43, 31, 26, 0.4);
 
+  text-decoration: none;
+  color: inherit;
+
   > h4 {
     font-size: 14px;
     font-weight: 600;

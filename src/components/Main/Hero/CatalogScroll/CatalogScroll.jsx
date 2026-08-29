@@ -1,5 +1,7 @@
 import style from "./catalogScroll.module.css";
 
+import { Link } from "react-router-dom";
+
 import sizeContainer from "../../../data/sizeContainer";
 import bouquetDesigns from "../../../data/bouquetDesigns";
 
@@ -14,14 +16,18 @@ const CatalogScroll = () => {
           </h2>
           <p className={style["flip-p"]}> Гортай праворуч →</p>
           <div className={style.scrollContainer}>
-            {bouquetDesigns.slice(0, 3).map((desEll) => {
+            {bouquetDesigns.slice(0, 5).map((desEll) => {
               const minSize = desEll.availableSizes
                 ? Math.min(...desEll.availableSizes)
                 : null;
               const priceInfo = sizeContainer.find((el) => el.size === minSize);
 
               return (
-                <div key={desEll.id} className={style.scrollCard}>
+                <Link
+                  to="/Gallery"
+                  key={desEll.id}
+                  className={style.scrollCard}
+                >
                   <img
                     src={desEll.photo}
                     alt={desEll.name}
@@ -29,7 +35,7 @@ const CatalogScroll = () => {
                   />
                   <h4>{desEll.name}</h4>
                   <p className={style.wigthTag}>від {priceInfo?.price} грн</p>
-                </div>
+                </Link>
               );
             })}
           </div>
