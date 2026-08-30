@@ -1,6 +1,8 @@
 import style from "./aboutUs.module.css";
 import avatar from "./../../../assets/logo.png";
 
+import { Link } from "react-router-dom";
+
 const AboutUs = () => {
   return (
     <section>
@@ -42,7 +44,9 @@ const AboutUs = () => {
             </div>
           </div>
 
-          <button className="btn btn-primary">Переглянути каталог</button>
+          <Link to="/catalog" className="btn btn-primary">
+            Переглянути каталог
+          </Link>
         </div>
       </div>
     </section>
