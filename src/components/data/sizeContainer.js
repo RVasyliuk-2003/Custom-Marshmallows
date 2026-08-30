@@ -5,7 +5,7 @@ const sizeContainer = [
     name: "Шкільний",
     category: "Букети",
     description: "або — одна хризантема 500 грн ",
-    price: 600,
+    price: 350,
   },
   {
     id: 2,
@@ -29,7 +29,7 @@ const sizeContainer = [
     name: "Пишний",
     category: "Букети",
     description: "На подарунок",
-    price: 1300,
+    price: 1400,
   },
   {
     id: 5,

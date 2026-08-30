@@ -162,6 +162,14 @@ const Gallery = () => {
 
           <div className={style.flexContanerCard}>
             {renderType.map((ell) => {
+              const priceInfo = sizeContainer.find((s) => s.size === sizeFilt);
+              const minSize = ell.availableSizes
+                ? Math.min(...ell.availableSizes)
+                : null;
+              const minSizePrice = sizeContainer.find(
+                (s) => s.size === minSize,
+              );
+
               return (
                 <div key={ell.id} className={style.mainGalleryBoxCard}>
                   <div className={style.positionImg}>
@@ -171,7 +179,11 @@ const Gallery = () => {
 
                   <div className={style.photoText}>
                     <h4>{ell.name}</h4>
-                    <span>{ell.name}</span>
+                    <span>
+                      {priceInfo
+                        ? `${priceInfo.price} грн`
+                        : `від ${minSizePrice?.price} грн`}
+                    </span>
                   </div>
                 </div>
               );
