@@ -6,18 +6,13 @@ import bouquetDesigns from "./../../data/bouquetDesigns";
 import { useState } from "react";
 
 const Gallery = () => {
-  const [typeFilt, setTypeFilt] = useState("Усі");
-  const [sizeFilt, setSizeFilt] = useState(0);
+  const [typeFilt, setTypeFilt] = useState("Букет");
+  const [sizeFilt, setSizeFilt] = useState(18);
 
   const renderType = bouquetDesigns.filter((ell) => {
     const matchesType = typeFilt === "Усі" || typeFilt === ell.type;
 
-    const matchesSize =
-      sizeFilt === 0 ||
-      ell.availableSizes?.includes(sizeFilt) ||
-      ell.availableSizes === null;
-
-    return matchesType && matchesSize;
+    return matchesType;
   });
 
   return (
@@ -28,22 +23,11 @@ const Gallery = () => {
             className="eyebrow"
             style={{ transform: "rotate(-2deg)", display: "inline-block" }}
           >
-            РОЗМІР: 10 СМ
+            РОЗМІР: {sizeFilt} СМ
           </span>
           <p className={style.filtTabl}>ТИП</p>
 
           <div className={style.filters}>
-            <button
-              style={
-                typeFilt === "Усі"
-                  ? { color: "var(--paper)", backgroundColor: "var(--ink)" }
-                  : null
-              }
-              onClick={(e) => setTypeFilt("Усі")}
-              className={style.categoryClick}
-            >
-              Усі
-            </button>
             <button
               style={
                 typeFilt === "Букет"
@@ -81,17 +65,6 @@ const Gallery = () => {
 
           <p className={style.filtTabl}>РОЗМІР</p>
           <div className={style.filters}>
-            <button
-              style={
-                sizeFilt === 0
-                  ? { color: "var(--paper)", backgroundColor: "var(--ink)" }
-                  : null
-              }
-              onClick={(e) => setSizeFilt(0)}
-              className={`${style.categoryClick} ${style.sizeClick}`}
-            >
-              Усі
-            </button>
             <button
               style={
                 sizeFilt === 10
@@ -163,12 +136,6 @@ const Gallery = () => {
           <div className={style.flexContanerCard}>
             {renderType.map((ell) => {
               const priceInfo = sizeContainer.find((s) => s.size === sizeFilt);
-              const minSize = ell.availableSizes
-                ? Math.min(...ell.availableSizes)
-                : null;
-              const minSizePrice = sizeContainer.find(
-                (s) => s.size === minSize,
-              );
 
               return (
                 <div key={ell.id} className={style.mainGalleryBoxCard}>
@@ -182,9 +149,7 @@ const Gallery = () => {
                     <span>
                       {ell.type === "Завиток"
                         ? "40 грн/шт"
-                        : priceInfo
-                          ? `${priceInfo.price} грн`
-                          : `від ${minSizePrice?.price} грн`}
+                        : `${priceInfo?.price} грн`}
                     </span>
                   </div>
                 </div>
