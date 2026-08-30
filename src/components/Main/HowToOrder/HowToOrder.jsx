@@ -1,4 +1,5 @@
 import style from "./howToOrder.module.css";
+import { Link } from "react-router-dom";
 
 const HowToOrder = () => {
   return (
@@ -63,9 +64,9 @@ const HowToOrder = () => {
             <p>Так, підберемо під будь-яку палітру</p>
           </div>
 
-          <button className={`btn btn-primary ${style.marginBtn}`}>
+          <Link to="/catalog" className={`btn btn-primary ${style.marginBtn}`}>
             Почати замовлення
-          </button>
+          </Link>
         </div>
       </div>
     </section>
