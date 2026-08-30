@@ -180,9 +180,11 @@ const Gallery = () => {
                   <div className={style.photoText}>
                     <h4>{ell.name}</h4>
                     <span>
-                      {priceInfo
-                        ? `${priceInfo.price} грн`
-                        : `від ${minSizePrice?.price} грн`}
+                      {ell.type === "Завиток"
+                        ? "40 грн/шт"
+                        : priceInfo
+                          ? `${priceInfo.price} грн`
+                          : `від ${minSizePrice?.price} грн`}
                     </span>
                   </div>
                 </div>
