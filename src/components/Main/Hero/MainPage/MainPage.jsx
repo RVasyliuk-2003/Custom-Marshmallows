@@ -2,6 +2,7 @@ import style from "./mainPage.module.css";
 import "./../../../../App.css";
 
 import LogoImg from "./../../../../assets/logo.png";
+import { Link } from "react-router-dom";
 
 const MainPage = () => {
   return (
@@ -26,8 +27,12 @@ const MainPage = () => {
             <img id={style.img2} src={LogoImg} alt="svg" />
             <img id={style.img3} src={LogoImg} alt="svg" />
             <div className={style.btnMainBox}>
-              <button className="btn-primary btn">Обрати букет</button>
-              <button className="btn">Як це працює</button>
+              <Link to="/catalog" className="btn-primary btn">
+                Обрати букет
+              </Link>
+              <Link to="/HowToOrder" className="btn">
+                Як це працює
+              </Link>
             </div>
 
             <div className={style.mainPrimary}>
