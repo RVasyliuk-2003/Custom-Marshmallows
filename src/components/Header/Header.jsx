@@ -3,6 +3,7 @@ import Logo from "./../../assets/logo.png";
 import Menu from "./../../assets/menu.png";
 
 import Drawer from "./MenuDrawer/Drawer";
+import { Link } from "react-router-dom";
 
 const Header = ({ isMenuOpen, setIsMenuOpen }) => {
   return (
@@ -10,10 +11,10 @@ const Header = ({ isMenuOpen, setIsMenuOpen }) => {
       <nav className={`container ${style.navContainer}`}>
         <Drawer isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
 
-        <div className={style.NavLogoBox}>
+        <Link to="/" className={style.NavLogoBox}>
           <img src={Logo} alt="Logo" />
           <h4>Зефірка</h4>
-        </div>
+        </Link>
 
         <img
           onClick={() => setIsMenuOpen(true)}
