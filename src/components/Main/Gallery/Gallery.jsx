@@ -46,22 +46,22 @@ const Gallery = () => {
             </button>
             <button
               style={
-                typeFilt === "bouquet"
+                typeFilt === "Букет"
                   ? { color: "var(--paper)", backgroundColor: "var(--ink)" }
                   : null
               }
-              onClick={(e) => setTypeFilt("bouquet")}
+              onClick={(e) => setTypeFilt("Букет")}
               className={style.categoryClick}
             >
               Букети
             </button>
             <button
               style={
-                typeFilt === "curl"
+                typeFilt === "Завиток"
                   ? { color: "var(--paper)", backgroundColor: "var(--ink)" }
                   : null
               }
-              onClick={(e) => setTypeFilt("curl")}
+              onClick={(e) => setTypeFilt("Завиток")}
               className={style.categoryClick}
             >
               Завитки
