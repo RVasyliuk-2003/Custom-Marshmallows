@@ -302,10 +302,16 @@ const bouquetDesigns = [
   },
   {
     id: 52,
-    name: "Завиток №52",
-    type: "Завиток",
+    name: "Різнобарвний мікс",
+    type: "Букет",
     photo: "imgZepfy151.jpg",
-    availableSizes: null,
+    availableSizes: [10, 16, 18, 20, 25, 30],
+  },
+  {
+    id: 53,
+    name: "Завиток",
+    type: "Завиток",
+    photo: "imgZepfy152.jpg",
   },
 ];
 
