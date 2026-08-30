@@ -28,6 +28,7 @@ section {
 }
 
 .btn {
+  font-family: var(--ff-body);
   font-weight: 800;
   font-size: 14px;
   padding: 13px 22px;
@@ -38,6 +39,9 @@ section {
   justify-content: center;
   gap: 8px;
   box-shadow: 2px 3px 0 var(--ink);
+
+  text-decoration: none;
+  color: inherit;
 
   width: 100%;
 }
