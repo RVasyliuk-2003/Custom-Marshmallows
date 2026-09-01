@@ -4,10 +4,12 @@ import logo from "./../../../assets/logo.png";
 import sizeContainer from "./../../data/sizeContainer";
 import bouquetDesigns from "./../../data/bouquetDesigns";
 import { useState } from "react";
+import { useParams } from "react-router-dom";
 
 const Gallery = () => {
+  const { size } = useParams();
   const [typeFilt, setTypeFilt] = useState("Букет");
-  const [sizeFilt, setSizeFilt] = useState(18);
+  const [sizeFilt, setSizeFilt] = useState(Number(size) || 18);
 
   const renderType = bouquetDesigns.filter((ell) => {
     const matchesType = typeFilt === "Усі" || typeFilt === ell.type;
@@ -140,7 +142,7 @@ const Gallery = () => {
               return (
                 <div key={ell.id} className={style.mainGalleryBoxCard}>
                   <div className={style.positionImg}>
-                    <img src={ell.photo} alt={ell.name} />
+                    <img src={`/${ell.photo}`} alt={ell.name} />
                     <span>{ell.type}</span>
                   </div>
 

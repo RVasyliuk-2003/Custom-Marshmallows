@@ -3,6 +3,8 @@ import style from "./catalog.module.css";
 
 import sizeContainer from "./../../data/sizeContainer.js";
 
+import { Link } from "react-router-dom";
+
 const Catalog = () => {
   const [boxProd, setBoxProd] = useState("Усі");
 
@@ -75,7 +77,11 @@ const Catalog = () => {
           </div>
 
           {filtersCategory.map((ell) => (
-            <div key={ell.id} className={style.sizeCard}>
+            <Link
+              to={`/gallery/${ell.size}`}
+              key={ell.id}
+              className={style.sizeCard}
+            >
               <div
                 style={{
                   backgroundColor:
@@ -97,7 +103,7 @@ const Catalog = () => {
               <span className={style.priceSpan}>
                 {ell.price ? `${ell.price} грн` : "за домов.."}
               </span>
-            </div>
+            </Link>
           ))}
 
           <div className={style.noteCard}>

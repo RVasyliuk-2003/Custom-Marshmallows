@@ -24,7 +24,7 @@ const CatalogScroll = () => {
 
               return (
                 <Link
-                  to="/Gallery"
+                  to={`/gallery/18`}
                   key={desEll.id}
                   className={style.scrollCard}
                 >

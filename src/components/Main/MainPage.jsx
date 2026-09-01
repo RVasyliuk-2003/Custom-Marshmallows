@@ -18,7 +18,7 @@ const MainPage = () => {
           <Route path="/AboutUs" element={<AboutUs />} />
           <Route path="/Catalog" element={<Catalog />} />
 
-          <Route path="/Gallery" element={<Gallery />} />
+          <Route path="/gallery/:size" element={<Gallery />} />
 
           <Route path="/HowToOrder" element={<HowToOrder />} />
           <Route path="/Reviews" element={<Reviews />} />

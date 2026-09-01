@@ -34,6 +34,9 @@
   gap: 14px;
   box-shadow: 3px 4px 0 var(--ink);
 
+  text-decoration: none;
+  color: inherit;
+
   .sizeBox {
     width: 56px;
     height: 56px;
