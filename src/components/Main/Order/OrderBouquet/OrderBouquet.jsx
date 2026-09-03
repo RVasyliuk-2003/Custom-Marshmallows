@@ -1,4 +1,4 @@
-import style from "./OrderBouquet.module.css";
+import style from "./orderBouquet.module.css";
 
 const OrderBouquet = () => {
   return (
