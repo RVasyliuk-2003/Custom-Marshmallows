@@ -7,8 +7,8 @@ import { useState } from "react";
 import { useParams } from "react-router-dom";
 
 const Gallery = () => {
-  const { size } = useParams();
-  const [typeFilt, setTypeFilt] = useState("Букет");
+  const { size, type } = useParams();
+  const [typeFilt, setTypeFilt] = useState(type || "Букет");
   const [sizeFilt, setSizeFilt] = useState(Number(size) || 18);
 
   const renderType = bouquetDesigns.filter((ell) => {

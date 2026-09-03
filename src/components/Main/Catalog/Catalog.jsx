@@ -78,7 +78,13 @@ const Catalog = () => {
 
           {filtersCategory.map((ell) => (
             <Link
-              to={`/gallery/${ell.size}`}
+              to={
+                ell.id === 8
+                  ? "/gallery/0/Завиток"
+                  : ell.id === 7
+                    ? "/orderMain"
+                    : `/gallery/${ell.size}/Букет`
+              }
               key={ell.id}
               className={style.sizeCard}
             >

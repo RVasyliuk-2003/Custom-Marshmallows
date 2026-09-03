@@ -24,12 +24,12 @@ const CatalogScroll = () => {
 
               return (
                 <Link
-                  to={`/gallery/18`}
+                  to={`/gallery/18/Букет`}
                   key={desEll.id}
                   className={style.scrollCard}
                 >
                   <img
-                    src={desEll.photo}
+                    src={`/${desEll.photo}`}
                     alt={desEll.name}
                     className={style.img}
                   />

@@ -6,6 +6,7 @@ import Reviews from "./ReviewsPage/Reviews";
 import Contact from "./Contact/Contact";
 
 import Gallery from "./Gallery/Gallery";
+import OrderMain from "./Order/OrderMain";
 
 import { Route, Routes } from "react-router-dom";
 
@@ -18,7 +19,8 @@ const MainPage = () => {
           <Route path="/AboutUs" element={<AboutUs />} />
           <Route path="/Catalog" element={<Catalog />} />
 
-          <Route path="/gallery/:size" element={<Gallery />} />
+          <Route path="/gallery/:size/:type" element={<Gallery />} />
+          <Route path="/orderMain" element={<OrderMain />} />
 
           <Route path="/HowToOrder" element={<HowToOrder />} />
           <Route path="/Reviews" element={<Reviews />} />
