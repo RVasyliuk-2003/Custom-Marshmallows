@@ -6,7 +6,7 @@ import Reviews from "./ReviewsPage/Reviews";
 import Contact from "./Contact/Contact";
 
 import Gallery from "./Gallery/Gallery";
-import OrderMain from "./Order/OrderMain";
+import OrderMain from "./Order/OrderMain/OrderMain";
 
 import { Route, Routes } from "react-router-dom";
 
