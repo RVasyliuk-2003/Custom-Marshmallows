@@ -142,7 +142,7 @@ const Gallery = () => {
 
               return (
                 <Link
-                  to="/OrderBouquet"
+                  to={ell.type === "Букет" ? "/OrderBouquet" : "/OrderCurl"}
                   key={ell.id}
                   className={style.mainGalleryBoxCard}
                 >

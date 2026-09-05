@@ -8,6 +8,7 @@ import Contact from "./Contact/Contact";
 import Gallery from "./Gallery/Gallery";
 import OrderMain from "./Order/OrderMain/OrderMain";
 import OrderBouquet from "./Order/OrderBouquet/OrderBouquet";
+import OrderCurl from "./Order/OrderCurl/OrderCurl";
 
 import { Route, Routes } from "react-router-dom";
 
@@ -23,6 +24,7 @@ const MainPage = () => {
           <Route path="/gallery/:size/:type" element={<Gallery />} />
           <Route path="/orderMain" element={<OrderMain />} />
           <Route path="/OrderBouquet" element={<OrderBouquet />} />
+          <Route path="/OrderCurl" element={<OrderCurl />} />
 
           <Route path="/HowToOrder" element={<HowToOrder />} />
           <Route path="/Reviews" element={<Reviews />} />
