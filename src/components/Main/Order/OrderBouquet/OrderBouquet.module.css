@@ -1,0 +1,248 @@
+.mainContainer {
+  padding: 14px 18px 44px;
+}
+
+.orderCard {
+  background: #fff;
+  border: 2px solid var(--ink);
+  border-radius: 16px;
+  padding: 14px;
+  margin-top: 8px;
+  display: flex;
+  gap: 12px;
+  box-shadow: 3px 4px 0 var(--ink);
+}
+
+.label {
+  font-size: 11px;
+  font-weight: 800;
+  color: var(--ink-soft);
+  margin: 18px 0 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.sizeRow {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding-bottom: 6px;
+
+  > .sizeChip {
+    flex-shrink: 0;
+    min-width: 64px;
+    text-align: center;
+    padding: 9px 10px;
+    border-radius: 12px;
+    background: #fff;
+    border: 2px solid var(--ink);
+    font-weight: 800;
+
+    > b {
+      display: block;
+      font-family: var(--ff-display);
+      font-size: 15px;
+    }
+
+    > span {
+      margin-top: 3px;
+      display: block;
+      font-size: 10px;
+      color: var(--ink-soft);
+      font-weight: 700;
+    }
+  }
+}
+
+.optionCard {
+  position: relative;
+  background-color: #fff;
+  border: 2px solid var(--ink);
+  border-radius: 14px;
+  padding: 12px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.optionCard::after {
+  background: var(--honey-light);
+  box-shadow: 3px 4px 0 var(--ink);
+}
+
+.optionPrice {
+  font-family: var(--ff-display);
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--raspberry-deep);
+  white-space: nowrap;
+}
+
+.optionLeft {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.tagAbsolute {
+  position: absolute;
+  top: -9px;
+  right: 10px;
+  background-color: var(--dark);
+  color: #fff;
+  font-family: var(--ff-display);
+  font-weight: 700;
+  font-size: 9px;
+  padding: 3px 8px;
+  border-radius: 100px;
+}
+
+.optionRadio {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 2px solid var(--ink);
+  border-radius: 50%;
+  outline: none;
+  cursor: pointer;
+  position: relative;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.optionRadio:checked::after {
+  content: "";
+  display: block;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background-color: var(--ink);
+}
+
+.optionTitle {
+  font-family: var(--ff-display);
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.optionText {
+  font-size: 10.5px;
+  color: var(--ink-soft);
+}
+
+.selectField {
+  width: 100%;
+  background-color: #fff;
+  border: 2px solid var(--ink);
+  border-radius: 12px;
+  padding: 12px 14px;
+  font-size: 13px;
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.optionCard:has(.optionRadio:checked) {
+  background: var(--honey-light);
+  box-shadow: 3px 4px 0 var(--ink);
+}
+
+.optionCheckbox {
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--ink);
+  border-radius: 5px;
+  accent-color: black;
+}
+
+.optionClickStyle:has(.optionCheckbox:checked) {
+  background: var(--lavender-light);
+}
+
+.infoColor {
+  width: 100%;
+  background: #fff;
+  border: 2px solid var(--ink);
+  border-radius: 12px;
+  padding: 12px 14px;
+  font-size: 13px;
+  color: var(--ink);
+  margin-top: 10px;
+}
+
+.radio {
+  display: flex;
+  gap: 8px;
+  margin-top: 0;
+  flex-wrap: wrap;
+}
+
+.btnRadio {
+  flex: 1;
+  min-width: 100px;
+  text-align: center;
+  padding: 10px;
+  border-radius: 12px;
+  background: #fff;
+  border: 2px solid var(--ink);
+  font-size: 11.5px;
+  font-weight: 800;
+  color: var(--ink-soft);
+}
+
+.typeText {
+  font-size: 11px;
+  font-weight: 800;
+  color: var(--ink-soft);
+  margin: 18px 0 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.inpt {
+  width: 100%;
+  background: #fff;
+  border: 2px solid var(--ink);
+  border-radius: 12px;
+  padding: 12px 14px;
+  font-size: 13px;
+  color: var(--ink);
+  margin-top: 0;
+}
+
+.totalRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-top: 22px;
+  padding-top: 16px;
+  border-top: 2px dashed var(--ink);
+
+  > b {
+    font-family: var(--ff-display);
+    font-weight: 800;
+    font-size: 22px;
+    color: var(--raspberry-deep);
+    display: block;
+  }
+}
+
+.totalText {
+  font-size: 11px;
+  color: var(--ink-soft);
+  line-height: 1.6;
+}

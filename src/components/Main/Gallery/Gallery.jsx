@@ -5,6 +5,7 @@ import sizeContainer from "./../../data/sizeContainer";
 import bouquetDesigns from "./../../data/bouquetDesigns";
 import { useState } from "react";
 import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Gallery = () => {
   const { size, type } = useParams();
@@ -140,7 +141,11 @@ const Gallery = () => {
               const priceInfo = sizeContainer.find((s) => s.size === sizeFilt);
 
               return (
-                <div key={ell.id} className={style.mainGalleryBoxCard}>
+                <Link
+                  to="/OrderBouquet"
+                  key={ell.id}
+                  className={style.mainGalleryBoxCard}
+                >
                   <div className={style.positionImg}>
                     <img src={`/${ell.photo}`} alt={ell.name} />
                     <span>{ell.type}</span>
@@ -154,7 +159,7 @@ const Gallery = () => {
                         : `${priceInfo?.price} грн`}
                     </span>
                   </div>
-                </div>
+                </Link>
               );
             })}
           </div>

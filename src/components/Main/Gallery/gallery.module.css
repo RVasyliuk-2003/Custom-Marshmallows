@@ -90,6 +90,9 @@
   border-radius: 16px;
   overflow: hidden;
   box-shadow: 3px 4px 0 var(--ink);
+
+  text-decoration: none;
+  color: inherit;
 }
 
 .positionImg {
