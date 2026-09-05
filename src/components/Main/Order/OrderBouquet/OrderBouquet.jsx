@@ -7,6 +7,7 @@ const OrderBouquet = () => {
     <section>
       <div className="container">
         <div className={style.mainContainer}>
+          <h2>Оформлення</h2>
           <div className={style.orderCard}>
             <img src="" alt="" />
             <div>

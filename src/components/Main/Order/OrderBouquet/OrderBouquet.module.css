@@ -1,5 +1,12 @@
 .mainContainer {
   padding: 14px 18px 44px;
+
+  > h2 {
+    font-size: 16px;
+    font-family: var(--ff-display);
+    font-weight: 800;
+    margin-bottom: 14px;
+  }
 }
 
 .orderCard {
