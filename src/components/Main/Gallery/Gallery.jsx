@@ -170,11 +170,12 @@ const Gallery = () => {
             <img src={logo} alt="logo" />
             <div>
               <h4>Не знайшов свій?</h4>
-              <p>Опиши, що уявляєш — зробимо саме такий</p>
+              <p>Опиши, що уявляєLinkш — зробимо саме такий</p>
             </div>
           </div>
 
-          <button
+          <Link
+            to="/OrderMain"
             className={
               typeFilt === "Індивідуальний"
                 ? "btn btn-primary"
@@ -182,7 +183,7 @@ const Gallery = () => {
             }
           >
             Замовити індивідуально
-          </button>
+          </Link>
         </div>
       </div>
     </section>
