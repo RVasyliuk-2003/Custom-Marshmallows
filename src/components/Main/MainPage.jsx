@@ -23,7 +23,7 @@ const MainPage = () => {
 
           <Route path="/gallery/:size/:type" element={<Gallery />} />
           <Route path="/orderMain" element={<OrderMain />} />
-          <Route path="/OrderBouquet" element={<OrderBouquet />} />
+          <Route path="/order-bouquet/:id" element={<OrderBouquet />} />
           <Route path="/OrderCurl" element={<OrderCurl />} />
 
           <Route path="/HowToOrder" element={<HowToOrder />} />

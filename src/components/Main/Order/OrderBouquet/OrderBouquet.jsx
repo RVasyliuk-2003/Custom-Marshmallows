@@ -1,22 +1,28 @@
 import { useState } from "react";
 import style from "./orderBouquet.module.css";
+import { useParams } from "react-router-dom";
+import bouquetDesigns from "../../../data/bouquetDesigns";
 
 const OrderBouquet = () => {
   const [inptforColor, setInptforColor] = useState(false);
+
+  const { id } = useParams();
+  const prod = bouquetDesigns?.find((el) => el.id === Number(id));
+
   return (
     <section>
       <div className="container">
         <div className={style.mainContainer}>
           <h2>Оформлення</h2>
           <div className={style.orderCard}>
-            <img src="" alt="" />
-            <div>
-              <h4>fdgzvfd</h4>
-              <span>vzfdf</span>
+            <img src={`/${prod?.photo}`} alt={prod.name} />
+            <div className={style.prodInfoCard}>
+              <h4>{prod.name}</h4>
+              <span>{prod.type}</span>
             </div>
           </div>
-          <span className={style.label}>РОЗМІР</span>
 
+          <span className={style.label}>РОЗМІР</span>
           <div className={style.sizeRow}>
             <div className={style.sizeChip}>
               <b>10</b>
@@ -43,9 +49,7 @@ const OrderBouquet = () => {
               <span>2500 грн</span>
             </div>
           </div>
-
           <span className={style.label}>ПАКУВАННЯ</span>
-
           <label className={style.optionCard}>
             <span className={style.tagAbsolute}>зазвичай для завитків</span>
 
@@ -63,7 +67,6 @@ const OrderBouquet = () => {
 
             <p className={style.optionPrice}>50-60 грн</p>
           </label>
-
           <label className={style.optionCard}>
             <span className={style.tagAbsolute}>зазвичай для букетів</span>
 
@@ -83,9 +86,7 @@ const OrderBouquet = () => {
 
             <p className={style.optionPrice}>150 грн</p>
           </label>
-
           <span className={style.label}>СМАК</span>
-
           <select className={style.selectField} name="">
             <option value="">Полуничний</option>
             <option value="">Полуничний</option>
@@ -94,9 +95,7 @@ const OrderBouquet = () => {
             <option value="">Полуничний</option>
             <option value="">Полуничний</option>
           </select>
-
           <span className={style.label}>КОЛЬОРИ</span>
-
           <label className={`${style.optionCard} ${style.optionClickStyle}`}>
             <div className={style.optionLeft}>
               <input
@@ -122,9 +121,7 @@ const OrderBouquet = () => {
               type="text"
             />
           )}
-
           <span className={style.label}>ОТРИМАННЯ</span>
-
           <div className={style.radio}>
             <button className={style.btnRadio}>Самовивіз</button>
             <button className={style.btnRadio}>По місту</button>
@@ -132,7 +129,6 @@ const OrderBouquet = () => {
           </div>
           <span className={style.label}>БАЖАНА ДАТА</span>
           <input className={style.inpt} placeholder="Наприклад, 14 вересня" />
-
           <span className={style.label}>ІМ'Я ТА ТЕЛЕФОН / TELEGRAM</span>
           <input className={style.inpt} type="name" placeholder="Ваше ім'я" />
           <input
@@ -141,7 +137,6 @@ const OrderBouquet = () => {
             placeholder="+380 або @нікнейм"
             style={{ marginTop: "10px" }}
           />
-
           <div className={style.totalRow}>
             <div className={style.totalText}>
               <p>fdasdvga</p>
@@ -150,7 +145,6 @@ const OrderBouquet = () => {
             </div>
             <b>1000 грн</b>
           </div>
-
           <button className="btn btn-primary" style={{ marginTop: "16px" }}>
             Підтвердити замовлення
           </button>
