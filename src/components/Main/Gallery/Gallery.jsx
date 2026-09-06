@@ -145,7 +145,7 @@ const Gallery = () => {
                   to={
                     ell.type === "Букет"
                       ? `/order-bouquet/${ell.id}`
-                      : "/OrderCurl"
+                      : `/order-curl/${ell.id}`
                   }
                   key={ell.id}
                   className={style.mainGalleryBoxCard}

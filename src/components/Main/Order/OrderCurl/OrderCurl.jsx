@@ -1,18 +1,23 @@
 import style from "./orderCurl.module.css";
 import { useState } from "react";
+import { useParams } from "react-router-dom";
+import bouquetDesigns from "../../../data/bouquetDesigns";
 
 const OrderCurl = () => {
   const [inptforColor, setInptforColor] = useState(false);
+  const { cu } = useParams();
+  const curl = bouquetDesigns.find((ell) => ell.id === Number(cu));
+
   return (
     <section>
       <div className="container">
         <div className={style.mainContainer}>
           <h2>Оформлення завитків</h2>
           <div className={style.orderCard}>
-            <img src="" alt="" />
+            <img src={`/${curl.photo}`} alt={curl.name} />
             <div>
-              <h4>fdgzvfd</h4>
-              <span>vzfdf</span>
+              <h4>{curl.type}</h4>
+              <span>40 грн / шт · 40-50г</span>
             </div>
           </div>
           <span className={style.label}>КІЛЬКІСТЬ</span>
