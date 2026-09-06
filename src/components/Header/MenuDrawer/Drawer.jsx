@@ -6,6 +6,11 @@ import { NavLink } from "react-router-dom";
 const Drawer = ({ isMenuOpen, setIsMenuOpen }) => {
   return (
     <>
+      <div
+        className={`${style.overlay} ${isMenuOpen ? style.overlayOpen : ""}`}
+        onClick={() => setIsMenuOpen(false)}
+      ></div>
+      
       <div className={`${style.mainContainer} ${isMenuOpen ? style.open : ""}`}>
         <div className={style.logoContainer}>
           <div className={style.logoBox}>
