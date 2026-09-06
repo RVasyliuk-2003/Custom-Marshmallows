@@ -9,6 +9,9 @@ const OrderBouquet = () => {
   const { id } = useParams();
   const prod = bouquetDesigns?.find((el) => el.id === Number(id));
 
+  const [count, setCount] = useState("");
+  const [size, setSize] = useState(null);
+
   return (
     <section>
       <div className="container">
@@ -24,27 +27,69 @@ const OrderBouquet = () => {
 
           <span className={style.label}>РОЗМІР</span>
           <div className={style.sizeRow}>
-            <div className={style.sizeChip}>
+            <div
+              onClick={() => setSize(10)}
+              className={
+                size === 10
+                  ? `${style.sizeChip} ${style.chipActive}`
+                  : style.sizeChip
+              }
+            >
               <b>10</b>
               <span>600 грн</span>
             </div>
-            <div className={style.sizeChip}>
+            <div
+              onClick={() => setSize(16)}
+              className={
+                size === 16
+                  ? `${style.sizeChip} ${style.chipActive}`
+                  : style.sizeChip
+              }
+            >
               <b>16</b>
               <span>1000 грн</span>
             </div>
-            <div className={style.sizeChip}>
+            <div
+              onClick={() => setSize(18)}
+              className={
+                size === 18
+                  ? `${style.sizeChip} ${style.chipActive}`
+                  : style.sizeChip
+              }
+            >
               <b>18</b>
               <span>1100 грн</span>
             </div>
-            <div className={style.sizeChip}>
+            <div
+              onClick={() => setSize(20)}
+              className={
+                size === 20
+                  ? `${style.sizeChip} ${style.chipActive}`
+                  : style.sizeChip
+              }
+            >
               <b>20</b>
               <span>1300 грн</span>
             </div>
-            <div className={style.sizeChip}>
+            <div
+              onClick={() => setSize(25)}
+              className={
+                size === 25
+                  ? `${style.sizeChip} ${style.chipActive}`
+                  : style.sizeChip
+              }
+            >
               <b>25</b>
               <span>1800 грн</span>
             </div>
-            <div className={style.sizeChip}>
+            <div
+              onClick={() => setSize(30)}
+              className={
+                size === 30
+                  ? `${style.sizeChip} ${style.chipActive}`
+                  : style.sizeChip
+              }
+            >
               <b>30</b>
               <span>2500 грн</span>
             </div>
