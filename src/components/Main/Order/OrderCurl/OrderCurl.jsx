@@ -8,6 +8,14 @@ const OrderCurl = () => {
   const { cu } = useParams();
   const curl = bouquetDesigns.find((ell) => ell.id === Number(cu));
 
+  const [count, setCount] = useState(1);
+  const [packaging, setPackaging] = useState("Стандарт");
+
+  const total =
+    count * 40 +
+    (packaging === "Стандарт" ? 50 : 150) +
+    (inptforColor ? 200 : 0);
+
   return (
     <section>
       <div className="container">
@@ -22,9 +30,19 @@ const OrderCurl = () => {
           </div>
           <span className={style.label}>КІЛЬКІСТЬ</span>
           <div className={style.qty}>
-            <button className={style.btnQty}>-</button>
-            <span>0</span>
-            <button className={style.btnQty}>+</button>
+            <button
+              onClick={() => setCount(count - 1)}
+              className={style.btnQty}
+            >
+              -
+            </button>
+            <span>{count}</span>
+            <button
+              onClick={() => setCount(count + 1)}
+              className={style.btnQty}
+            >
+              +
+            </button>
           </div>
 
           <span className={style.label}>ПАКУВАННЯ</span>
@@ -35,6 +53,8 @@ const OrderCurl = () => {
             <div className={style.optionLeft}>
               <input
                 type="radio"
+                onChange={() => setPackaging("Стандарт")}
+                checked={packaging === "Стандарт"}
                 name="optionGroup"
                 className={style.optionRadio}
               />
@@ -53,6 +73,8 @@ const OrderCurl = () => {
             <div className={style.optionLeft}>
               <input
                 type="radio"
+                onChange={() => setPackaging("Подарункове")}
+                checked={packaging === "Подарункове"}
                 name="optionGroup"
                 className={style.optionRadio}
               />
@@ -130,7 +152,7 @@ const OrderCurl = () => {
               <p>fdasdvga</p>
               <p>sdzVafd zfdbzfa fasdv</p>
             </div>
-            <b>40 грн</b>
+            <b>{total} грн</b>
           </div>
 
           <button className="btn btn-primary" style={{ marginTop: "16px" }}>
