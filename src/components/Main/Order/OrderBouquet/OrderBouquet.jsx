@@ -11,8 +11,15 @@ const OrderBouquet = () => {
   const { id } = useParams();
   const prod = bouquetDesigns?.find((el) => el.id === Number(id));
 
-  const [count, setCount] = useState("");
-  const [size, setSize] = useState(null);
+  const [size, setSize] = useState(18);
+  const [packaging, setPackaging] = useState("Стандарт");
+
+  const priceId = sizeContainer?.find((el) => el.size === size);
+
+  const total =
+    priceId?.price +
+    (packaging === "Стандарт" ? 50 : 150) +
+    (inptforColor ? 200 : 0);
 
   return (
     <section>
@@ -43,7 +50,7 @@ const OrderBouquet = () => {
                   }
                 >
                   <b>{ell.size}</b>
-                  <span>{ell.price}</span>
+                  <span>{ell.price} грн</span>
                 </div>
               ))}
           </div>
@@ -53,7 +60,9 @@ const OrderBouquet = () => {
 
             <div className={style.optionLeft}>
               <input
+                onChange={() => setPackaging("Стандарт")}
                 type="radio"
+                checked={packaging === "Стандарт"}
                 name="optionGroup"
                 className={style.optionRadio}
               />
@@ -70,7 +79,9 @@ const OrderBouquet = () => {
 
             <div className={style.optionLeft}>
               <input
+                onChange={() => setPackaging("Подарункове")}
                 type="radio"
+                checked={packaging === "Подарункове"}
                 name="optionGroup"
                 className={style.optionRadio}
               />
@@ -141,7 +152,7 @@ const OrderBouquet = () => {
               <p>sdzVafd zfdbzfa fasdv</p>
               <p>svZVasfv sdvaszfv sdvzdsazv</p>
             </div>
-            <b>1000 грн</b>
+            <b>{total} грн</b>
           </div>
           <button className="btn btn-primary" style={{ marginTop: "16px" }}>
             Підтвердити замовлення
