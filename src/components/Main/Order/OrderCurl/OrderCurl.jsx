@@ -234,8 +234,12 @@ const OrderCurl = () => {
 
           <div className={style.totalRow}>
             <div className={style.totalText}>
-              <p>fdasdvga</p>
-              <p>sdzVafd zfdbzfa fasdv</p>
+              <p>
+                Завиток x {count} - {count * 40} грн
+              </p>
+              <p>
+                {packaging} - {packaging === "Стандарт" ? 50 : 150} грн
+              </p>
             </div>
             <b>{total} грн</b>
           </div>
