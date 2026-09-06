@@ -16,6 +16,7 @@ const OrderCurl = () => {
     (packaging === "Стандарт" ? 50 : 150) +
     (inptforColor ? 200 : 0);
 
+  const [deliverColor, setDeliverColor] = useState("Самовивіз");
   return (
     <section>
       <div className="container">
@@ -131,9 +132,36 @@ const OrderCurl = () => {
           <span className={style.label}>ОТРИМАННЯ</span>
 
           <div className={style.radio}>
-            <button className={style.btnRadio}>Самовивіз</button>
-            <button className={style.btnRadio}>По місту</button>
-            <button className={style.btnRadio}>Нова пошта</button>
+            <button
+              onClick={() => setDeliverColor("Самовивіз")}
+              className={
+                deliverColor === "Самовивіз"
+                  ? `${style.btnRadio} ${style.activeCol}`
+                  : style.btnRadio
+              }
+            >
+              Самовивіз
+            </button>
+            <button
+              onClick={() => setDeliverColor("По місту")}
+              className={
+                deliverColor === "По місту"
+                  ? `${style.btnRadio} ${style.activeCol}`
+                  : style.btnRadio
+              }
+            >
+              По місту
+            </button>
+            <button
+              onClick={() => setDeliverColor("Нова пошта")}
+              className={
+                deliverColor === "Нова пошта"
+                  ? `${style.btnRadio} ${style.activeCol}`
+                  : style.btnRadio
+              }
+            >
+              Нова пошта
+            </button>
           </div>
           <span className={style.label}>БАЖАНА ДАТА</span>
           <input className={style.inpt} placeholder="Наприклад, 14 вересня" />
