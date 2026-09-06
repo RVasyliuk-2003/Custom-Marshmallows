@@ -8,7 +8,7 @@ const OrderCurl = () => {
   const { cu } = useParams();
   const curl = bouquetDesigns.find((ell) => ell.id === Number(cu));
 
-  const [count, setCount] = useState(1);
+  const [count, setCount] = useState(6);
   const [packaging, setPackaging] = useState("Стандарт");
 
   const total =
@@ -16,7 +16,7 @@ const OrderCurl = () => {
     (packaging === "Стандарт" ? 50 : 150) +
     (inptforColor ? 200 : 0);
 
-  const [deliverColor, setDeliverColor] = useState("Самовивіз");
+  const [deliverColor, setDeliverColor] = useState("");
 
   const [inptDate, setInptDate] = useState("");
   const [inptName, setInptName] = useState("");
@@ -30,6 +30,10 @@ const OrderCurl = () => {
   const errorContact = () => {
     if (!inptDate || !inptName || !inptNumber) {
       setIError("ЗАПОМНІТЬ УСІ ПОЛЯ");
+      return;
+    }
+    if (!deliverColor) {
+      setIError("ОБЕРІТЬ СПОСІБ ДОСТАВКИ");
       return;
     }
     if (!nameRegex.test(inptName)) {
@@ -62,7 +66,12 @@ const OrderCurl = () => {
           <span className={style.label}>КІЛЬКІСТЬ</span>
           <div className={style.qty}>
             <button
-              onClick={() => setCount(count - 1)}
+              onClick={() => {
+                if (count > 6) {
+                  setCount(count - 1);
+                  return;
+                }
+              }}
               className={style.btnQty}
             >
               -
