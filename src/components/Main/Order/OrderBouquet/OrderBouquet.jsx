@@ -3,6 +3,8 @@ import style from "./orderBouquet.module.css";
 import { useParams } from "react-router-dom";
 import bouquetDesigns from "../../../data/bouquetDesigns";
 
+import sizeContainer from "../../../data/sizeContainer";
+
 const OrderBouquet = () => {
   const [inptforColor, setInptforColor] = useState(false);
 
@@ -26,73 +28,24 @@ const OrderBouquet = () => {
           </div>
 
           <span className={style.label}>РОЗМІР</span>
+
           <div className={style.sizeRow}>
-            <div
-              onClick={() => setSize(10)}
-              className={
-                size === 10
-                  ? `${style.sizeChip} ${style.chipActive}`
-                  : style.sizeChip
-              }
-            >
-              <b>10</b>
-              <span>600 грн</span>
-            </div>
-            <div
-              onClick={() => setSize(16)}
-              className={
-                size === 16
-                  ? `${style.sizeChip} ${style.chipActive}`
-                  : style.sizeChip
-              }
-            >
-              <b>16</b>
-              <span>1000 грн</span>
-            </div>
-            <div
-              onClick={() => setSize(18)}
-              className={
-                size === 18
-                  ? `${style.sizeChip} ${style.chipActive}`
-                  : style.sizeChip
-              }
-            >
-              <b>18</b>
-              <span>1100 грн</span>
-            </div>
-            <div
-              onClick={() => setSize(20)}
-              className={
-                size === 20
-                  ? `${style.sizeChip} ${style.chipActive}`
-                  : style.sizeChip
-              }
-            >
-              <b>20</b>
-              <span>1300 грн</span>
-            </div>
-            <div
-              onClick={() => setSize(25)}
-              className={
-                size === 25
-                  ? `${style.sizeChip} ${style.chipActive}`
-                  : style.sizeChip
-              }
-            >
-              <b>25</b>
-              <span>1800 грн</span>
-            </div>
-            <div
-              onClick={() => setSize(30)}
-              className={
-                size === 30
-                  ? `${style.sizeChip} ${style.chipActive}`
-                  : style.sizeChip
-              }
-            >
-              <b>30</b>
-              <span>2500 грн</span>
-            </div>
+            {sizeContainer
+              ?.filter((type) => type.category === "Букети")
+              .map((ell) => (
+                <div
+                  key={ell.id}
+                  onClick={() => setSize(ell.size)}
+                  className={
+                    size === ell.size
+                      ? `${style.sizeChip} ${style.chipActive}`
+                      : style.sizeChip
+                  }
+                >
+                  <b>{ell.size}</b>
+                  <span>{ell.price}</span>
+                </div>
+              ))}
           </div>
           <span className={style.label}>ПАКУВАННЯ</span>
           <label className={style.optionCard}>
