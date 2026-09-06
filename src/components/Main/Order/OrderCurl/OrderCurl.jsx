@@ -17,6 +17,36 @@ const OrderCurl = () => {
     (inptforColor ? 200 : 0);
 
   const [deliverColor, setDeliverColor] = useState("Самовивіз");
+
+  const [inptDate, setInptDate] = useState("");
+  const [inptName, setInptName] = useState("");
+  const [inptNumber, setInptNumber] = useState("");
+
+  const [error, setIError] = useState("");
+
+  const nameRegex = /^([a-zA-Z\s]+|[а-яА-ЯҐґЄєІіЇї'’\s]+)$/u;
+  const contactRegex = /^(\+?[\d\s\-\(\)]{7,20}|@[a-zA-Z0-9_]{5,32})$/;
+
+  const errorContact = () => {
+    if (!inptDate || !inptName || !inptNumber) {
+      setIError("ЗАПОМНІТЬ УСІ ПОЛЯ");
+      return;
+    }
+    if (!nameRegex.test(inptName)) {
+      setIError("НЕПРАВИЛЬНО ВВЕДЕННО ІМ'Я");
+      return;
+    }
+    if (!contactRegex.test(inptNumber)) {
+      setIError("НЕПРАВЕЛЬНО ВВЕДЕННИЙ НОМЕР ТЕЛЕФОНУ АБО НІКНЕЙМ");
+      return;
+    } else {
+      setIError("ФОРМУ ВІДПРАВЛЕННО");
+      setInptDate("");
+      setInptName("");
+      setInptNumber("");
+    }
+  };
+
   return (
     <section>
       <div className="container">
@@ -164,16 +194,43 @@ const OrderCurl = () => {
             </button>
           </div>
           <span className={style.label}>БАЖАНА ДАТА</span>
-          <input className={style.inpt} placeholder="Наприклад, 14 вересня" />
+          <input
+            onChange={(e) => setInptDate(e.target.value)}
+            value={inptDate}
+            className={style.inpt}
+            placeholder="Наприклад, 14 вересня"
+          />
 
           <span className={style.label}>ІМ'Я ТА ТЕЛЕФОН / TELEGRAM</span>
-          <input className={style.inpt} type="name" placeholder="Ваше ім'я" />
           <input
+            onChange={(e) => setInptName(e.target.value)}
+            value={inptName}
             className={style.inpt}
-            type="number"
+            type="name"
+            placeholder="Ваше ім'я"
+          />
+          <input
+            onChange={(e) => setInptNumber(e.target.value)}
+            value={inptNumber}
+            className={style.inpt}
+            type="text"
             placeholder="+380 або @нікнейм"
             style={{ marginTop: "10px" }}
           />
+
+          {error ? (
+            <p
+              style={{
+                color:
+                  error === "ФОРМУ ВІДПРАВЛЕННО"
+                    ? "var(--pistachio)"
+                    : "var(--raspberry-deep)",
+              }}
+              className={style.infoError}
+            >
+              {error}
+            </p>
+          ) : null}
 
           <div className={style.totalRow}>
             <div className={style.totalText}>
@@ -183,7 +240,11 @@ const OrderCurl = () => {
             <b>{total} грн</b>
           </div>
 
-          <button className="btn btn-primary" style={{ marginTop: "16px" }}>
+          <button
+            onClick={() => errorContact()}
+            className="btn btn-primary"
+            style={{ marginTop: "16px" }}
+          >
             Підтвердити замовлення
           </button>
         </div>
