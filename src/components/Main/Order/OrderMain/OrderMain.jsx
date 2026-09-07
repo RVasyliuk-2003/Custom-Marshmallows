@@ -19,6 +19,8 @@ const OrderMain = () => {
   const nameRegex = /^([a-zA-Z\s]+|[а-яА-ЯҐґЄєІіЇї'’\s]+)$/u;
   const contactRegex = /^(\+?[\d\s\-\(\)]{7,20}|@[a-zA-Z0-9_]{5,32})$/;
 
+  const option = sizeContainer?.find((s) => s.size === size);
+
   const resultError = () => {
     if (!inptDate || !inptName || !inptNumber) {
       setError("ЗАПОМНІТЬ УСІ ПОЛЯ");
@@ -190,10 +192,10 @@ const OrderMain = () => {
         )}
 
         <div className={style.box}>
-          <b>Орієнтовно від 1100 грн</b>
+          <b>Орієнтовно від {option.price + 50} грн</b>
           <p>
             Точну ціну повідомимо особисто після обговорення деталей — вона
-            залежить від розміру й складності дизайну
+            залежить від складності дизайну
           </p>
         </div>
         <button onClick={() => resultError()} className="btn btn-primary">
