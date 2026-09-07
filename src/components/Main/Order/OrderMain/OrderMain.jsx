@@ -8,10 +8,52 @@ const OrderMain = () => {
   const [flavor, setFlavor] = useState("Оберіть смак");
   const [actiRadio, setActiRadio] = useState("");
 
+  const [inpColor, setInpColor] = useState("");
   const [inpIdea, setInpIdea] = useState("");
   const [inptDate, setInptDate] = useState("");
   const [inptName, setInptName] = useState("");
   const [inptNumber, setInptNumber] = useState("");
+
+  const [error, setError] = useState("");
+
+  const nameRegex = /^([a-zA-Z\s]+|[а-яА-ЯҐґЄєІіЇї'’\s]+)$/u;
+  const contactRegex = /^(\+?[\d\s\-\(\)]{7,20}|@[a-zA-Z0-9_]{5,32})$/;
+
+  const resultError = () => {
+    if (!inptDate || !inptName || !inptNumber) {
+      setError("ЗАПОМНІТЬ УСІ ПОЛЯ");
+      return;
+    }
+    if (!inpIdea) {
+      setError("ОПИШІТЬ СВОЮ ІДЕЮ");
+      return;
+    }
+    if (flavor === "Оберіть смак") {
+      setError("ОБЕРІТЬ СМАК");
+      return;
+    }
+    if (!actiRadio) {
+      setError("ОБЕРІТЬ СПОСІБ ДОСТАВКИ");
+      return;
+    }
+    if (!nameRegex.test(inptName)) {
+      setError("НЕПРАВИЛЬНО ВВЕДЕННО ІМ'Я");
+      return;
+    }
+    if (!contactRegex.test(inptNumber)) {
+      setError("НЕПРАВЕЛЬНО ВВЕДЕННИЙ НОМЕР ТЕЛЕФОНУ АБО НІКНЕЙМ");
+      return;
+    } else {
+      setError("ФОРМУ ВІДПРАВЛЕННО");
+      setInpColor("");
+      setInpIdea("");
+      setFlavor("Оберіть смак");
+      setActiRadio("");
+      setInptDate("");
+      setInptName("");
+      setInptNumber("");
+    }
+  };
 
   return (
     <section className="contsiner">
@@ -45,6 +87,8 @@ const OrderMain = () => {
         </div>
         <span className={style.typeText}>КОЛЬОРИ</span>
         <input
+          value={inpColor}
+          onChange={(e) => setInpColor(e.target.value)}
           className={style.inpt}
           placeholder="Напр.: бордовий, пудровий, з золотом"
         />
@@ -131,6 +175,8 @@ const OrderMain = () => {
           placeholder="+380 або @нікнейм"
           style={{ marginTop: "10px" }}
         />
+
+        <p className={style.infoError}>{error}</p>
         <div className={style.box}>
           <b>Орієнтовно від 1100 грн</b>
           <p>
@@ -138,7 +184,9 @@ const OrderMain = () => {
             залежить від розміру й складності дизайну
           </p>
         </div>
-        <button className="btn btn-primary">Надіслати запит</button>
+        <button onClick={() => resultError()} className="btn btn-primary">
+          Надіслати запит
+        </button>
       </div>
     </section>
   );
