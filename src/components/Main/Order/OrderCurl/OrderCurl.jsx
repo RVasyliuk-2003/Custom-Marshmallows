@@ -249,6 +249,7 @@ const OrderCurl = () => {
               <p>
                 {packaging} - {packaging === "Стандарт" ? 50 : 150} грн
               </p>
+              {inptforColor && <p> Насичені кольори - 200 грн</p>}
             </div>
             <b>{total} грн</b>
           </div>
