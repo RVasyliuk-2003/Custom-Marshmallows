@@ -10,6 +10,7 @@ const OrderCurl = () => {
 
   const [count, setCount] = useState(6);
   const [packaging, setPackaging] = useState("Стандарт");
+  const [flavor, setFlavor] = useState("Полуниця");
 
   const total =
     count * 40 +
@@ -131,13 +132,22 @@ const OrderCurl = () => {
 
           <span className={style.label}>СМАК</span>
 
-          <select className={style.selectField} name="">
-            <option value="">Полуничний</option>
-            <option value="">Полуничний</option>
-            <option value="">Полуничний</option>
-            <option value="">Полуничний</option>
-            <option value="">Полуничний</option>
-            <option value="">Полуничний</option>
+          <select
+            value={flavor}
+            onChange={(e) => setFlavor(e.target.value)}
+            className={style.selectField}
+            name=""
+          >
+            <option value="Полуниця">Полуниця</option>
+            <option value="Смородина">Смородина</option>
+            <option value="Апельсин">Апельсин</option>
+            <option value="Малина">Малина</option>
+            <option value="Абрикосовий">Абрикосовий</option>
+            <option value="Сливовий">Сливовий</option>
+            <option value="Яблучно-Грушевий">Яблучно-Грушевий</option>
+            <option value="Ванільний">Ванільний</option>
+            <option value="Грушевий">Грушевий</option>
+            <option value="Яблучний">Яблучний</option>
           </select>
 
           <span className={style.label}>КОЛЬОРИ</span>
@@ -250,6 +260,7 @@ const OrderCurl = () => {
                 {packaging} - {packaging === "Стандарт" ? 50 : 150} грн
               </p>
               {inptforColor && <p> Насичені кольори - 200 грн</p>}
+              {flavor && <p>Смак - {flavor}</p>}
             </div>
             <b>{total} грн</b>
           </div>
