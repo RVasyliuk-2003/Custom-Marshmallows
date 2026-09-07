@@ -146,6 +146,11 @@ h2 {
   color: var(--ink-soft);
 }
 
+.altiveRadio {
+  background-color: var(--ink);
+  color: var(--paper);
+}
+
 .box {
   background: var(--honey-light);
   border: 2px solid var(--ink);

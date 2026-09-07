@@ -6,11 +6,13 @@ import { useState } from "react";
 const OrderMain = () => {
   const [size, setSize] = useState(18);
   const [flavor, setFlavor] = useState("Оберіть смак");
+  const [actiRadio, setActiRadio] = useState("");
 
   const [inpIdea, setInpIdea] = useState("");
   const [inptDate, setInptDate] = useState("");
   const [inptName, setInptName] = useState("");
   const [inptNumber, setInptNumber] = useState("");
+
   return (
     <section className="contsiner">
       <div className={style.mainOrderContainer}>
@@ -75,9 +77,36 @@ const OrderMain = () => {
         />
         <span className={style.typeText}>ОТРИМАННЯ</span>
         <div className={style.radio}>
-          <button className={style.btnRadio}>Самовивіз</button>
-          <button className={style.btnRadio}>По місту</button>
-          <button className={style.btnRadio}>Нова пошта</button>
+          <button
+            onClick={() => setActiRadio("Самовивіз")}
+            className={
+              actiRadio === "Самовивіз"
+                ? `${style.btnRadio} ${style.altiveRadio}`
+                : style.btnRadio
+            }
+          >
+            Самовивіз
+          </button>
+          <button
+            onClick={() => setActiRadio("По місту")}
+            className={
+              actiRadio === "По місту"
+                ? `${style.btnRadio} ${style.altiveRadio}`
+                : style.btnRadio
+            }
+          >
+            По місту
+          </button>
+          <button
+            onClick={() => setActiRadio("Нова пошта")}
+            className={
+              actiRadio === "Нова пошта"
+                ? `${style.btnRadio} ${style.altiveRadio}`
+                : style.btnRadio
+            }
+          >
+            Нова пошта
+          </button>
         </div>
         <span className={style.typeText}>БАЖАНА ДАТА</span>
         <input
