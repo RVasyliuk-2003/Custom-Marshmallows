@@ -13,6 +13,7 @@ const OrderBouquet = () => {
 
   const [size, setSize] = useState(18);
   const [packaging, setPackaging] = useState("Стандарт");
+  const [actiRadio, setActiRadio] = useState("");
 
   const priceId = sizeContainer?.find((el) => el.size === size);
 
@@ -132,9 +133,36 @@ const OrderBouquet = () => {
           )}
           <span className={style.label}>ОТРИМАННЯ</span>
           <div className={style.radio}>
-            <button className={style.btnRadio}>Самовивіз</button>
-            <button className={style.btnRadio}>По місту</button>
-            <button className={style.btnRadio}>Нова пошта</button>
+            <button
+              onClick={() => setActiRadio("Самовивіз")}
+              className={
+                actiRadio === "Самовивіз"
+                  ? `${style.btnRadio} ${style.radioActive}`
+                  : style.btnRadio
+              }
+            >
+              Самовивіз
+            </button>
+            <button
+              onClick={() => setActiRadio("По місту")}
+              className={
+                actiRadio === "По місту"
+                  ? `${style.btnRadio} ${style.radioActive}`
+                  : style.btnRadio
+              }
+            >
+              По місту
+            </button>
+            <button
+              onClick={() => setActiRadio("Нова пошта")}
+              className={
+                actiRadio === "Нова пошта"
+                  ? `${style.btnRadio} ${style.radioActive}`
+                  : style.btnRadio
+              }
+            >
+              Нова пошта
+            </button>
           </div>
           <span className={style.label}>БАЖАНА ДАТА</span>
           <input className={style.inpt} placeholder="Наприклад, 14 вересня" />
