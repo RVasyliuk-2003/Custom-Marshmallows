@@ -1,6 +1,8 @@
 import style from "./orderMain.module.css";
 import logo from "./../../../../assets/logo.png";
 
+import sizeContainer from "../../../data/sizeContainer";
+
 const OrderMain = () => {
   return (
     <section className="contsiner">
@@ -15,30 +17,14 @@ const OrderMain = () => {
         </div>
         <span className={style.typeText}>РОЗМІР</span>
         <div className={style.chipSize}>
-          <div className={style.sizeChipBox}>
-            <b>10</b>
-            <span>см</span>
-          </div>
-          <div className={style.sizeChipBox}>
-            <b>16</b>
-            <span>см</span>
-          </div>
-          <div className={style.sizeChipBox}>
-            <b>18</b>
-            <span>см</span>
-          </div>
-          <div className={style.sizeChipBox}>
-            <b>20</b>
-            <span>см</span>
-          </div>
-          <div className={style.sizeChipBox}>
-            <b>25</b>
-            <span>см</span>
-          </div>
-          <div className={style.sizeChipBox}>
-            <b>30</b>
-            <span>см</span>
-          </div>
+          {sizeContainer
+            ?.filter((bo) => bo.category === "Букети")
+            .map((ell) => (
+              <div key={ell.id} className={style.sizeChipBox}>
+                <b>{ell.size}</b>
+                <span>см</span>
+              </div>
+            ))}
         </div>
 
         <span className={style.typeText}>КОЛЬОРИ</span>
