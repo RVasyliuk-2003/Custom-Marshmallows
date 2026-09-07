@@ -237,9 +237,13 @@ const OrderBouquet = () => {
           ) : null}
           <div className={style.totalRow}>
             <div className={style.totalText}>
-              <p>fdasdvga</p>
-              <p>sdzVafd zfdbzfa fasdv</p>
-              <p>svZVasfv sdvaszfv sdvzdsazv</p>
+              <p>
+                Букет {priceId.size} см - {priceId.price} грн
+              </p>
+              <p>
+                {packaging} - {packaging === "Стандарт" ? 50 : 150} грн
+              </p>
+              {inptforColor && <p> Насичені кольори - 200 грн</p>}
             </div>
             <b>{total} грн</b>
           </div>
