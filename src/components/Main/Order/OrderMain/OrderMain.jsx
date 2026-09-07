@@ -5,6 +5,12 @@ import { useState } from "react";
 
 const OrderMain = () => {
   const [size, setSize] = useState(18);
+  const [flavor, setFlavor] = useState("Оберіть смак");
+
+  const [inpIdea, setInpIdea] = useState("");
+  const [inptDate, setInptDate] = useState("");
+  const [inptName, setInptName] = useState("");
+  const [inptNumber, setInptNumber] = useState("");
   return (
     <section className="contsiner">
       <div className={style.mainOrderContainer}>
@@ -35,46 +41,67 @@ const OrderMain = () => {
               </div>
             ))}
         </div>
-
         <span className={style.typeText}>КОЛЬОРИ</span>
         <input
           className={style.inpt}
           placeholder="Напр.: бордовий, пудровий, з золотом"
         />
-
         <span className={style.typeText}>СМАК</span>
-
-        <select className={style.select} name="" id="">
-          <option value="">Оберіть смак</option>
-          <option value="">Вишня</option>
+        <select
+          className={style.select}
+          value={flavor}
+          onChange={(e) => setFlavor(e.target.value)}
+          name=""
+        >
+          <option value="Оберіть смак">Оберіть смак</option>
+          <option value="Полуниця">Полуниця</option>
+          <option value="Смородина">Смородина</option>
+          <option value="Апельсин">Апельсин</option>
+          <option value="Малина">Малина</option>
+          <option value="Абрикосовий">Абрикосовий</option>
+          <option value="Сливовий">Сливовий</option>
+          <option value="Яблучно-Грушевий">Яблучно-Грушевий</option>
+          <option value="Ванільний">Ванільний</option>
+          <option value="Грушевий">Грушевий</option>
+          <option value="Яблучний">Яблучний</option>
         </select>
-
         <span className={style.typeText}>ОПИШИ СВОЮ ІДЕЮ</span>
-
-        <input
-          className={style.field}
-          type="text"
+        <textarea
           placeholder="Привід, стиль упаковки, референси — все, що маєш на думці"
+          className={style.field}
+          value={inpIdea}
+          onChange={(e) => setInpIdea(e.target.value)}
+          type="text"
         />
         <span className={style.typeText}>ОТРИМАННЯ</span>
-
         <div className={style.radio}>
           <button className={style.btnRadio}>Самовивіз</button>
           <button className={style.btnRadio}>По місту</button>
           <button className={style.btnRadio}>Нова пошта</button>
         </div>
         <span className={style.typeText}>БАЖАНА ДАТА</span>
-        <input className={style.inpt} placeholder="Наприклад, 14 вересня" />
-
-        <span className={style.typeText}>ІМ'Я ТА ТЕЛЕФОН / TELEGRAM</span>
-        <input className={style.inpt} type="name" placeholder="Ваше ім'я" />
         <input
+          value={inptDate}
+          onChange={(e) => setInptDate(e.target.value)}
           className={style.inpt}
-          type="number"
+          placeholder="Наприклад, 14 вересня"
+        />
+        <span className={style.typeText}>ІМ'Я ТА ТЕЛЕФОН / TELEGRAM</span>
+        <input
+          value={inptName}
+          onChange={(e) => setInptName(e.target.value)}
+          className={style.inpt}
+          type="name"
+          placeholder="Ваше ім'я"
+        />
+        <input
+          value={inptNumber}
+          onChange={(e) => setInptNumber(e.target.value)}
+          className={style.inpt}
+          type="text"
           placeholder="+380 або @нікнейм"
           style={{ marginTop: "10px" }}
         />
-
         <div className={style.box}>
           <b>Орієнтовно від 1100 грн</b>
           <p>
@@ -82,7 +109,6 @@ const OrderMain = () => {
             залежить від розміру й складності дизайну
           </p>
         </div>
-
         <button className="btn btn-primary">Надіслати запит</button>
       </div>
     </section>
