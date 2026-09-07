@@ -21,7 +21,11 @@ const OrderMain = () => {
 
   const option = sizeContainer?.find((s) => s.size === size);
 
+  const [submitted, setSubmitted] = useState(false);
+
   const resultError = () => {
+    setSubmitted(true);
+
     if (!inptDate || !inptName || !inptNumber) {
       setError("ЗАПОМНІТЬ УСІ ПОЛЯ");
       return;
@@ -54,6 +58,7 @@ const OrderMain = () => {
       setInptDate("");
       setInptName("");
       setInptNumber("");
+      setISubmitted(false);
     }
   };
 
@@ -99,6 +104,12 @@ const OrderMain = () => {
           className={style.select}
           value={flavor}
           onChange={(e) => setFlavor(e.target.value)}
+          style={{
+            border:
+              submitted && flavor === "Оберіть смак"
+                ? "2px solid var(--raspberry-deep)"
+                : undefined,
+          }}
           name=""
         >
           <option value="Оберіть смак">Оберіть смак</option>
@@ -120,6 +131,12 @@ const OrderMain = () => {
           value={inpIdea}
           onChange={(e) => setInpIdea(e.target.value)}
           type="text"
+          style={{
+            border:
+              submitted && !inpIdea
+                ? "2px solid var(--raspberry-deep)"
+                : undefined,
+          }}
         />
         <span className={style.typeText}>ОТРИМАННЯ</span>
         <div className={style.radio}>
@@ -160,9 +177,21 @@ const OrderMain = () => {
           onChange={(e) => setInptDate(e.target.value)}
           className={style.inpt}
           placeholder="Наприклад, 14 вересня"
+          style={{
+            border:
+              submitted && !inptDate
+                ? "2px solid var(--raspberry-deep)"
+                : undefined,
+          }}
         />
         <span className={style.typeText}>ІМ'Я ТА ТЕЛЕФОН / TELEGRAM</span>
         <input
+          style={{
+            border:
+              submitted && (!inptName || !nameRegex.test(inptName))
+                ? "2px solid var(--raspberry-deep)"
+                : null,
+          }}
           value={inptName}
           onChange={(e) => setInptName(e.target.value)}
           className={style.inpt}
@@ -175,7 +204,13 @@ const OrderMain = () => {
           className={style.inpt}
           type="text"
           placeholder="+380 або @нікнейм"
-          style={{ marginTop: "10px" }}
+          style={{
+            marginTop: "10px",
+            border:
+              submitted && (!inptNumber || !contactRegex.test(inptNumber))
+                ? "2px solid var(--raspberry-deep)"
+                : undefined,
+          }}
         />
         {error && (
           <p
