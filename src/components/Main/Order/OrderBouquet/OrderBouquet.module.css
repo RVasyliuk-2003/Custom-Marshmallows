@@ -285,3 +285,11 @@
   color: var(--ink-soft);
   line-height: 1.6;
 }
+
+.infoError {
+  margin-top: 15px;
+  font-family: var(--ff-body);
+  font-weight: 700;
+  font-size: 14px;
+  text-align: center;
+}

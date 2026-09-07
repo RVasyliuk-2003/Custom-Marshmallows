@@ -22,6 +22,40 @@ const OrderBouquet = () => {
     (packaging === "Стандарт" ? 50 : 150) +
     (inptforColor ? 200 : 0);
 
+  const nameRegex = /^([a-zA-Z\s]+|[а-яА-ЯҐґЄєІіЇї'’\s]+)$/u;
+  const contactRegex = /^(\+?[\d\s\-\(\)]{7,20}|@[a-zA-Z0-9_]{5,32})$/;
+
+  const [inptDate, setInptDate] = useState("");
+  const [inptName, setInptName] = useState("");
+  const [inptNumber, setInptNumber] = useState("");
+
+  const [error, setIError] = useState("");
+
+  const resultError = () => {
+    if (!inptDate || !inptName || !inptNumber) {
+      setIError("ЗАПОМНІТЬ УСІ ПОЛЯ");
+      return;
+    }
+    if (!actiRadio) {
+      setIError("ОБЕРІТЬ СПОСІБ ДОСТАВКИ");
+      return;
+    }
+    if (!nameRegex.test(inptName)) {
+      setIError("НЕПРАВИЛЬНО ВВЕДЕННО ІМ'Я");
+      return;
+    }
+    if (!contactRegex.test(inptNumber)) {
+      setIError("НЕПРАВЕЛЬНО ВВЕДЕННИЙ НОМЕР ТЕЛЕФОНУ АБО НІКНЕЙМ");
+      return;
+    } else {
+      setIError("ФОРМУ ВІДПРАВЛЕННО");
+      setInptDate("");
+      setInptName("");
+      setInptNumber("");
+      return;
+    }
+  };
+
   return (
     <section>
       <div className="container">
@@ -165,15 +199,42 @@ const OrderBouquet = () => {
             </button>
           </div>
           <span className={style.label}>БАЖАНА ДАТА</span>
-          <input className={style.inpt} placeholder="Наприклад, 14 вересня" />
-          <span className={style.label}>ІМ'Я ТА ТЕЛЕФОН / TELEGRAM</span>
-          <input className={style.inpt} type="name" placeholder="Ваше ім'я" />
           <input
+            value={inptDate}
+            onChange={(e) => setInptDate(e.target.value)}
             className={style.inpt}
-            type="number"
+            placeholder="Наприклад, 14 вересня"
+          />
+          <span className={style.label}>ІМ'Я ТА ТЕЛЕФОН / TELEGRAM</span>
+          <input
+            value={inptName}
+            onChange={(e) => setInptName(e.target.value)}
+            className={style.inpt}
+            type="name"
+            placeholder="Ваше ім'я"
+          />
+          <input
+            value={inptNumber}
+            onChange={(e) => setInptNumber(e.target.value)}
+            className={style.inpt}
+            type="text"
             placeholder="+380 або @нікнейм"
             style={{ marginTop: "10px" }}
           />
+
+          {error ? (
+            <p
+              className={style.infoError}
+              style={{
+                color:
+                  error === "ФОРМУ ВІДПРАВЛЕННО"
+                    ? "var(--pistachio)"
+                    : "var(--raspberry-deep)",
+              }}
+            >
+              {error}
+            </p>
+          ) : null}
           <div className={style.totalRow}>
             <div className={style.totalText}>
               <p>fdasdvga</p>
@@ -182,7 +243,11 @@ const OrderBouquet = () => {
             </div>
             <b>{total} грн</b>
           </div>
-          <button className="btn btn-primary" style={{ marginTop: "16px" }}>
+          <button
+            onClick={() => resultError()}
+            className="btn btn-primary"
+            style={{ marginTop: "16px" }}
+          >
             Підтвердити замовлення
           </button>
         </div>
