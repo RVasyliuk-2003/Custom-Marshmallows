@@ -175,8 +175,20 @@ const OrderMain = () => {
           placeholder="+380 або @нікнейм"
           style={{ marginTop: "10px" }}
         />
+        {error && (
+          <p
+            className={style.infoError}
+            style={{
+              color:
+                error === "ФОРМУ ВІДПРАВЛЕННО"
+                  ? "var(--pistachio)"
+                  : "var(--raspberry-deep)",
+            }}
+          >
+            {error}
+          </p>
+        )}
 
-        <p className={style.infoError}>{error}</p>
         <div className={style.box}>
           <b>Орієнтовно від 1100 грн</b>
           <p>
