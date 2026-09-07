@@ -85,6 +85,11 @@ h2 {
   }
 }
 
+.active {
+  background: var(--honey-light);
+  box-shadow: 2px 3px 0 var(--ink);
+}
+
 .inpt {
   width: 100%;
   background: #fff;

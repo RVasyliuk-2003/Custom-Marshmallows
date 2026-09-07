@@ -1,9 +1,10 @@
 import style from "./orderMain.module.css";
 import logo from "./../../../../assets/logo.png";
-
 import sizeContainer from "../../../data/sizeContainer";
+import { useState } from "react";
 
 const OrderMain = () => {
+  const [size, setSize] = useState(18);
   return (
     <section className="contsiner">
       <div className={style.mainOrderContainer}>
@@ -20,9 +21,17 @@ const OrderMain = () => {
           {sizeContainer
             ?.filter((bo) => bo.category === "Букети")
             .map((ell) => (
-              <div key={ell.id} className={style.sizeChipBox}>
+              <div
+                key={ell.id}
+                className={
+                  size === ell.size
+                    ? `${style.sizeChipBox} ${style.active}`
+                    : style.sizeChipBox
+                }
+                onClick={() => setSize(ell.size)}
+              >
                 <b>{ell.size}</b>
-                <span>см</span>
+                <span>{ell.price} грн</span>
               </div>
             ))}
         </div>
