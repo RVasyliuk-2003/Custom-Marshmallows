@@ -58,7 +58,7 @@ const OrderMain = () => {
       setInptDate("");
       setInptName("");
       setInptNumber("");
-      setISubmitted(false);
+      setSubmitted(false);
     }
   };
 
