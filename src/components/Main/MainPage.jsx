@@ -10,6 +10,8 @@ import OrderMain from "./Order/OrderMain/OrderMain";
 import OrderBouquet from "./Order/OrderBouquet/OrderBouquet";
 import OrderCurl from "./Order/OrderCurl/OrderCurl";
 
+import NotFound from "./NotFound/NotFound";
+
 import { Route, Routes } from "react-router-dom";
 
 const MainPage = () => {
@@ -29,6 +31,8 @@ const MainPage = () => {
           <Route path="/HowToOrder" element={<HowToOrder />} />
           <Route path="/Reviews" element={<Reviews />} />
           <Route path="/Contact" element={<Contact />} />
+
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
     </>

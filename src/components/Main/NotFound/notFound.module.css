@@ -1,0 +1,68 @@
+.wrapper {
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  padding-block: 40px;
+  padding: 0px 22px;
+}
+
+.card {
+  background: #fff;
+  border: 2px solid var(--ink);
+  border-radius: 20px;
+  padding: 36px 24px;
+  text-align: center;
+  box-shadow: 4px 5px 0 var(--ink);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.eyebrow {
+  display: inline-block;
+  transform: rotate(-2deg);
+  background: var(--dark);
+  color: var(--paper);
+  font-family: var(--ff-display);
+  font-weight: 900;
+  font-size: 26px;
+  padding: 6px 18px;
+  border-radius: 6px;
+  letter-spacing: 0.05em;
+}
+
+.flowerBox {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: var(--lavender-light);
+  border: 2px dashed var(--ink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--raspberry);
+}
+
+.card h2 {
+  margin: 0;
+}
+
+.card p {
+  color: var(--ink-soft);
+  font-size: 14px;
+  max-width: 32ch;
+  margin: 0;
+}
+
+.card .btn {
+  margin-top: 8px;
+  width: fit-content;
+  padding-inline: 32px;
+}
