@@ -15,7 +15,14 @@ const Connection = () => {
 
           <span>Відповідаємо протягом години</span>
 
-          <button className={`btn ${style.styleBtn1}`}>Instagram </button>
+          <a
+            href="https://instagram.com/olenavasyliuk69/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`btn ${style.styleBtn1}`}
+          >
+            Instagram{" "}
+          </a>
           <button className={`btn btn-outline ${style.styleBtn2}`}>
             Telegram
           </button>

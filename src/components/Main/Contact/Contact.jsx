@@ -36,13 +36,18 @@ const Contact = () => {
     <section>
       <div className="container">
         <div className={style.mainContainer}>
-          <div className={style.contactBox}>
+          <a
+            href="https://instagram.com/olenavasyliuk69/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={style.contactBox}
+          >
             <div className={style.icon}>📸</div>
             <div className={style.contactLink}>
               <b>Instagram</b>
               <span>@zefirka.ua</span>
             </div>
-          </div>
+          </a>
           <div className={style.contactBox}>
             <div className={style.icon}>💬</div>
             <div className={style.contactLink}>

@@ -10,7 +10,7 @@ const Drawer = ({ isMenuOpen, setIsMenuOpen }) => {
         className={`${style.overlay} ${isMenuOpen ? style.overlayOpen : ""}`}
         onClick={() => setIsMenuOpen(false)}
       ></div>
-      
+
       <div className={`${style.mainContainer} ${isMenuOpen ? style.open : ""}`}>
         <div className={style.logoContainer}>
           <div className={style.logoBox}>
@@ -81,7 +81,14 @@ const Drawer = ({ isMenuOpen, setIsMenuOpen }) => {
 
         <div className={style.btnBox}>
           <button className="btn btn-primary">Замовити букет</button>
-          <button className="btn">Instagram</button>
+          <a
+            href="https://instagram.com/olenavasyliuk69/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn"
+          >
+            Instagram
+          </a>
         </div>
       </div>
     </>
