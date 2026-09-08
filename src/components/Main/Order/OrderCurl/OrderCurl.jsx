@@ -10,7 +10,7 @@ const OrderCurl = () => {
 
   const [count, setCount] = useState(6);
   const [packaging, setPackaging] = useState("Стандарт");
-  const [flavor, setFlavor] = useState("Полуниця");
+  const [flavor, setFlavor] = useState("Оберіть смак");
 
   const total =
     count * 40 +
@@ -23,32 +23,41 @@ const OrderCurl = () => {
   const [inptName, setInptName] = useState("");
   const [inptNumber, setInptNumber] = useState("");
 
-  const [error, setIError] = useState("");
+  const [error, setError] = useState("");
 
   const nameRegex = /^([a-zA-Z\s]+|[а-яА-ЯҐґЄєІіЇї'’\s]+)$/u;
   const contactRegex = /^(\+?[\d\s\-\(\)]{7,20}|@[a-zA-Z0-9_]{5,32})$/;
 
+  const [submitted, setSubmitted] = useState(false);
+
   const errorContact = () => {
+    setSubmitted(true);
     if (!inptDate || !inptName || !inptNumber) {
-      setIError("ЗАПОМНІТЬ УСІ ПОЛЯ");
+      setError("ЗАПОМНІТЬ УСІ ПОЛЯ");
       return;
     }
     if (!deliverColor) {
-      setIError("ОБЕРІТЬ СПОСІБ ДОСТАВКИ");
+      setError("ОБЕРІТЬ СПОСІБ ДОСТАВКИ");
+      return;
+    }
+    if (flavor === "Оберіть смак") {
+      setError("ОБЕРІТЬ СМАК");
       return;
     }
     if (!nameRegex.test(inptName)) {
-      setIError("НЕПРАВИЛЬНО ВВЕДЕННО ІМ'Я");
+      setError("НЕПРАВИЛЬНО ВВЕДЕННО ІМ'Я");
       return;
     }
     if (!contactRegex.test(inptNumber)) {
-      setIError("НЕПРАВЕЛЬНО ВВЕДЕННИЙ НОМЕР ТЕЛЕФОНУ АБО НІКНЕЙМ");
+      setError("НЕПРАВЕЛЬНО ВВЕДЕННИЙ НОМЕР ТЕЛЕФОНУ АБО НІКНЕЙМ");
       return;
     } else {
-      setIError("ФОРМУ ВІДПРАВЛЕННО");
+      setError("ФОРМУ ВІДПРАВЛЕННО");
+      setDeliverColor("");
       setInptDate("");
       setInptName("");
       setInptNumber("");
+      setSubmitted(false);
     }
   };
 
@@ -137,7 +146,14 @@ const OrderCurl = () => {
             onChange={(e) => setFlavor(e.target.value)}
             className={style.selectField}
             name=""
+            style={{
+              border:
+                submitted && flavor === "Оберіть смак"
+                  ? "1px solid var(--raspberry-deep)"
+                  : undefined,
+            }}
           >
+            <option value="Оберіть смак">Оберіть смак</option>
             <option value="Полуниця">Полуниця</option>
             <option value="Смородина">Смородина</option>
             <option value="Апельсин">Апельсин</option>
@@ -218,6 +234,12 @@ const OrderCurl = () => {
             value={inptDate}
             className={style.inpt}
             placeholder="Наприклад, 14 вересня"
+            style={{
+              border:
+                submitted && !inptDate
+                  ? "1px solid var(--raspberry-deep)"
+                  : undefined,
+            }}
           />
 
           <span className={style.label}>ІМ'Я ТА ТЕЛЕФОН / TELEGRAM</span>
@@ -227,6 +249,12 @@ const OrderCurl = () => {
             className={style.inpt}
             type="name"
             placeholder="Ваше ім'я"
+            style={{
+              border:
+                submitted && (!inptName || !nameRegex.test(inptName))
+                  ? "1px solid var(--raspberry-deep)"
+                  : undefined,
+            }}
           />
           <input
             onChange={(e) => setInptNumber(e.target.value)}
@@ -234,7 +262,13 @@ const OrderCurl = () => {
             className={style.inpt}
             type="text"
             placeholder="+380 або @нікнейм"
-            style={{ marginTop: "10px" }}
+            style={{
+              marginTop: "10px",
+              border:
+                submitted && (!inptNumber || !contactRegex.test(inptNumber))
+                  ? "1px solid var(--raspberry-deep)"
+                  : undefined,
+            }}
           />
 
           {error ? (
