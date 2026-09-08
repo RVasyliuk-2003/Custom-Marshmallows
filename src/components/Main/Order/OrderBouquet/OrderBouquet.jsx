@@ -14,7 +14,7 @@ const OrderBouquet = () => {
   const [size, setSize] = useState(18);
   const [packaging, setPackaging] = useState("Стандарт");
   const [actiRadio, setActiRadio] = useState("");
-  const [flavor, setFlavor] = useState("Полуниця");
+  const [flavor, setFlavor] = useState("Оберіть смак");
 
   const priceId = sizeContainer?.find((el) => el.size === size);
 
@@ -30,29 +30,39 @@ const OrderBouquet = () => {
   const [inptName, setInptName] = useState("");
   const [inptNumber, setInptNumber] = useState("");
 
-  const [error, setIError] = useState("");
+  const [error, setError] = useState("");
+
+  const [submitted, setSubmitted] = useState(false);
 
   const resultError = () => {
+    setSubmitted(true);
+
     if (!inptDate || !inptName || !inptNumber) {
-      setIError("ЗАПОМНІТЬ УСІ ПОЛЯ");
+      setError("ЗАПОМНІТЬ УСІ ПОЛЯ");
       return;
     }
     if (!actiRadio) {
-      setIError("ОБЕРІТЬ СПОСІБ ДОСТАВКИ");
+      setError("ОБЕРІТЬ СПОСІБ ДОСТАВКИ");
+      return;
+    }
+    if (flavor === "Оберіть смак") {
+      setError("ОБЕРІТЬ СМАК");
       return;
     }
     if (!nameRegex.test(inptName)) {
-      setIError("НЕПРАВИЛЬНО ВВЕДЕННО ІМ'Я");
+      setError("НЕПРАВИЛЬНО ВВЕДЕННО ІМ'Я");
       return;
     }
     if (!contactRegex.test(inptNumber)) {
-      setIError("НЕПРАВЕЛЬНО ВВЕДЕННИЙ НОМЕР ТЕЛЕФОНУ АБО НІКНЕЙМ");
+      setError("НЕПРАВЕЛЬНО ВВЕДЕННИЙ НОМЕР ТЕЛЕФОНУ АБО НІКНЕЙМ");
       return;
     } else {
-      setIError("ФОРМУ ВІДПРАВЛЕННО");
+      setError("ФОРМУ ВІДПРАВЛЕННО");
+      setActiRadio("");
       setInptDate("");
       setInptName("");
       setInptNumber("");
+      setSubmitted(false);
       return;
     }
   };
@@ -137,7 +147,14 @@ const OrderBouquet = () => {
             onChange={(e) => setFlavor(e.target.value)}
             className={style.selectField}
             name=""
+            style={{
+              border:
+                submitted && flavor === "Оберіть смак"
+                  ? "1px solid var(--raspberry-deep)"
+                  : undefined,
+            }}
           >
+            <option value="Оберіть смак">Оберіть смак</option>
             <option value="Полуниця">Полуниця</option>
             <option value="Смородина">Смородина</option>
             <option value="Апельсин">Апельсин</option>
@@ -214,6 +231,12 @@ const OrderBouquet = () => {
             onChange={(e) => setInptDate(e.target.value)}
             className={style.inpt}
             placeholder="Наприклад, 14 вересня"
+            style={{
+              border:
+                submitted && !inptDate
+                  ? "2px solid var(--raspberry-deep)"
+                  : undefined,
+            }}
           />
           <span className={style.label}>ІМ'Я ТА ТЕЛЕФОН / TELEGRAM</span>
           <input
@@ -222,6 +245,12 @@ const OrderBouquet = () => {
             className={style.inpt}
             type="name"
             placeholder="Ваше ім'я"
+            style={{
+              border:
+                submitted && (!inptName || !nameRegex.test(inptName))
+                  ? "2px solid var(--raspberry-deep)"
+                  : undefined,
+            }}
           />
           <input
             value={inptNumber}
@@ -229,7 +258,13 @@ const OrderBouquet = () => {
             className={style.inpt}
             type="text"
             placeholder="+380 або @нікнейм"
-            style={{ marginTop: "10px" }}
+            style={{
+              marginTop: "10px",
+              border:
+                submitted && (!inptNumber || !contactRegex.test(inptNumber))
+                  ? "2px solid var(--raspberry-deep)"
+                  : undefined,
+            }}
           />
 
           {error ? (
