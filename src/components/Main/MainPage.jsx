@@ -10,7 +10,7 @@ import OrderMain from "./Order/OrderMain/OrderMain";
 import OrderBouquet from "./Order/OrderBouquet/OrderBouquet";
 import OrderCurl from "./Order/OrderCurl/OrderCurl";
 
-import NotFound from "./NotFound/NotFound";
+import NotFound from "../NotFound/NotFound";
 import ScrollToTop from "../ScrollToTop/ScrollToTop";
 
 import { Route, Routes } from "react-router-dom";
