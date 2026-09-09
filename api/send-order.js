@@ -1,38 +1,9 @@
-// /api/send-order.js
 export default async function handler(req, res) {
   if (req.method !== "POST") {
     return res.status(405).json({ message: "Method Not Allowed" });
   }
 
-  const {
-    title,
-    count,
-    packaging,
-    flavor,
-    total,
-    delivery,
-    date,
-    name,
-    contact,
-  } = req.body;
-
-  const text = `
-🛍️ **НОВЕ ЗАМОВЛЕННЯ: ${title}**
-
-📌 **Деталі:**
-• **Кількість:** ${count} шт.
-• **Пакування:** ${packaging}
-• **Смак:** ${flavor}
-• **Сума:** ${total} грн
-
-🚚 **Отримання та дата:**
-• **Спосіб:** ${delivery}
-• **Дата:** ${date}
-
-👤 **Клієнт:**
-• **Ім'я:** ${name}
-• **Контакт:** ${contact}
-  `;
+  const { text } = req.body;
 
   try {
     const telegramRes = await fetch(
@@ -49,7 +20,6 @@ export default async function handler(req, res) {
     );
 
     if (!telegramRes.ok) throw new Error("Telegram API Error");
-
     return res.status(200).json({ success: true });
   } catch (error) {
     return res.status(500).json({ success: false, error: error.message });
