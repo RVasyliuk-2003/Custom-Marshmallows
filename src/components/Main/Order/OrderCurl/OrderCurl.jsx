@@ -30,8 +30,9 @@ const OrderCurl = () => {
 
   const [submitted, setSubmitted] = useState(false);
 
-  const errorContact = () => {
+  const errorContact = async () => {
     setSubmitted(true);
+
     if (!inptDate || !inptName || !inptNumber) {
       setError("ЗАПОМНІТЬ УСІ ПОЛЯ");
       return;
@@ -52,12 +53,45 @@ const OrderCurl = () => {
       setError("НЕПРАВЕЛЬНО ВВЕДЕННИЙ НОМЕР ТЕЛЕФОНУ АБО НІКНЕЙМ");
       return;
     } else {
-      setError("ФОРМУ ВІДПРАВЛЕННО");
-      setDeliverColor("");
-      setInptDate("");
-      setInptName("");
-      setInptNumber("");
-      setSubmitted(false);
+      const text = `
+🛍️ **НОВЕ ЗАМОВЛЕННЯ: ${curl.name}**
+
+📌 **Деталі:**
+- **Кількість:** ${count} шт.
+- **Пакування:** ${packaging}
+- **Смак:** ${flavor}
+${inptforColor ? "- **Насичені кольори:** так" : ""}
+- **Сума:** ${total} грн
+
+🚚 **Отримання та дата:**
+- **Спосіб:** ${deliverColor}
+- **Дата:** ${inptDate}
+
+👤 **Клієнт:**
+- **Ім'я:** ${inptName}
+- **Контакт:** ${inptNumber}
+`;
+
+      try {
+        const response = await fetch("/api/send-order", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ text }),
+        });
+
+        if (!response.ok) {
+          throw new Error("Помилка відправки");
+        }
+
+        setError("ФОРМУ ВІДПРАВЛЕННО");
+        setDeliverColor("");
+        setInptDate("");
+        setInptName("");
+        setInptNumber("");
+        setSubmitted(false);
+      } catch (err) {
+        setError("НЕ ВДАЛОСЯ ВІДПРАВИТИ, СПРОБУЙТЕ ЩЕ РАЗ");
+      }
     }
   };
 
