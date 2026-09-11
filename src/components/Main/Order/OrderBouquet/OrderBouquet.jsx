@@ -34,7 +34,7 @@ const OrderBouquet = () => {
 
   const [submitted, setSubmitted] = useState(false);
 
-  const resultError = () => {
+  const resultError = async () => {
     setSubmitted(true);
 
     if (!inptDate || !inptName || !inptNumber) {
@@ -57,13 +57,45 @@ const OrderBouquet = () => {
       setError("НЕПРАВЕЛЬНО ВВЕДЕННИЙ НОМЕР ТЕЛЕФОНУ АБО НІКНЕЙМ");
       return;
     } else {
-      setError("ФОРМУ ВІДПРАВЛЕННО");
-      setActiRadio("");
-      setInptDate("");
-      setInptName("");
-      setInptNumber("");
-      setSubmitted(false);
-      return;
+      const text = `
+<b>🛍️ НОВЕ ЗАМОВЛЕННЯ: ${prod?.name || "Букет"}</b>
+
+<b>📌 Деталі:</b>
+- <b>Розмір:</b> ${size} см.
+- <b>Пакування:</b> ${packaging}
+- <b>Смак:</b> ${flavor}
+${inptforColor ? "- <b>Насичені кольори:</b> так" : ""}
+- <b>Сума:</b> ${total} грн
+
+<b>🚚 Отримання та дата:</b>
+- <b>Спосіб:</b> ${actiRadio}
+- <b>Дата:</b> ${inptDate}
+
+<b>👤 Клієнт:</b>
+- <b>Ім'я:</b> ${inptName}
+- <b>Контакт:</b> ${inptNumber}
+`;
+
+      try {
+        const response = await fetch("/api/send-order", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ text }),
+        });
+
+        if (!response.ok) {
+          throw new Error("Помилка відправки");
+        }
+
+        setError("ФОРМУ ВІДПРАВЛЕННО");
+        setActiRadio("");
+        setInptDate("");
+        setInptName("");
+        setInptNumber("");
+        setSubmitted(false);
+      } catch (err) {
+        setError("НЕ ВДАЛОСЯ ВІДПРАВИТИ, СПРОБУЙТЕ ЩЕ РАЗ");
+      }
     }
   };
 
