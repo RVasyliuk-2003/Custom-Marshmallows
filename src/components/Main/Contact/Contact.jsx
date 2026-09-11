@@ -48,13 +48,18 @@ const Contact = () => {
               <span>@zefirka.ua</span>
             </div>
           </a>
-          <div className={style.contactBox}>
+          <a
+            href="https://telegram.me/ZefirkaOlena/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={style.contactBox}
+          >
             <div className={style.icon}>💬</div>
             <div className={style.contactLink}>
               <b>Telegram</b>
-              <span>@zefirka_bot</span>
+              <span>@ZefirkaOlena</span>
             </div>
-          </div>
+          </a>
           <div className={style.contactBox}>
             <div className={style.icon}>📞</div>
             <div className={style.contactLink}>
