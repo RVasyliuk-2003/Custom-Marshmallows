@@ -23,7 +23,7 @@ const OrderMain = () => {
 
   const [submitted, setSubmitted] = useState(false);
 
-  const resultError = () => {
+  const resultError = async () => {
     setSubmitted(true);
 
     if (!inptDate || !inptName || !inptNumber) {
@@ -50,15 +50,47 @@ const OrderMain = () => {
       setError("НЕПРАВЕЛЬНО ВВЕДЕННИЙ НОМЕР ТЕЛЕФОНУ АБО НІКНЕЙМ");
       return;
     } else {
-      setError("ФОРМУ ВІДПРАВЛЕННО");
-      setInpColor("");
-      setInpIdea("");
-      setFlavor("Оберіть смак");
-      setActiRadio("");
-      setInptDate("");
-      setInptName("");
-      setInptNumber("");
-      setSubmitted(false);
+      const text = `
+<b>🛍️ НОВЕ ЗАМОВЛЕННЯ: "Індивідуальний букет"</b>
+
+<b>📌 Деталі:</b>
+- <b>Розмір:</b> ${size} см.
+- <b>Пакування за домовленістю</b>
+- <b>Смак:</b> ${flavor}
+${inpColor ? "- <b>Насичені кольори:</b> так" : ""}
+- <b>Бажання замовника: ${inpIdea}</b>
+- <b>Очікуванна сума в діапазоні:</b> ${option.price} грн
+
+<b>🚚 Отримання та дата:</b>
+- <b>Спосіб:</b> ${actiRadio}
+- <b>Дата:</b> ${inptDate}
+
+<b>👤 Клієнт:</b>
+- <b>Ім'я:</b> ${inptName}
+- <b>Контакт:</b> ${inptNumber}
+`;
+      try {
+        const response = await fetch("/api/send-order", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ text }),
+        });
+
+        if (!response.ok) {
+          throw new Error("Помилка відправки");
+        }
+        setError("ФОРМУ ВІДПРАВЛЕННО");
+        setInpColor("");
+        setInpIdea("");
+        setFlavor("Оберіть смак");
+        setActiRadio("");
+        setInptDate("");
+        setInptName("");
+        setInptNumber("");
+        setSubmitted(false);
+      } catch (err) {
+        setError("НЕ ВДАЛОСЯ ВІДПРАВИТИ, СПРОБУЙТЕ ЩЕ РАЗ");
+      }
     }
   };
 
