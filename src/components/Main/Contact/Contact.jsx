@@ -11,7 +11,7 @@ const Contact = () => {
 
   const isContactValid = /^(\+?\d{9,13}|@[\w]{3,})$/;
 
-  const resultContactForm = () => {
+  const resultContactForm = async () => {
     if (!inptName || !phoneOrNik || !comment) {
       setError("ЗАПОМНІТЬ УСІ ПОЛЯ");
       return;
@@ -24,11 +24,28 @@ const Contact = () => {
       setError("НЕПРАВИЛЬНО ВВЕДЕННИЙ НОМЕР ТЕЛЕФОНУ АБО НІКНЕЙМ");
       return;
     } else {
-      setError("ФОРМУ ВІДПРАВЛЕННО");
-      setInptName("");
-      setPhoneOrNik("");
-      setComment("");
-      return;
+      const text = `
+<b>🛍️ З вами хоче зв'язатися: ${inptName}</b>
+<b>Повідомлення: ${comment}</b>
+- <b>Контакт:</b> ${phoneOrNik}
+`;
+      try {
+        const response = await fetch("/api/send-order", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ text }),
+        });
+
+        if (!response.ok) {
+          throw new Error("Помилка відправки");
+        }
+        setError("ФОРМУ ВІДПРАВЛЕННО");
+        setInptName("");
+        setPhoneOrNik("");
+        setComment("");
+      } catch (err) {
+        setError("НЕ ВДАЛОСЯ ВІДПРАВИТИ, СПРОБУЙТЕ ЩЕ РАЗ");
+      }
     }
   };
 
