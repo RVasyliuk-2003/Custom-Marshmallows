@@ -16,16 +16,21 @@ const Connection = () => {
           <span>Відповідаємо протягом години</span>
 
           <a
-            href="https://instagram.com/olenavasyliuk69/"
+            href="https://t.me/ZefirkaOlena"
             target="_blank"
             rel="noopener noreferrer"
             className={`btn ${style.styleBtn1}`}
           >
-            Instagram{" "}
+            Instagram
           </a>
-          <button className={`btn btn-outline ${style.styleBtn2}`}>
+          <a
+            href="https://telegram.me/ZefirkaOlena/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`btn btn-outline ${style.styleBtn2}`}
+          >
             Telegram
-          </button>
+          </a>
         </div>
       </div>
     </section>

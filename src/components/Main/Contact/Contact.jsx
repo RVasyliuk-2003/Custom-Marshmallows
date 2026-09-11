@@ -49,7 +49,7 @@ const Contact = () => {
             </div>
           </a>
           <a
-            href="https://telegram.me/ZefirkaOlena/"
+            href="https://t.me/ZefirkaOlena"
             target="_blank"
             rel="noopener noreferrer"
             className={style.contactBox}
