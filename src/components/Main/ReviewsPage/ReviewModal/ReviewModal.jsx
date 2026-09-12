@@ -51,10 +51,10 @@ const ReviewModal = ({ close, onclose, setReviews, reviews }) => {
 
     try {
       const messageText =
-        `📝 *Новий відгук на модерацію!*\n\n` +
-        `👤 *Ім'я:* ${inptName}\n` +
-        `🏙️ *Місто:* ${inptCity}\n` +
-        `💬 *Текст:* ${inptText}`;
+        `📝 <b>Новий відгук на модерацію!</b>\n\n` +
+        `👤 <b>Ім'я:</b> ${inptName}\n` +
+        `🏙️ <b>Місто:</b> ${inptCity}\n` +
+        `💬 <b>Текст:</b> ${inptText}`;
 
       await fetch(
         `https://api.telegram.org/bot${import.meta.env.VITE_TELEGRAM_BOT_TOKEN}/sendMessage`,
@@ -64,7 +64,7 @@ const ReviewModal = ({ close, onclose, setReviews, reviews }) => {
           body: JSON.stringify({
             chat_id: import.meta.env.VITE_TELEGRAM_CHAT_ID,
             text: messageText,
-            parse_mode: "Markdown",
+            parse_mode: "HTML",
             reply_markup: {
               inline_keyboard: [
                 [
