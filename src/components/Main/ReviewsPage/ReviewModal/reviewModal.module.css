@@ -83,3 +83,11 @@ textarea {
   color: var(--ink);
   font-family: var(--ff-body);
 }
+
+.result {
+  margin-top: 15px;
+  font-family: var(--ff-body);
+  font-weight: 700;
+  font-size: 14px;
+  text-align: center;
+}

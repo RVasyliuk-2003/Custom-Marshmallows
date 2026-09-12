@@ -3,6 +3,36 @@ import style from "./reviewModal.module.css";
 import Reviews from "../Reviews";
 
 const ReviewModal = ({ close, onclose }) => {
+  const [submitted, setSubmitted] = useState(false);
+
+  const [inptName, setInptName] = useState("");
+  const [inptCity, setInptCity] = useState("");
+  const [inptText, setInptText] = useState("");
+
+  const [result, setResult] = useState("");
+
+  const reviewAdd = () => {
+    setSubmitted(true);
+    if (!inptName || !inptCity || !inptText) {
+      setResult("ЗАПОВНІТЬ УСІ ПОЛЯ");
+      return;
+    }
+    if (inptName[0] !== inptName[0].toUpperCase()) {
+      setResult("ІМ'Я ПИШЕМО З ВЕЛИКОЇ ЛІТЕРИ");
+      return;
+    }
+    if (inptCity[0] !== inptCity[0].toUpperCase()) {
+      setResult("МІСТО ПИШЕМО З ВЕЛИКОЇ ЛІТЕРИ");
+      return;
+    } else {
+      setResult("ДЯКУЄМО ЗА ВІДГУК!");
+      setSubmitted(false);
+      setInptName("");
+      setInptCity("");
+      setInptText("");
+    }
+  };
+
   return (
     <>
       {close && (
@@ -18,19 +48,69 @@ const ReviewModal = ({ close, onclose }) => {
           </h2>
 
           <span className={style.label}>ВАШ ВІДГУК</span>
-          <textarea placeholder="Що сподобалось найбільше?"></textarea>
+          <textarea
+            value={inptText}
+            onChange={(e) => setInptText(e.target.value)}
+            placeholder="Що сподобалось найбільше?"
+            style={{
+              border:
+                submitted && !inptText
+                  ? "2px solid var(--raspberry-deep)"
+                  : undefined,
+            }}
+          ></textarea>
 
           <span className={style.label}>Ім'я та місто</span>
           <div className={style.fieldBox}>
             <input
+              value={inptName}
+              onChange={(e) => setInptName(e.target.value)}
               className={style.field}
               type="name"
               placeholder="Ваше ім'я"
+              style={{
+                border:
+                  submitted &&
+                  (!inptName || inptName[0] !== inptName[0].toUpperCase())
+                    ? "2px solid var(--raspberry-deep)"
+                    : undefined,
+              }}
             />
-            <input className={style.field} type="text" placeholder="Місто" />
+            <input
+              value={inptCity}
+              onChange={(e) => setInptCity(e.target.value)}
+              className={style.field}
+              type="text"
+              placeholder="Місто"
+              style={{
+                border:
+                  submitted &&
+                  (!inptCity || inptCity[0] !== inptCity[0].toUpperCase())
+                    ? "2px solid var(--raspberry-deep)"
+                    : undefined,
+              }}
+            />
           </div>
 
-          <button style={{ marginTop: "18px" }} className="btn btn-primary">
+          {result && (
+            <p
+              style={{
+                color:
+                  result === "ДЯКУЄМО ЗА ВІДГУК!"
+                    ? "var(--pistachio)"
+                    : "var(--raspberry-deep)",
+              }}
+              className={style.result}
+            >
+              {result}
+            </p>
+          )}
+
+          <button
+            onClick={() => reviewAdd()}
+            style={{ marginTop: "18px" }}
+            className="btn btn-primary"
+          >
             Надіслати відгук
           </button>
         </div>
