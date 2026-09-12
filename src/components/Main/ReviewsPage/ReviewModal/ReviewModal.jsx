@@ -2,6 +2,8 @@ import { useState } from "react";
 import style from "./reviewModal.module.css";
 import Reviews from "../Reviews";
 
+import { supabase } from "../../../../supabaseClient";
+
 const ReviewModal = ({ close, onclose, setReviews, reviews }) => {
   const [submitted, setSubmitted] = useState(false);
 
@@ -11,8 +13,9 @@ const ReviewModal = ({ close, onclose, setReviews, reviews }) => {
 
   const [result, setResult] = useState("");
 
-  const reviewAdd = () => {
+  const reviewAdd = async () => {
     setSubmitted(true);
+
     if (!inptName || !inptCity || !inptText) {
       setResult("ЗАПОВНІТЬ УСІ ПОЛЯ");
       return;
@@ -24,27 +27,32 @@ const ReviewModal = ({ close, onclose, setReviews, reviews }) => {
     if (inptCity[0] !== inptCity[0].toUpperCase()) {
       setResult("МІСТО ПИШЕМО З ВЕЛИКОЇ ЛІТЕРИ");
       return;
-    } else {
-      setResult("ДЯКУЄМО ЗА ВІДГУК!");
-      setSubmitted(false);
-      setInptName("");
-      setInptCity("");
-      setInptText("");
-
-      setReviews([
-        ...reviews,
-        {
-          id: Math.random(),
-          text: inptText,
-          name: inptName,
-          city: inptCity,
-        },
-      ]);
-
-      setTimeout(() => {
-        onclose(false);
-      }, 3000);
     }
+
+    const { data, error } = await supabase.from("Reviews").insert([
+      {
+        name: inptName,
+        city: inptCity,
+        text: inptText,
+        status: "pending",
+      },
+    ]);
+
+    if (error) {
+      console.error("Помилка зберігання в Supabase:", error);
+      setResult("ПОМИЛКА ВІДПРАВКИ. СПРОБУЙТЕ ЩЕ РАЗ");
+      return;
+    }
+
+    setResult("ДЯКУЄМО! ВІДГУК НАДІСЛАНО НА МОДЕРАЦІЮ");
+    setSubmitted(false);
+    setInptName("");
+    setInptCity("");
+    setInptText("");
+
+    setTimeout(() => {
+      onclose(false);
+    }, 3000);
   };
 
   return (
@@ -109,10 +117,9 @@ const ReviewModal = ({ close, onclose, setReviews, reviews }) => {
           {result && (
             <p
               style={{
-                color:
-                  result === "ДЯКУЄМО ЗА ВІДГУК!"
-                    ? "var(--pistachio)"
-                    : "var(--raspberry-deep)",
+                color: result.startsWith("ДЯКУЄМО")
+                  ? "var(--pistachio)"
+                  : "var(--raspberry-deep)",
               }}
               className={style.result}
             >
