@@ -5,12 +5,11 @@
   transform: translate(-50%, -50%);
   width: 88%;
   max-height: 86%;
-  /* overflow-y: auto; */
   background: var(--paper);
   border: 2px solid var(--ink);
   border-radius: 22px;
   box-shadow: 5px 6px 0 var(--ink);
-  z-index: 10;
+  z-index: 100;
   padding: 20px;
 }
 

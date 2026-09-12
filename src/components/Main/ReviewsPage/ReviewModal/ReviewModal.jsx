@@ -40,6 +40,10 @@ const ReviewModal = ({ close, onclose, setReviews, reviews }) => {
           city: inptCity,
         },
       ]);
+
+      setTimeout(() => {
+        onclose(false);
+      }, 3000);
     }
   };
 

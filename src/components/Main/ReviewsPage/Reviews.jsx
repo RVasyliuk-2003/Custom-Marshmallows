@@ -2,13 +2,17 @@ import style from "./reviews.module.css";
 import icons from "./images/icons8.png";
 
 import { useState } from "react";
+import { useEffect } from "react";
 import reviewsData from "./reviewsData";
 import ReviewModal from "./ReviewModal/ReviewModal";
 
 const Reviews = () => {
   const [reviews, setReviews] = useState(reviewsData);
-
   const [close, onclose] = useState(false);
+
+  useEffect(() => {
+    document.body.style.overflowY = close ? "hidden" : "auto";
+  }, [close]);
 
   return (
     <section>
@@ -29,6 +33,10 @@ const Reviews = () => {
               reviews={reviews}
             />
           )}
+          {close && (
+            <div className={style.overlay} onClick={() => onclose(false)}></div>
+          )}
+
           {reviews?.map((ell) => (
             <div key={ell.id} className={style.card}>
               <img src={icons} alt="icons" />
