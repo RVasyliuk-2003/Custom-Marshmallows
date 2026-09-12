@@ -29,19 +29,61 @@ const ReviewModal = ({ close, onclose, setReviews, reviews }) => {
       return;
     }
 
-    const { data, error } = await supabase.from("Reviews").insert([
-      {
-        name: inptName,
-        city: inptCity,
-        text: inptText,
-        status: "pending",
-      },
-    ]);
+    const { data, error } = await supabase
+      .from("Reviews")
+      .insert([
+        {
+          name: inptName,
+          city: inptCity,
+          text: inptText,
+          status: "pending",
+        },
+      ])
+      .select();
 
     if (error) {
       console.error("Помилка зберігання в Supabase:", error);
       setResult("ПОМИЛКА ВІДПРАВКИ. СПРОБУЙТЕ ЩЕ РАЗ");
       return;
+    }
+
+    const createdReview = data[0];
+
+    try {
+      const messageText =
+        `📝 *Новий відгук на модерацію!*\n\n` +
+        `👤 *Ім'я:* ${inptName}\n` +
+        `🏙️ *Місто:* ${inptCity}\n` +
+        `💬 *Текст:* ${inptText}`;
+
+      await fetch(
+        `https://api.telegram.org/bot${import.meta.env.VITE_TELEGRAM_BOT_TOKEN}/sendMessage`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            chat_id: import.meta.env.VITE_TELEGRAM_CHAT_ID,
+            text: messageText,
+            parse_mode: "Markdown",
+            reply_markup: {
+              inline_keyboard: [
+                [
+                  {
+                    text: "🟢 Опублікувати",
+                    callback_data: `approve_${createdReview.id}`,
+                  },
+                  {
+                    text: "🔴 Відхилити",
+                    callback_data: `reject_${createdReview.id}`,
+                  },
+                ],
+              ],
+            },
+          }),
+        },
+      );
+    } catch (telegramErr) {
+      console.error("Помилка відправки в Telegram:", telegramErr);
     }
 
     setResult("ДЯКУЄМО! ВІДГУК НАДІСЛАНО НА МОДЕРАЦІЮ");
