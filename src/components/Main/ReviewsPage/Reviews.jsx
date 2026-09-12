@@ -1,14 +1,30 @@
 import style from "./reviews.module.css";
 import icons from "./images/icons8.png";
 
-import { useState } from "react";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import reviewsData from "./reviewsData";
+import { supabase } from "../../../supabaseClient";
 import ReviewModal from "./ReviewModal/ReviewModal";
 
 const Reviews = () => {
   const [reviews, setReviews] = useState(reviewsData);
   const [close, onclose] = useState(false);
+
+  useEffect(() => {
+    const fetchReviews = async () => {
+      const { data, error } = await supabase
+        .from("Reviews")
+        .select("*")
+        .eq("status", "approved")
+        .order("id", { ascending: false });
+
+      if (!error && data) {
+        setReviews([...data, ...reviewsData]);
+      }
+    };
+
+    fetchReviews();
+  }, []);
 
   useEffect(() => {
     document.body.style.overflowY = close ? "hidden" : "auto";
