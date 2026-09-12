@@ -2,7 +2,7 @@ import { useState } from "react";
 import style from "./reviewModal.module.css";
 import Reviews from "../Reviews";
 
-const ReviewModal = ({ close, onclose }) => {
+const ReviewModal = ({ close, onclose, setReviews, reviews }) => {
   const [submitted, setSubmitted] = useState(false);
 
   const [inptName, setInptName] = useState("");
@@ -30,6 +30,16 @@ const ReviewModal = ({ close, onclose }) => {
       setInptName("");
       setInptCity("");
       setInptText("");
+
+      setReviews([
+        ...reviews,
+        {
+          id: Math.random(),
+          text: inptText,
+          name: inptName,
+          city: inptCity,
+        },
+      ]);
     }
   };
 

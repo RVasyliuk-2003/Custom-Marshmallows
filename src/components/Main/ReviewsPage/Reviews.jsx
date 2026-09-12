@@ -21,7 +21,14 @@ const Reviews = () => {
               <p className={style.ratingCount}>89 відгуків</p>
             </div>
           </div>
-          {close && <ReviewModal close={close} onclose={onclose} />}
+          {close && (
+            <ReviewModal
+              close={close}
+              onclose={onclose}
+              setReviews={setReviews}
+              reviews={reviews}
+            />
+          )}
           {reviews?.map((ell) => (
             <div key={ell.id} className={style.card}>
               <img src={icons} alt="icons" />
