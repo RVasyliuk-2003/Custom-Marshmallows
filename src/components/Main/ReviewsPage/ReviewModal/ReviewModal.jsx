@@ -56,32 +56,16 @@ const ReviewModal = ({ close, onclose, setReviews, reviews }) => {
         `🏙️ <b>Місто:</b> ${inptCity}\n` +
         `💬 <b>Текст:</b> ${inptText}`;
 
-      await fetch(
-        `https://api.telegram.org/bot${import.meta.env.VITE_TELEGRAM_BOT_TOKEN}/sendMessage`,
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            chat_id: import.meta.env.VITE_TELEGRAM_CHAT_ID,
-            text: messageText,
-            parse_mode: "HTML",
-            reply_markup: {
-              inline_keyboard: [
-                [
-                  {
-                    text: "🟢 Опублікувати",
-                    callback_data: `approve_${createdReview.id}`,
-                  },
-                  {
-                    text: "🔴 Відхилити",
-                    callback_data: `reject_${createdReview.id}`,
-                  },
-                ],
-              ],
-            },
-          }),
-        },
-      );
+      await fetch("/api/notify-review", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          id: createdReview.id,
+          name: inptName,
+          city: inptCity,
+          text: inptText,
+        }),
+      });
     } catch (telegramErr) {
       console.error("Помилка відправки в Telegram:", telegramErr);
     }

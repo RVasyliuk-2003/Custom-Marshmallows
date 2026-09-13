@@ -20,7 +20,13 @@ export default async function handler(req, res) {
     });
   }
 
-  const { text } = req.body;
+  const { id, name, city, text } = req.body;
+
+  const messageText =
+    `📝 <b>Новий відгук на модерацію!</b>\n\n` +
+    `👤 <b>Ім'я:</b> ${name}\n` +
+    `🏙️ <b>Місто:</b> ${city}\n` +
+    `💬 <b>Текст:</b> ${text}`;
 
   try {
     const telegramRes = await fetch(
@@ -30,8 +36,16 @@ export default async function handler(req, res) {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           chat_id: chatId,
-          text: text,
+          text: messageText,
           parse_mode: "HTML",
+          reply_markup: {
+            inline_keyboard: [
+              [
+                { text: "🟢 Опублікувати", callback_data: `approve_${id}` },
+                { text: "🔴 Відхилити", callback_data: `reject_${id}` },
+              ],
+            ],
+          },
         }),
       },
     );
