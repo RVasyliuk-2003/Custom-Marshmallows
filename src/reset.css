@@ -133,3 +133,6 @@ select,
 textarea {
   font-family: inherit;
 }
+a {
+  -webkit-tap-highlight-color: transparent;
+}
