@@ -10,8 +10,8 @@ export default async function handler(req, res) {
     return res.status(405).json({ message: "Method Not Allowed" });
   }
 
-  const token = process.env.TELEGRAM_BOT_TOKEN;
-  const chatId = process.env.TELEGRAM_CHAT_ID;
+  const token = process.env.VITE_TELEGRAM_BOT_TOKEN;
+  const chatId = process.env.VITE_TELEGRAM_CHAT_ID;
 
   if (!token || !chatId) {
     return res.status(500).json({

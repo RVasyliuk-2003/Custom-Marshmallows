@@ -3,7 +3,9 @@
 }
 
 body {
-  overflow-x: hidden;
+  overflow: hidden;
+  height: 100dvh;
+  background: var(--dark);
 }
 
 section {

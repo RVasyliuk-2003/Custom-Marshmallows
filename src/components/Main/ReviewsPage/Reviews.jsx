@@ -38,7 +38,7 @@ const Reviews = () => {
             <h5>9.9</h5>
             <div>
               <span className={style.rating}>★★★★★</span>
-              <p className={style.ratingCount}>89 відгуків</p>
+              <p className={style.ratingCount}>{reviews.length} відгуків</p>
             </div>
           </div>
           {close && (
