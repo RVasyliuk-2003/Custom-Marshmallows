@@ -6,6 +6,7 @@ import bouquetDesigns from "./../../data/bouquetDesigns";
 import { useState } from "react";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
 
 const Gallery = () => {
   const { size, type } = useParams();
@@ -18,9 +19,35 @@ const Gallery = () => {
     return matchesType;
   });
 
+  const [showButton, setShowButton] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 400) {
+        setShowButton(true);
+      } else {
+        setShowButton(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <section>
       <div className="container">
+        {showButton && (
+          <button
+            className={style.scrollTopBtn}
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          >
+            ↑
+          </button>
+        )}
         <div className={style.mainGalleryContainet}>
           <span
             className="eyebrow"

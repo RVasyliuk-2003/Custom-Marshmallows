@@ -159,3 +159,24 @@
   font-size: 13px;
   text-decoration: none;
 }
+
+.scrollTopBtn {
+  position: fixed;
+  z-index: 1000;
+  right: 30px;
+  bottom: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background-color: #fff;
+  border: 2px solid var(--ink);
+  box-shadow: 2px 3px 0 var(--ink);
+  font-family: var(--ff-display);
+  color: var(--ink);
+  font-weight: 700;
+  font-size: 20px;
+  cursor: pointer;
+}
