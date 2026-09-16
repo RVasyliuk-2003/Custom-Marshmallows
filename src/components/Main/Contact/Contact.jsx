@@ -77,13 +77,13 @@ const Contact = () => {
               <span>@ZefirkaOlena</span>
             </div>
           </a>
-          <div className={style.contactBox}>
+          <a className={style.contactBox} href="tel:+380 63 775 13 84">
             <div className={style.icon}>📞</div>
             <div className={style.contactLink}>
               <b>Телефон</b>
-              <span>+380 00 000 00 00</span>
+              <span>+380 63 775 13 84</span>
             </div>
-          </div>
+          </a>
           <div className={style.contactBox}>
             <div className={style.icon}>🕘</div>
             <div className={style.contactLink}>
