@@ -41,7 +41,6 @@
   flex-direction: column;
 
   > img {
-    max-width: 50px;
     width: 100%;
 
     position: absolute;
@@ -49,20 +48,26 @@
 }
 
 #img1 {
-  max-width: 95px;
-  right: 5px;
+  max-width: 130px;
+  right: 10px;
+  top: -5%;
 }
 
 #img2 {
-  max-width: 55px;
+  max-width: 110px;
   right: 5px;
-  top: 25%;
+  top: 20%;
+  rotate: calc(40deg);
 }
 
 #img3 {
-  max-width: 70px;
-  left: 40%;
-  top: 20%;
+  max-width: 160px;
+  left: 6%;
+  top: 6%;
+
+  /* rotate: calc(40deg); */
+  rotate: calc(0deg);
+  z-index: 1;
 }
 
 .btnMainBox {

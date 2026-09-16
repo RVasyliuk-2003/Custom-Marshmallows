@@ -23,11 +23,15 @@ const MainPage = () => {
             пелюстка за пелюсткою
           </p>
           <div className={style.positionMainBoxBtn}>
-            <img id={style.img1} src={LogoImg} alt="svg" />
-            <img id={style.img2} src={LogoImg} alt="svg" />
-            <img id={style.img3} src={LogoImg} alt="svg" />
+            <img id={style.img1} src="ze2.webp" alt="Букет квітів з зефіру" />
+            <img id={style.img2} src="ze3.webp" alt="Букет квітів з зефіру" />
+            <img id={style.img3} src="ze5.webp" alt="Букет квітів з зефіру" />
             <div className={style.btnMainBox}>
-              <Link to="/catalog" className="btn-primary btn">
+              <Link
+                style={{ position: "relative", zIndex: "2" }}
+                to="/catalog"
+                className="btn-primary btn"
+              >
                 Обрати букет
               </Link>
               <Link to="/HowToOrder" className="btn">
