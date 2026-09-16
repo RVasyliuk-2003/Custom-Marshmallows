@@ -142,3 +142,20 @@
     color: var(--raspberry-deep);
   }
 }
+
+.backToCatalog {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  width: max-content;
+  margin-top: 30px;
+  background: #fff;
+  color: var(--ink);
+  border: 2px solid var(--ink);
+  padding: 11px 20px;
+  border-radius: 100px;
+  font-family: var(--ff-body);
+  font-weight: 800;
+  font-size: 13px;
+  text-decoration: none;
+}

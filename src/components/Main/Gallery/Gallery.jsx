@@ -168,6 +168,10 @@ const Gallery = () => {
             })}
           </div>
 
+          <Link to="/Catalog" className={style.backToCatalog}>
+            👈 Назад до каталогу
+          </Link>
+
           <div className={style.customLine}></div>
 
           <div className={style.dopInfoBox}>
