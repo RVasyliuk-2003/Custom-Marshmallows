@@ -9,13 +9,6 @@
   background-color: #e1d2ed;
 }
 
-.widthEyebrow {
-  max-width: 110px;
-  width: 100%;
-
-  z-index: 5;
-}
-
 .stagesContainers {
   display: flex;
   flex-direction: column;

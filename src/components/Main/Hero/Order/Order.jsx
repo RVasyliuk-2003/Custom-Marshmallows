@@ -8,7 +8,12 @@ const Order = () => {
         <div className={`${style.orderMainContainer} ${style.contactsSection}`}>
           <SubtleEdge />
           <div>
-            <p className={`eyebrow ${style.widthEyebrow}`}>ЯК ЗАМОВИТИ?</p>
+            <span
+              style={{ display: "inline-block", width: "max-content" }}
+              className="eyebrow"
+            >
+              ЯК ЗАМОВИТИ?
+            </span>
             <h2 className={style.h2}>
               3 кроки <br /> до букета
             </h2>

@@ -9,7 +9,12 @@ const WhyMarshmallows = () => {
         <div className={style.whyMarshmaContainer}>
           <SubtleEdge />
           <div className={style.whyMarshmaBox}>
-            <p className={`eyebrow ${style.types}`}>Чому Зефірка?</p>
+            <span
+              style={{ display: "inline-block", width: "max-content" }}
+              className="eyebrow"
+            >
+              Чому Зефірка?
+            </span>
             <h2>
               Маленька цукрова <br /> скульптура
             </h2>

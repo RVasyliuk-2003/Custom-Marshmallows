@@ -8,11 +8,6 @@
   flex-direction: column;
 }
 
-.types {
-  max-width: 110px;
-  width: 100%;
-}
-
 .whyMarshmaBox {
   > h2 {
     margin-top: 10px;

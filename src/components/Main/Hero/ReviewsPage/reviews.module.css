@@ -3,11 +3,6 @@
   position: relative;
 }
 
-.type {
-  max-width: 70px;
-  width: 100%;
-}
-
 .scrollContainer {
   display: flex;
   gap: 14px;

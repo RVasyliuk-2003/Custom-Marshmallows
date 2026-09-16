@@ -20,11 +20,6 @@
   margin: 12px 0 10px;
 }
 
-.wigth {
-  max-width: 140px;
-  width: 100%;
-}
-
 .styleBtn1 {
   background-color: white;
   color: var(--raspberry-deep);

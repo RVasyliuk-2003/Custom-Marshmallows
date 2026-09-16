@@ -10,7 +10,9 @@ const CatalogScroll = () => {
     <section>
       <div className="container">
         <div className={style.catalogContainer}>
-          <p className={`eyebrow ${style.typ}`}>КАТАЛОГ</p>
+          <span style={{ width: "min-content" }} className="eyebrow">
+            КАТАЛОГ
+          </span>
           <h2>
             ОБЕРИ НАСТРІЙ <br /> БУКЕТА
           </h2>

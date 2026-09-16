@@ -6,7 +6,12 @@ const Reviews = () => {
     <section>
       <div className="container">
         <div className={style.mainContainerReviews}>
-          <p className={`eyebrow ${style.type}`}>ВІДГУКИ</p>
+          <span
+            style={{ display: "inline-block", width: "max-content" }}
+            className="eyebrow"
+          >
+            ВІДГУКИ
+          </span>
           <h2 className="h2">
             Що кажуть
             <br /> клієнти

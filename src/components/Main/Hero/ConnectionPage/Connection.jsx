@@ -8,7 +8,9 @@ const Connection = () => {
         <div className={style.connectiMainContainer}>
           <SubtleEdge color="var(--kraft)" />
 
-          <p className={`eyebrow ${style.wigth}`}>ГОТОВІ ЗДИВУВАТИ?</p>
+          <span style={{ width: "max-content" }} className="eyebrow">
+            ГОТОВІ ЗДИВУВАТИ?
+          </span>
           <h2 className={`h2 ${style.h2Mr}`}>
             Напишіть нам — <br /> і ми зберемо букет
           </h2>

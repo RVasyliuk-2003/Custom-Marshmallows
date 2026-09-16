@@ -22,12 +22,6 @@
   left: 18px;
 }
 
-.mainEyebrow {
-  display: inline-block;
-  width: max-content;
-  margin: 0px;
-}
-
 .textMainBox {
   font-size: 14px;
   color: var(--ink-soft);

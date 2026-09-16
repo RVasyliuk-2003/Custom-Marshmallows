@@ -10,9 +10,12 @@ const MainPage = () => {
       <div className="container">
         <div className={style.mainContainer}>
           <div className={`${style.maintape} tape`}></div>
-          <p className={`eyebrow ${style.mainEyebrow}`}>
+          <span
+            style={{ display: "inline-block", width: "max-content" }}
+            className="eyebrow"
+          >
             Ручна робота · Україна
-          </p>
+          </span>
 
           <h1>
             Квіти, які не в'януть.. <br /> Вони тануть
