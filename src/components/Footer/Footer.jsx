@@ -14,9 +14,21 @@ const Footer = () => {
           <p className={style.prFtr}>Букети з зефіру ручної роботи</p>
 
           <div className={style.spanIconBox}>
-            <span>@</span>
-            <span>✉</span>
-            <span>📞</span>
+            <a
+              href="https://instagram.com/olenavasyliuk69/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              📸
+            </a>
+            <a
+              href="https://t.me/ZefirkaOlena"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              💬
+            </a>
+            <a href="tel:+380637751384">📞</a>
           </div>
 
           <div className={style.footBottom}>© 2026 Зефірка</div>
