@@ -1,5 +1,8 @@
 import style from "./whyMarshmallows.module.css";
-import img from "./../../../../assets/logo.png";
+import img1 from "./images/Together.webp";
+import img2 from "./images/Chemical.webp";
+import img3 from "./images/flower.webp";
+
 import SubtleEdge from "../../SubtleEdge/SubtleEdge.jsx";
 
 const WhyMarshmallows = () => {
@@ -22,7 +25,7 @@ const WhyMarshmallows = () => {
             <div className={style.containerMarsh}>
               <div className={style.boxMarsh}>
                 <div className={style.positionImgbox}>
-                  <img src={img} alt="img" />
+                  <img src={img1} alt="img1" loading="lazy" />
                   <div>
                     <h6>Ручна робота</h6>
                     <p>Кожна пелюстка формується вручну</p>
@@ -31,7 +34,7 @@ const WhyMarshmallows = () => {
               </div>
               <div className={style.boxMarsh}>
                 <div className={style.positionImgbox}>
-                  <img src={img} alt="img" />
+                  <img src={img2} alt="img2" loading="lazy" />
                   <div>
                     <h6>Без хімії</h6>
                     <p>Натуральні барвники, можна дітям</p>
@@ -40,7 +43,7 @@ const WhyMarshmallows = () => {
               </div>
               <div className={style.boxMarsh}>
                 <div className={style.positionImgbox}>
-                  <img src={img} alt="img" />
+                  <img src={img3} alt="img3" loading="lazy" />
                   <div>
                     <h6>Не в'яне 5 днів</h6>
                     <p>Тримає форму без вази й холодильника</p>

@@ -19,7 +19,12 @@ const Reviews = () => {
 
           <div className={style.scrollContainer}>
             <div className={`card ${style.widtgCard}`}>
-              <img className={style.ImgComm} src={img} alt="ImgComm" />
+              <img
+                className={style.ImgComm}
+                src={img}
+                alt="ImgComm"
+                loading="lazy"
+              />
               <p>
                 Вона довго не могла повірити, <br /> що це не живі квіти!
               </p>
@@ -27,7 +32,12 @@ const Reviews = () => {
               <p className={style["sity-p"]}>Київ</p>
             </div>
             <div className={`card ${style.widtgCard}`}>
-              <img className={style.ImgComm} src={img} alt="ImgComm" />
+              <img
+                className={style.ImgComm}
+                src={img}
+                alt="ImgComm"
+                loading="lazy"
+              />
               <p>
                 Вона довго не могла повірити, <br /> що це не живі квіти!
               </p>
@@ -35,7 +45,12 @@ const Reviews = () => {
               <p className={style["sity-p"]}>Житомир</p>
             </div>
             <div className={`card ${style.widtgCard}`}>
-              <img className={style.ImgComm} src={img} alt="ImgComm" />
+              <img
+                className={style.ImgComm}
+                src={img}
+                alt="ImgComm"
+                loading="lazy"
+              />
               <p>
                 Кожна пелюстка як справжня. <br /> Неймовірна якість
               </p>

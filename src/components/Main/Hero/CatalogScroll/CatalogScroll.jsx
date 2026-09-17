@@ -34,6 +34,7 @@ const CatalogScroll = () => {
                     src={`/${desEll.photo}`}
                     alt={desEll.name}
                     className={style.img}
+                    loading="lazy"
                   />
                   <h4>Дізнатись більше →</h4>
                   <p className={style.wigthTag}>від {priceInfo?.price} грн</p>

@@ -7,7 +7,7 @@ const Footer = () => {
       <div className="container">
         <div className={style.ftrMainContainer}>
           <div className={style.logoBox}>
-            <img src={logo} alt="logo" />
+            <img src={logo} alt="logo" loading="lazy" />
             <h3>Зефірка</h3>
           </div>
 
