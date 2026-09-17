@@ -1,7 +1,7 @@
 import style from "./drawer.module.css";
 import logo from "./../../../assets/logo.png";
 
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 
 const Drawer = ({ isMenuOpen, setIsMenuOpen }) => {
   return (
@@ -80,7 +80,13 @@ const Drawer = ({ isMenuOpen, setIsMenuOpen }) => {
         </nav>
 
         <div className={style.btnBox}>
-          <button className="btn btn-primary">Замовити букет</button>
+          <Link
+            onClick={() => setIsMenuOpen(false)}
+            to="/HowToOrder"
+            className="btn btn-primary"
+          >
+            Замовити букет
+          </Link>
           <a
             href="https://instagram.com/olenavasyliuk69/"
             target="_blank"
