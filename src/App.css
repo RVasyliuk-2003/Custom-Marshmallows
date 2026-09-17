@@ -9,7 +9,7 @@ body {
 }
 
 section {
-  background-color: #fbf1e1;
+  background-color: var(--paper);
 }
 
 .container {

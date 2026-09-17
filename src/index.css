@@ -1,17 +1,17 @@
 :root {
-  --raspberry: #e2456f;
-  --raspberry-deep: #b23a56;
-  --raspberry-light: #f6b9cd;
-  --pistachio: #5e9a7b;
-  --pistachio-light: #c6e3d2;
-  --honey: #f0b23e;
-  --honey-light: #fbe0a3;
-  --lavender: #9e7ebb;
-  --lavender-light: #e1d2ed;
-  --paper: #fbf1e1;
-  --kraft: #e7d3ac;
-  --ink: #332420;
-  --ink-soft: #6e5a4e;
+  --raspberry: #ea4560;
+  --raspberry-deep: #c93a4a;
+  --raspberry-light: #f7c0c8;
+  --pistachio: #6ea35a;
+  --pistachio-light: #d3e3b8;
+  --honey: #f5a623;
+  --honey-light: #fce0a8;
+  --lavender: #a67bb0;
+  --lavender-light: #e6d3e8;
+  --paper: #fbecd4;
+  --kraft: #ead0a0;
+  --ink: #35241c;
+  --ink-soft: #71583e;
   --dark: #2b1f1a;
 
   --ff-display: "Unbounded", sans-serif;
