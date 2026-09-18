@@ -82,7 +82,7 @@ const Drawer = ({ isMenuOpen, setIsMenuOpen }) => {
         <div className={style.btnBox}>
           <Link
             onClick={() => setIsMenuOpen(false)}
-            to="/HowToOrder"
+            to="/Catalog"
             className="btn btn-primary"
           >
             Замовити букет

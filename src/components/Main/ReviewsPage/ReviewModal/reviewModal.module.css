@@ -33,6 +33,7 @@
   font-size: 15px;
   box-shadow: 2px 3px 0 var(--ink);
   flex-shrink: 0;
+  color: black;
 }
 
 .h2 {
