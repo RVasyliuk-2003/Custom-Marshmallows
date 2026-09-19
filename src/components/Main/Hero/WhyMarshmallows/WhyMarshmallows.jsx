@@ -27,7 +27,7 @@ const WhyMarshmallows = () => {
               <FadeUp
                 className={style.boxMarsh}
                 duration={1}
-                delay={0.35}
+                delay={0.4}
                 yOffset={15}
               >
                 <div className={style.positionImgbox}>
@@ -41,7 +41,7 @@ const WhyMarshmallows = () => {
               <FadeUp
                 className={style.boxMarsh}
                 duration={1}
-                delay={0.35}
+                delay={0.55}
                 yOffset={15}
               >
                 <div className={style.positionImgbox}>
@@ -55,7 +55,7 @@ const WhyMarshmallows = () => {
               <FadeUp
                 className={style.boxMarsh}
                 duration={1}
-                delay={0.35}
+                delay={1}
                 yOffset={15}
               >
                 <div className={style.positionImgbox}>
