@@ -1,5 +1,6 @@
 import style from "./howToOrder.module.css";
 import { Link } from "react-router-dom";
+import { FadeUp } from "../../FadeUp";
 
 const HowToOrder = () => {
   return (
@@ -12,7 +13,7 @@ const HowToOrder = () => {
               <svg
                 width="2"
                 height="100%"
-                style={{ position: "absolute", inset: 0 }}
+                style={{ position: "absolute", inset: 0, opacity: 0.4 }}
               >
                 <line className={style.doodle} x1="1" y1="0" x2="1" y2="150" />
               </svg>
@@ -21,30 +22,50 @@ const HowToOrder = () => {
               <div className={style.numberStagesBox}>
                 <p>1</p>
               </div>
-              <div className={style.textStagesBox}>
+              <FadeUp
+                className={style.textStagesBox}
+                xOffset={-25}
+                yOffset={0}
+                duration={0.5}
+                delay={0.1}
+              >
                 <h4>Опиши свій букет</h4>
                 <p>Кольори, розмір, привід — в Instagram чи Telegram</p>
-              </div>
+              </FadeUp>
             </div>
 
+            {/* Крок 2 */}
             <div className={style.stagesBox}>
               <div className={style.numberStagesBox}>
                 <p>2</p>
               </div>
-              <div className={style.textStagesBox}>
+              <FadeUp
+                className={style.textStagesBox}
+                xOffset={-25}
+                yOffset={0}
+                duration={0.5}
+                delay={0.3}
+              >
                 <h4>Погодь дату</h4>
                 <p>Порахуємо вартість і домовимось про терміни</p>
-              </div>
+              </FadeUp>
             </div>
 
+            {/* Крок 3 */}
             <div className={style.stagesBox}>
               <div className={style.numberStagesBox}>
                 <p>3</p>
               </div>
-              <div className={style.textStagesBox}>
+              <FadeUp
+                className={style.textStagesBox}
+                xOffset={-25}
+                yOffset={0}
+                duration={0.5}
+                delay={0.5}
+              >
                 <h4>Забери або отримай</h4>
                 <p>Особисто або Новою поштою по Україні</p>
-              </div>
+              </FadeUp>
             </div>
           </div>
 
@@ -64,9 +85,16 @@ const HowToOrder = () => {
             <p>Так, підберемо під будь-яку палітру</p>
           </div>
 
-          <Link to="/catalog" className={`btn btn-primary ${style.marginBtn}`}>
+          <FadeUp
+            as="Link"
+            duration={0.7}
+            delay={0.3}
+            yOffset={15}
+            to="/catalog"
+            className={`btn btn-primary ${style.marginBtn}`}
+          >
             Почати замовлення
-          </Link>
+          </FadeUp>
         </div>
       </div>
     </section>
