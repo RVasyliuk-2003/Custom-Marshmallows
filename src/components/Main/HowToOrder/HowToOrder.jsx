@@ -85,15 +85,13 @@ const HowToOrder = () => {
             <p>Так, підберемо під будь-яку палітру</p>
           </div>
 
-          <FadeUp
-            as="Link"
-            duration={0.7}
-            delay={0.3}
-            yOffset={15}
-            to="/catalog"
-            className={`btn btn-primary ${style.marginBtn}`}
-          >
-            Почати замовлення
+          <FadeUp duration={0.7} delay={0.3} yOffset={15}>
+            <Link
+              to="/catalog"
+              className={`btn btn-primary ${style.marginBtn}`}
+            >
+              Почати замовлення
+            </Link>
           </FadeUp>
         </div>
       </div>
