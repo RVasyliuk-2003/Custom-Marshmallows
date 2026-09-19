@@ -1,11 +1,10 @@
-// src/components/FadeUp.jsx
 import { motion } from "framer-motion";
 
 export const FadeUp = ({
   children,
   duration = 0.6,
   delay = 0,
-  yOffset = 40,
+  yOffset = 0,
   xOffset = 0,
   className = "",
   as = "div",
