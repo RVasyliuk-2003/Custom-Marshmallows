@@ -2,6 +2,7 @@ import style from "./aboutUs.module.css";
 import avatar from "./../../../assets/logo.png";
 
 import { Link } from "react-router-dom";
+import { FadeUp } from "../../FadeUp";
 
 const AboutUs = () => {
   return (
@@ -22,18 +23,36 @@ const AboutUs = () => {
           </div>
 
           <div className={style.boxRow}>
-            <div className={style.box}>
+            <FadeUp
+              className={style.box}
+              xOffset={-20}
+              yOffset={0}
+              duration={0.4}
+              delay={0.2}
+            >
               <b>3 роки</b>
               <span>на ринку</span>
-            </div>
-            <div className={style.box}>
+            </FadeUp>
+            <FadeUp
+              className={style.box}
+              xOffset={-20}
+              yOffset={0}
+              duration={0.8}
+              delay={0.4}
+            >
               <b>500+</b>
               <span>букетів</span>
-            </div>
-            <div className={style.box}>
+            </FadeUp>
+            <FadeUp
+              className={style.box}
+              xOffset={-40}
+              yOffset={0}
+              duration={1.2}
+              delay={0.6}
+            >
               <b>20+</b>
               <span>міст</span>
-            </div>
+            </FadeUp>
           </div>
 
           <div className={style.founder}>
@@ -44,9 +63,16 @@ const AboutUs = () => {
             </div>
           </div>
 
-          <Link to="/catalog" className="btn btn-primary">
+          <FadeUp
+            as="Link"
+            to="/catalog"
+            className="btn btn-primary"
+            duration={0.7}
+            delay={0.3}
+            yOffset={15}
+          >
             Переглянути каталог
-          </Link>
+          </FadeUp>
         </div>
       </div>
     </section>

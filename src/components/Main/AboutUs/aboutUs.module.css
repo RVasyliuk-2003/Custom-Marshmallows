@@ -14,10 +14,6 @@
     line-height: 1.12;
     letter-spacing: -0.01em;
   }
-
-  > a {
-    margin-top: 22px;
-  }
 }
 
 .boxText {
@@ -73,6 +69,7 @@
   border-radius: 18px;
   padding: 14px;
   margin-top: 30px;
+  margin-bottom: 22px;
   box-shadow: 3px 4px 0 var(--ink);
   transform: rotate(1deg);
 
