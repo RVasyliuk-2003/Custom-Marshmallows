@@ -177,3 +177,10 @@ section {
 .btn:active {
   transform: scale(0.95) !important;
 }
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: var(--kraft);
+}
