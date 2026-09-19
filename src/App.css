@@ -163,3 +163,19 @@ section {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* index.css / global.css */
+button,
+.btn {
+  transition:
+    transform 0.1s ease,
+    opacity 0.1s ease;
+  cursor: pointer;
+}
+
+/* Спрацьовує безпосередньо в момент затискання клавіші миші */
+button:active,
+.btn:active {
+  transform: scale(0.95);
+  opacity: 0.9;
+}

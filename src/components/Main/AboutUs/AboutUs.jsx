@@ -63,15 +63,10 @@ const AboutUs = () => {
             </div>
           </div>
 
-          <FadeUp
-            as="Link"
-            to="/catalog"
-            className="btn btn-primary"
-            duration={0.7}
-            delay={0.3}
-            yOffset={15}
-          >
-            Переглянути каталог
+          <FadeUp duration={0.7} delay={0.3} yOffset={15}>
+            <Link to="/Catalog" className="btn btn-primary">
+              Переглянути каталог
+            </Link>
           </FadeUp>
         </div>
       </div>
