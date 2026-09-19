@@ -19,14 +19,20 @@ const MainPage = () => {
             Ручна робота · Україна
           </span>
 
-          <h1>
+          <FadeUp as="h1" duration={0.8} xOffset={-40}>
             Квіти, які не в'януть.. <br /> Вони тануть
-          </h1>
+          </FadeUp>
 
-          <p className={style.textMainBox}>
+          <FadeUp
+            as="p"
+            as="h2"
+            duration={0.6}
+            xOffset={-35}
+            className={style.textMainBox}
+          >
             Зефірка ліпить букети з натурального <br /> маршмелоу вручну —
             пелюстка за пелюсткою
-          </p>
+          </FadeUp>
           <div className={style.positionMainBoxBtn}>
             <FadeUp
               as="img"

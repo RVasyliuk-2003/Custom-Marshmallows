@@ -1,5 +1,6 @@
 import style from "./order.module.css";
 import SubtleEdge from "../../SubtleEdge/SubtleEdge.jsx";
+import { FadeUp } from "../../../FadeUp.jsx";
 
 const Order = () => {
   return (
@@ -14,9 +15,9 @@ const Order = () => {
             >
               ЯК ЗАМОВИТИ?
             </span>
-            <h2 className={style.h2}>
+            <FadeUp as="h2" duration={1} xOffset={-30} className={style.h2}>
               3 кроки <br /> до букета
-            </h2>
+            </FadeUp>
           </div>
 
           <div className={style.stagesContainer}>

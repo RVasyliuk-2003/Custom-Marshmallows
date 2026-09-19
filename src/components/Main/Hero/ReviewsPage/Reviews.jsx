@@ -1,5 +1,6 @@
 import style from "./reviews.module.css";
 import img from "./images/icons8.png";
+import { FadeUp } from "../../../FadeUp";
 
 const Reviews = () => {
   return (
@@ -12,10 +13,10 @@ const Reviews = () => {
           >
             ВІДГУКИ
           </span>
-          <h2 className="h2">
+          <FadeUp as="h2" duration={1} xOffset={-30} className="h2">
             Що кажуть
             <br /> клієнти
-          </h2>
+          </FadeUp>
 
           <div className={style.scrollContainer}>
             <div className={`card ${style.widtgCard}`}>

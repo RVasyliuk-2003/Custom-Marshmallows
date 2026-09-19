@@ -10,9 +10,9 @@ const AboutUs = () => {
       <div className="container">
         <div className={style.mainContainerAboutUs}>
           <span className="eyebrow">НАША ІСТОРІЯ</span>
-          <h1>
+          <FadeUp as="h1" duration={0.8} xOffset={-40}>
             Зефірка почалась <br />з одного букета
-          </h1>
+          </FadeUp>
 
           <div className={style.boxText}>
             <p>

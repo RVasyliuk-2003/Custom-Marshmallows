@@ -21,8 +21,8 @@ const Connection = () => {
           <FadeUp
             as="a"
             duration={0.7}
-            delay={0.4}
-            yOffset={20}
+            delay={0.3}
+            yOffset={15}
             href="https://t.me/ZefirkaOlena"
             target="_blank"
             rel="noopener noreferrer"
@@ -34,8 +34,8 @@ const Connection = () => {
           <FadeUp
             as="a"
             duration={0.7}
-            delay={0.55}
-            yOffset={20}
+            delay={0.6}
+            yOffset={15}
             href="https://telegram.me/ZefirkaOlena/"
             target="_blank"
             rel="noopener noreferrer"

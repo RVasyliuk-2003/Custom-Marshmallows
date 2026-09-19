@@ -1,4 +1,5 @@
 import style from "./catalogScroll.module.css";
+import { FadeUp } from "../../../FadeUp";
 
 import { Link } from "react-router-dom";
 
@@ -13,9 +14,9 @@ const CatalogScroll = () => {
           <span style={{ width: "min-content" }} className="eyebrow">
             КАТАЛОГ
           </span>
-          <h2>
+          <FadeUp as="h2" duration={1} xOffset={-30}>
             ОБЕРИ НАСТРІЙ <br /> БУКЕТА
-          </h2>
+          </FadeUp>
           <p className={style["flip-p"]}> Гортай праворуч →</p>
           <div className={style.scrollContainer}>
             {bouquetDesigns.slice(0, 5).map((desEll) => {

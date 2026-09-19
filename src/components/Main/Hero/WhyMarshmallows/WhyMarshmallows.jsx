@@ -19,9 +19,9 @@ const WhyMarshmallows = () => {
             >
               Чому Зефірка?
             </span>
-            <h2>
+            <FadeUp as="h2" duration={1} xOffset={-30}>
               Маленька цукрова <br /> скульптура
-            </h2>
+            </FadeUp>
 
             <div className={style.containerMarsh}>
               <FadeUp
