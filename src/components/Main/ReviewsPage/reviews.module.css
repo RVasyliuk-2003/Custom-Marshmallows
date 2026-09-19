@@ -70,3 +70,11 @@
   background: rgba(43, 31, 26, 0.5);
   z-index: 50;
 }
+
+.visible {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 18px;
+  color: var(--ink-soft);
+  
+}

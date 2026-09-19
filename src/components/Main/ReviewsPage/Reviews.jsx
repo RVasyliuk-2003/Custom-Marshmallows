@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 import reviewsData from "./reviewsData";
 import { supabase } from "../../../supabaseClient";
 import ReviewModal from "./ReviewModal/ReviewModal";
+import { FadeUp } from "./../../FadeUp";
 
 const Reviews = () => {
   const [reviews, setReviews] = useState(reviewsData);
@@ -30,6 +31,8 @@ const Reviews = () => {
     document.body.style.overflowY = close ? "hidden" : "auto";
   }, [close]);
 
+  const [visibleCount, setVisibleCount] = useState(3);
+
   return (
     <section>
       <div className="container">
@@ -53,14 +56,27 @@ const Reviews = () => {
             <div className={style.overlay} onClick={() => onclose(false)}></div>
           )}
 
-          {reviews?.map((ell) => (
-            <div key={ell.id} className={style.card}>
+          {reviews?.slice(0, visibleCount).map((ell, index) => (
+            <FadeUp
+              key={ell.id}
+              className={style.card}
+              delay={(index % 3) * 0.1}
+            >
               <img src={icons} alt="icons" />
               <p>{ell.text}</p>
               <h5>{ell.name}</h5>
               <span>{ell.city}</span>
-            </div>
+            </FadeUp>
           ))}
+
+          {visibleCount < reviews.length && (
+            <p
+              className={style.visible}
+              onClick={() => setVisibleCount(visibleCount + 3)}
+            >
+              показати ще
+            </p>
+          )}
 
           <button
             onClick={() => onclose(true)}
