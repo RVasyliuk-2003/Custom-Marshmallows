@@ -1,6 +1,8 @@
 import style from "./mainPage.module.css";
 import "./../../../../App.css";
 
+import { FadeUp } from "../../../FadeUp";
+
 import LogoImg from "./../../../../assets/logo.png";
 import { Link } from "react-router-dom";
 
@@ -26,9 +28,34 @@ const MainPage = () => {
             пелюстка за пелюсткою
           </p>
           <div className={style.positionMainBoxBtn}>
-            <img id={style.img1} src="ze2.webp" alt="Букет квітів з зефіру" />
-            <img id={style.img2} src="ze3.webp" alt="Букет квітів з зефіру" />
-            <img id={style.img3} src="ze5.webp" alt="Букет квітів з зефіру" />
+            <FadeUp
+              as="img"
+              duration={1.2}
+              delay={0.1}
+              yOffset={50}
+              id={style.img1}
+              src="/ze2.webp"
+              alt="Букет квітів з зефіру"
+            />
+            <FadeUp
+              as="img"
+              duration={1}
+              delay={0.35}
+              yOffset={35}
+              id={style.img2}
+              src="/ze3.webp"
+              alt="Букет квітів з зефіру"
+            />
+            <FadeUp
+              as="img"
+              duration={0.9}
+              delay={0.55}
+              yOffset={25}
+              id={style.img3}
+              src="/ze5.webp"
+              alt="Букет квітів з зефіру"
+            />
+
             <div className={style.btnMainBox}>
               <Link
                 style={{ position: "relative", zIndex: "2" }}
