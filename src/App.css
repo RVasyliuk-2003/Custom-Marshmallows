@@ -164,18 +164,16 @@ section {
   transform: translateY(0);
 }
 
-/* index.css / global.css */
-button,
+/* Animation for btn */
+
 .btn {
   transition:
     transform 0.1s ease,
-    opacity 0.1s ease;
-  cursor: pointer;
+    background-color 0.2s ease,
+    box-shadow 0.2s ease;
+  will-change: transform;
 }
 
-/* Спрацьовує безпосередньо в момент затискання клавіші миші */
-button:active,
 .btn:active {
-  transform: scale(0.95);
-  opacity: 0.9;
+  transform: scale(0.95) !important;
 }
