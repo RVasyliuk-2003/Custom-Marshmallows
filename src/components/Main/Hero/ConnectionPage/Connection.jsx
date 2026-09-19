@@ -1,5 +1,6 @@
 import style from "./connection.module.css";
 import SubtleEdge from "../../SubtleEdge/SubtleEdge.jsx";
+import { FadeUp } from "../../../FadeUp.jsx";
 
 const Connection = () => {
   return (
@@ -17,22 +18,31 @@ const Connection = () => {
 
           <span>Відповідаємо протягом години</span>
 
-          <a
+          <FadeUp
+            as="a"
+            duration={0.7}
+            delay={0.4}
+            yOffset={20}
             href="https://t.me/ZefirkaOlena"
             target="_blank"
             rel="noopener noreferrer"
             className={`btn ${style.styleBtn1}`}
           >
             Instagram
-          </a>
-          <a
+          </FadeUp>
+
+          <FadeUp
+            as="a"
+            duration={0.7}
+            delay={0.55}
+            yOffset={20}
             href="https://telegram.me/ZefirkaOlena/"
             target="_blank"
             rel="noopener noreferrer"
             className={`btn btn-outline ${style.styleBtn2}`}
           >
             Telegram
-          </a>
+          </FadeUp>
         </div>
       </div>
     </section>
