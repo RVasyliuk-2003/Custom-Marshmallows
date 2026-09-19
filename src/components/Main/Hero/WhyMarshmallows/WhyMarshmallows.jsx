@@ -4,6 +4,7 @@ import img2 from "./images/Chemical.webp";
 import img3 from "./images/flower.webp";
 
 import SubtleEdge from "../../SubtleEdge/SubtleEdge.jsx";
+import { FadeUp } from "../../../FadeUp.jsx";
 
 const WhyMarshmallows = () => {
   return (
@@ -23,7 +24,12 @@ const WhyMarshmallows = () => {
             </h2>
 
             <div className={style.containerMarsh}>
-              <div className={style.boxMarsh}>
+              <FadeUp
+                className={style.boxMarsh}
+                duration={1}
+                delay={0.35}
+                yOffset={15}
+              >
                 <div className={style.positionImgbox}>
                   <img src={img1} alt="img1" loading="lazy" />
                   <div>
@@ -31,8 +37,13 @@ const WhyMarshmallows = () => {
                     <p>Кожна пелюстка формується вручну</p>
                   </div>
                 </div>
-              </div>
-              <div className={style.boxMarsh}>
+              </FadeUp>
+              <FadeUp
+                className={style.boxMarsh}
+                duration={1}
+                delay={0.35}
+                yOffset={15}
+              >
                 <div className={style.positionImgbox}>
                   <img src={img2} alt="img2" loading="lazy" />
                   <div>
@@ -40,8 +51,13 @@ const WhyMarshmallows = () => {
                     <p>Натуральні барвники, можна дітям</p>
                   </div>
                 </div>
-              </div>
-              <div className={style.boxMarsh}>
+              </FadeUp>
+              <FadeUp
+                className={style.boxMarsh}
+                duration={1}
+                delay={0.35}
+                yOffset={15}
+              >
                 <div className={style.positionImgbox}>
                   <img src={img3} alt="img3" loading="lazy" />
                   <div>
@@ -49,7 +65,7 @@ const WhyMarshmallows = () => {
                     <p>Тримає форму без вази й холодильника</p>
                   </div>
                 </div>
-              </div>
+              </FadeUp>
             </div>
           </div>
           <SubtleEdge flip />
