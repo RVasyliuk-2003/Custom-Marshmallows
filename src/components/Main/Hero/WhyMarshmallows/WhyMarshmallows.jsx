@@ -26,9 +26,9 @@ const WhyMarshmallows = () => {
             <div className={style.containerMarsh}>
               <FadeUp
                 className={style.boxMarsh}
-                duration={1}
-                delay={0.4}
-                yOffset={15}
+                duration={0.7}
+                delay={0.1}
+                yOffset={20}
               >
                 <div className={style.positionImgbox}>
                   <img src={img1} alt="img1" loading="lazy" />
@@ -40,9 +40,9 @@ const WhyMarshmallows = () => {
               </FadeUp>
               <FadeUp
                 className={style.boxMarsh}
-                duration={1}
-                delay={0.55}
-                yOffset={15}
+                duration={0.7}
+                delay={0.2}
+                yOffset={20}
               >
                 <div className={style.positionImgbox}>
                   <img src={img2} alt="img2" loading="lazy" />
@@ -54,9 +54,9 @@ const WhyMarshmallows = () => {
               </FadeUp>
               <FadeUp
                 className={style.boxMarsh}
-                duration={1}
-                delay={1}
-                yOffset={15}
+                duration={0.7}
+                delay={0.3}
+                yOffset={20}
               >
                 <div className={style.positionImgbox}>
                   <img src={img3} alt="img3" loading="lazy" />
