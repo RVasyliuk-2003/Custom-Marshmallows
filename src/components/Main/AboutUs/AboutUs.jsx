@@ -1,5 +1,5 @@
 import style from "./aboutUs.module.css";
-import avatar from "./../../../assets/logo.png";
+import avatar from "./../../../assets/avatar.webp";
 
 import { Link } from "react-router-dom";
 import { FadeUp } from "../../FadeUp";
