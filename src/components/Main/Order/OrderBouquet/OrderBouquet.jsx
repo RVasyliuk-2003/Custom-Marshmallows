@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import bouquetDesigns from "../../../data/bouquetDesigns";
 
 import sizeContainer from "../../../data/sizeContainer";
+import { input } from "framer-motion/client";
 
 const OrderBouquet = () => {
   const [inptforColor, setInptforColor] = useState(false);
@@ -34,6 +35,10 @@ const OrderBouquet = () => {
 
   const [submitted, setSubmitted] = useState(false);
 
+  const [newPostCity, setNewPostCity] = useState("");
+  const [newPost, setNewPost] = useState("");
+  const [inptAdres, setInptAdres] = useState("");
+
   const resultError = async () => {
     setSubmitted(true);
 
@@ -43,6 +48,14 @@ const OrderBouquet = () => {
     }
     if (!actiRadio) {
       setError("ОБЕРІТЬ СПОСІБ ДОСТАВКИ");
+      return;
+    }
+    if (actiRadio === "Нова пошта" && (!newPostCity || !newPost)) {
+      setError("ВКАЖІТЬ МІСТО ТА ВІДДІЛЕННЯ");
+      return;
+    }
+    if (actiRadio === "По місту" && !inptAdres) {
+      setError("ВКАЖІТЬ АДРЕСУ");
       return;
     }
     if (flavor === "Оберіть смак") {
@@ -69,6 +82,14 @@ ${inptforColor ? "- <b>Насичені кольори:</b> так" : ""}
 
 <b>🚚 Отримання та дата:</b>
 - <b>Спосіб:</b> ${actiRadio}
+${
+  actiRadio === "Нова пошта"
+    ? `- <b>Місто доставки:</b> ${newPostCity}
+- <b>Відділення НП:</b> ${newPost}`
+    : actiRadio === "По місту"
+      ? `- <b>Адрес по місту:</b> ${inptAdres}`
+      : ""
+}
 - <b>Дата:</b> ${inptDate}
 
 <b>👤 Клієнт:</b>
@@ -88,7 +109,11 @@ ${inptforColor ? "- <b>Насичені кольори:</b> так" : ""}
         }
 
         setError("ФОРМУ ВІДПРАВЛЕННО");
+        setFlavor("Оберіть смак");
         setActiRadio("");
+        setNewPostCity("");
+        setNewPost("");
+        setInptAdres("");
         setInptDate("");
         setInptName("");
         setInptNumber("");
@@ -257,6 +282,31 @@ ${inptforColor ? "- <b>Насичені кольори:</b> так" : ""}
               Нова пошта
             </button>
           </div>
+
+          {actiRadio === "Нова пошта" ? (
+            <>
+              <input
+                type="text"
+                value={newPostCity}
+                onChange={(e) => setNewPostCity(e.target.value)}
+                placeholder="Місто для доставки"
+              />
+              <input
+                type="text"
+                value={newPost}
+                onChange={(e) => setNewPost(e.target.value)}
+                placeholder="Відділення Нової Пошти"
+              />
+            </>
+          ) : actiRadio === "По місту" ? (
+            <input
+              type="text"
+              value={inptAdres}
+              onChange={(e) => setInptAdres(e.target.value)}
+              placeholder="Ваша адреса"
+            />
+          ) : null}
+
           <span className={style.label}>БАЖАНА ДАТА</span>
           <input
             value={inptDate}
