@@ -93,7 +93,7 @@ h2 {
 .inpt {
   width: 100%;
   background: #fff;
-  border: 2px solid var(--ink);
+  border: 1.5px solid var(--ink);
   border-radius: 12px;
   padding: 12px 14px;
   font-size: 13px;
@@ -181,4 +181,15 @@ h2 {
   font-weight: 700;
   font-size: 14px;
   text-align: center;
+}
+
+.inpDelivery {
+  width: 100%;
+  background: #fff;
+  border: 1px solid var(--ink);
+  border-radius: 12px;
+  padding: 10px 12px;
+  font-size: 13px;
+  color: var(--ink);
+  margin-top: 10px;
 }

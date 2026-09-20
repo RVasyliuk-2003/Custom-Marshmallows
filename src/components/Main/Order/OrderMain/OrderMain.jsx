@@ -22,7 +22,11 @@ const OrderMain = () => {
   const option = sizeContainer?.find((s) => s.size === size);
 
   const [submitted, setSubmitted] = useState(false);
-  
+
+  const [newPostCity, setNewPostCity] = useState("");
+  const [newPost, setNewPost] = useState("");
+  const [inptAdres, setInptAdres] = useState("");
+
   const resultError = async () => {
     setSubmitted(true);
 
@@ -40,6 +44,14 @@ const OrderMain = () => {
     }
     if (!actiRadio) {
       setError("ОБЕРІТЬ СПОСІБ ДОСТАВКИ");
+      return;
+    }
+    if (actiRadio === "Нова пошта" && (!newPostCity || !newPost)) {
+      setError("ВКАЖІТЬ МІСТО ТА ВІДДІЛЕННЯ");
+      return;
+    }
+    if (actiRadio === "По місту" && !inptAdres) {
+      setError("ВКАЖІТЬ АДРЕСУ");
       return;
     }
     if (!nameRegex.test(inptName)) {
@@ -63,6 +75,14 @@ ${inpColor ? "- <b>Насичені кольори:</b> так" : ""}
 
 <b>🚚 Отримання та дата:</b>
 - <b>Спосіб:</b> ${actiRadio}
+${
+  actiRadio === "Нова пошта"
+    ? `- <b>Місто доставки:</b> ${newPostCity}
+- <b>Відділення НП:</b> ${newPost}`
+    : actiRadio === "По місту"
+      ? `- <b>Адрес по місту:</b> ${inptAdres}`
+      : ""
+}
 - <b>Дата:</b> ${inptDate}
 
 <b>👤 Клієнт:</b>
@@ -80,10 +100,13 @@ ${inpColor ? "- <b>Насичені кольори:</b> так" : ""}
           throw new Error("Помилка відправки");
         }
         setError("ФОРМУ ВІДПРАВЛЕННО");
+        setFlavor("Оберіть смак");
         setInpColor("");
         setInpIdea("");
-        setFlavor("Оберіть смак");
         setActiRadio("");
+        setNewPostCity("");
+        setNewPost("");
+        setInptAdres("");
         setInptDate("");
         setInptName("");
         setInptNumber("");
@@ -203,6 +226,51 @@ ${inpColor ? "- <b>Насичені кольори:</b> так" : ""}
             Нова пошта
           </button>
         </div>
+
+        {actiRadio === "Нова пошта" ? (
+          <>
+            <input
+              className={style.inpDelivery}
+              type="text"
+              value={newPostCity}
+              onChange={(e) => setNewPostCity(e.target.value)}
+              placeholder="Місто для доставки"
+              style={{
+                border:
+                  submitted && !newPostCity
+                    ? "2px solid var(--raspberry-deep)"
+                    : undefined,
+              }}
+            />
+            <input
+              className={style.inpDelivery}
+              type="text"
+              value={newPost}
+              onChange={(e) => setNewPost(e.target.value)}
+              placeholder="Відділення Нової Пошти"
+              style={{
+                border:
+                  submitted && !newPost
+                    ? "2px solid var(--raspberry-deep)"
+                    : undefined,
+              }}
+            />
+          </>
+        ) : actiRadio === "По місту" ? (
+          <input
+            className={style.inpDelivery}
+            type="text"
+            value={inptAdres}
+            onChange={(e) => setInptAdres(e.target.value)}
+            placeholder="Ваша адреса"
+            style={{
+              border:
+                submitted && !inptAdres
+                  ? "2px solid var(--raspberry-deep)"
+                  : undefined,
+            }}
+          />
+        ) : null}
         <span className={style.typeText}>БАЖАНА ДАТА</span>
         <input
           value={inptDate}
