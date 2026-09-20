@@ -64,19 +64,33 @@ const MainPage = () => {
 
             <div className={style.btnMainBox}>
               <Link
-                style={{ position: "relative", zIndex: "2" }}
+                style={{ position: "relative", zIndex: "5" }}
                 to="/catalog"
                 className="btn-primary btn"
               >
                 Обрати букет
               </Link>
-              <Link to="/HowToOrder" className="btn">
+              <Link
+                style={{
+                  position: "relative",
+                  zIndex: "2",
+                  backgroundColor: "var(--paper)",
+                }}
+                to="/HowToOrder"
+                className="btn"
+              >
                 Як це працює
               </Link>
             </div>
 
             <div className={style.mainPrimary}>
-              <div className={style.boxPrimary}>
+              <div
+                className={style.boxPrimary}
+                style={{
+                  position: "relative",
+                  zIndex: "2",
+                }}
+              >
                 <img src={LogoImg} alt="svg" />
                 <p>Тримає форму 5 днів</p>
               </div>

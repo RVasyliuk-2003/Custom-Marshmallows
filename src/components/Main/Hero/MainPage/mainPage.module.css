@@ -42,27 +42,55 @@
   }
 }
 
+
 #img1 {
-  max-width: 130px;
-  right: 10px;
-  top: -5%;
+  max-width: 95px; 
+  right: 15px; 
+  top: 3%;
+  rotate: 10deg;
+  z-index: 3;
 }
 
 #img2 {
-  max-width: 110px;
-  right: 5px;
-  top: 20%;
-  rotate: calc(40deg);
+  max-width: 90px; 
+  right: 15px; 
+  top: 25%;
+  rotate: 10deg;
+  z-index: 4;
 }
 
 #img3 {
-  max-width: 160px;
-  left: 6%;
-  top: 6%;
-
-  /* rotate: calc(40deg); */
-  rotate: calc(0deg);
+  max-width: 250px; 
+  left: 0%;
+  top: -15%;
+  rotate: 0deg;
   z-index: 1;
+}
+
+@media (min-width: 375px) {
+  #img1 {
+    max-width: 120px;
+    right: 30px;
+    top: 0%;
+    rotate: 10deg;
+    z-index: 3;
+  }
+
+  #img2 {
+    max-width: 110px;
+    right: 30px;
+    top: 27%;
+    rotate: 10deg;
+    z-index: 4;
+  }
+
+  #img3 {
+    max-width: 300px;
+    left: 2%;
+    top: -20%;
+    rotate: 0deg;
+    z-index: 1;
+  }
 }
 
 .btnMainBox {
