@@ -22,7 +22,7 @@ const OrderMain = () => {
   const option = sizeContainer?.find((s) => s.size === size);
 
   const [submitted, setSubmitted] = useState(false);
-
+  
   const resultError = async () => {
     setSubmitted(true);
 

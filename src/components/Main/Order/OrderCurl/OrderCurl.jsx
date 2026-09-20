@@ -30,6 +30,10 @@ const OrderCurl = () => {
 
   const [submitted, setSubmitted] = useState(false);
 
+  const [newPostCity, setNewPostCity] = useState("");
+  const [newPost, setNewPost] = useState("");
+  const [inptAdres, setInptAdres] = useState("");
+
   const errorContact = async () => {
     setSubmitted(true);
 
@@ -39,6 +43,14 @@ const OrderCurl = () => {
     }
     if (!deliverColor) {
       setError("ОБЕРІТЬ СПОСІБ ДОСТАВКИ");
+      return;
+    }
+    if (deliverColor === "Нова пошта" && (!newPostCity || !newPost)) {
+      setError("ВКАЖІТЬ МІСТО ТА ВІДДІЛЕННЯ");
+      return;
+    }
+    if (deliverColor === "По місту" && !inptAdres) {
+      setError("ВКАЖІТЬ АДРЕСУ");
       return;
     }
     if (flavor === "Оберіть смак") {
@@ -65,6 +77,14 @@ ${inptforColor ? "- <b>Насичені кольори:</b> так" : ""}
 
 <b>🚚 Отримання та дата:</b>
 - <b>Спосіб:</b> ${deliverColor}
+${
+  deliverColor === "Нова пошта"
+    ? `- <b>Місто доставки:</b> ${newPostCity}
+- <b>Відділення НП:</b> ${newPost}`
+    : deliverColor === "По місту"
+      ? `- <b>Адрес по місту:</b> ${inptAdres}`
+      : ""
+}
 - <b>Дата:</b> ${inptDate}
 
 <b>👤 Клієнт:</b>
@@ -84,7 +104,11 @@ ${inptforColor ? "- <b>Насичені кольори:</b> так" : ""}
         }
 
         setError("ФОРМУ ВІДПРАВЛЕННО");
+        setFlavor("Оберіть смак");
         setDeliverColor("");
+        setNewPostCity("");
+        setNewPost("");
+        setInptAdres("");
         setInptDate("");
         setInptName("");
         setInptNumber("");
@@ -262,6 +286,51 @@ ${inptforColor ? "- <b>Насичені кольори:</b> так" : ""}
               Нова пошта
             </button>
           </div>
+
+          {deliverColor === "Нова пошта" ? (
+            <>
+              <input
+                className={style.inpDelivery}
+                type="text"
+                value={newPostCity}
+                onChange={(e) => setNewPostCity(e.target.value)}
+                placeholder="Місто для доставки"
+                style={{
+                  border:
+                    submitted && !newPostCity
+                      ? "2px solid var(--raspberry-deep)"
+                      : undefined,
+                }}
+              />
+              <input
+                className={style.inpDelivery}
+                type="text"
+                value={newPost}
+                onChange={(e) => setNewPost(e.target.value)}
+                placeholder="Відділення Нової Пошти"
+                style={{
+                  border:
+                    submitted && !newPost
+                      ? "2px solid var(--raspberry-deep)"
+                      : undefined,
+                }}
+              />
+            </>
+          ) : deliverColor === "По місту" ? (
+            <input
+              className={style.inpDelivery}
+              type="text"
+              value={inptAdres}
+              onChange={(e) => setInptAdres(e.target.value)}
+              placeholder="Ваша адреса"
+              style={{
+                border:
+                  submitted && !inptAdres
+                    ? "2px solid var(--raspberry-deep)"
+                    : undefined,
+              }}
+            />
+          ) : null}
           <span className={style.label}>БАЖАНА ДАТА</span>
           <input
             onChange={(e) => setInptDate(e.target.value)}
