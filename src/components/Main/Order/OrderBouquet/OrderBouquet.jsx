@@ -286,24 +286,45 @@ ${
           {actiRadio === "Нова пошта" ? (
             <>
               <input
+                className={style.inpDelivery}
                 type="text"
                 value={newPostCity}
                 onChange={(e) => setNewPostCity(e.target.value)}
                 placeholder="Місто для доставки"
+                style={{
+                  border:
+                    submitted && !newPostCity
+                      ? "2px solid var(--raspberry-deep)"
+                      : undefined,
+                }}
               />
               <input
+                className={style.inpDelivery}
                 type="text"
                 value={newPost}
                 onChange={(e) => setNewPost(e.target.value)}
                 placeholder="Відділення Нової Пошти"
+                style={{
+                  border:
+                    submitted && !newPost
+                      ? "2px solid var(--raspberry-deep)"
+                      : undefined,
+                }}
               />
             </>
           ) : actiRadio === "По місту" ? (
             <input
+              className={style.inpDelivery}
               type="text"
               value={inptAdres}
               onChange={(e) => setInptAdres(e.target.value)}
               placeholder="Ваша адреса"
+              style={{
+                border:
+                  submitted && !inptAdres
+                    ? "2px solid var(--raspberry-deep)"
+                    : undefined,
+              }}
             />
           ) : null}
 
