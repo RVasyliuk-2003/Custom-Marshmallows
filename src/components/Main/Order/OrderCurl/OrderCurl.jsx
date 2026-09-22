@@ -156,8 +156,6 @@ ${
           <span className={style.label}>ПАКУВАННЯ</span>
 
           <label className={style.optionCard}>
-            <span className={style.tagAbsolute}>зазвичай для завитків</span>
-
             <div className={style.optionLeft}>
               <input
                 type="radio"
@@ -173,26 +171,6 @@ ${
             </div>
 
             <p className={style.optionPrice}>50-60 грн</p>
-          </label>
-
-          <label className={style.optionCard}>
-            <span className={style.tagAbsolute}>зазвичай для букетів</span>
-
-            <div className={style.optionLeft}>
-              <input
-                type="radio"
-                onChange={() => setPackaging("Подарункове")}
-                checked={packaging === "Подарункове"}
-                name="optionGroup"
-                className={style.optionRadio}
-              />
-              <div>
-                <h4 className={style.optionTitle}>Подарункове</h4>
-                <span className={style.optionText}>Крафт-папір, Плівка</span>
-              </div>
-            </div>
-
-            <p className={style.optionPrice}>150 грн</p>
           </label>
 
           <span className={style.label}>СМАК</span>
@@ -221,34 +199,6 @@ ${
             <option value="Яблучний">Яблучний</option>
             <option value="Яблучно-Грушевий">Яблучно-Грушевий</option>
           </select>
-
-          <span className={style.label}>КОЛЬОРИ</span>
-
-          <label className={`${style.optionCard} ${style.optionClickStyle}`}>
-            <div className={style.optionLeft}>
-              <input
-                type="checkbox"
-                checked={inptforColor}
-                onChange={(e) => setInptforColor(e.target.checked)}
-                className={style.optionCheckbox}
-              />
-              <div>
-                <h4 className={style.optionTitle}>Насичені кольори</h4>
-                <span className={style.optionText}>
-                  Яскравіші відтінки на вибір
-                </span>
-              </div>
-            </div>
-
-            <p className={style.optionPrice}>+200 грн</p>
-          </label>
-          {inptforColor && (
-            <input
-              className={style.infoColor}
-              placeholder="Опиши бажаний колір (напр. бордовий)"
-              type="text"
-            />
-          )}
 
           <span className={style.label}>ОТРИМАННЯ</span>
 

@@ -107,19 +107,6 @@
   gap: 10px;
 }
 
-.tagAbsolute {
-  position: absolute;
-  top: -9px;
-  right: 10px;
-  background-color: var(--dark);
-  color: #fff;
-  font-family: var(--ff-display);
-  font-weight: 700;
-  font-size: 9px;
-  padding: 3px 8px;
-  border-radius: 100px;
-}
-
 .optionRadio {
   appearance: none;
   -webkit-appearance: none;
