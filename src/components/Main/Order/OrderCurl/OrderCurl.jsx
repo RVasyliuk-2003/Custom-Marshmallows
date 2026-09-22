@@ -218,10 +218,10 @@ ${
             <option value="Малина">Малина</option>
             <option value="Абрикосовий">Абрикосовий</option>
             <option value="Сливовий">Сливовий</option>
-            <option value="Яблучно-Грушевий">Яблучно-Грушевий</option>
             <option value="Ванільний">Ванільний</option>
             <option value="Грушевий">Грушевий</option>
             <option value="Яблучний">Яблучний</option>
+            <option value="Яблучно-Грушевий">Яблучно-Грушевий</option>
           </select>
 
           <span className={style.label}>КОЛЬОРИ</span>

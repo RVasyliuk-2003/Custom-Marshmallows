@@ -7,7 +7,7 @@ const HowToOrder = () => {
     <section>
       <div className="container">
         <div className={style.mainContainer}>
-          <p className={style.pTime}>Від ідеї до букета — 3 кроки, 3–4 дні.</p>
+          <p className={style.pTime}>Від ідеї до букета — 3 кроки.</p>
           <div className={style.stagesContainer}>
             <div className={style.line}>
               <svg

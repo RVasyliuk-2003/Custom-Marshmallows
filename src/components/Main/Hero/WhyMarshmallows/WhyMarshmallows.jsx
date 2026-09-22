@@ -48,7 +48,7 @@ const WhyMarshmallows = () => {
                   <img src={img2} alt="img2" loading="lazy" />
                   <div>
                     <h6>Без хімії</h6>
-                    <p>Натуральні барвники, можна дітям</p>
+                    <p>Натуральні інгредієнти, можна дітям</p>
                   </div>
                 </div>
               </FadeUp>
@@ -61,7 +61,7 @@ const WhyMarshmallows = () => {
                 <div className={style.positionImgbox}>
                   <img src={img3} alt="img3" loading="lazy" />
                   <div>
-                    <h6>Не в'яне 5 днів</h6>
+                    <h6>Не в'яне 10 днів</h6>
                     <p>Тримає форму без вази й холодильника</p>
                   </div>
                 </div>

@@ -30,7 +30,7 @@ const MainPage = () => {
             xOffset={-35}
             className={style.textMainBox}
           >
-            Зефірка ліпить букети з натурального <br /> маршмелоу вручну —
+            Зефірка створює букети з натурального <br /> маршмелоу вручну —
             пелюстка за пелюсткою
           </FadeUp>
           <div className={style.positionMainBoxBtn}>
@@ -92,7 +92,7 @@ const MainPage = () => {
                 }}
               >
                 <img src={LogoImg} alt="svg" />
-                <p>Тримає форму 5 днів</p>
+                <p>Тримає форму 10 днів</p>
               </div>
               <div className={style.boxPrimary}>
                 <img src={LogoImg} alt="svg" />

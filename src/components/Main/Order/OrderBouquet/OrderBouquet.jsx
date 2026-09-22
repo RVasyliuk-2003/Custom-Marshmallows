@@ -171,7 +171,7 @@ ${
               />
               <div>
                 <h4 className={style.optionTitle}>Стандарт</h4>
-                <span className={style.optionText}>Плівка, Стрічка</span>
+                <span className={style.optionText}>Коробка, Стрічка</span>
               </div>
             </div>
 
@@ -190,9 +190,7 @@ ${
               />
               <div>
                 <h4 className={style.optionTitle}>Подарункове</h4>
-                <span className={style.optionText}>
-                  Крафт-папір, більше декору
-                </span>
+                <span className={style.optionText}>Крафт-папір, Плівка</span>
               </div>
             </div>
 
@@ -218,10 +216,10 @@ ${
             <option value="Малина">Малина</option>
             <option value="Абрикосовий">Абрикосовий</option>
             <option value="Сливовий">Сливовий</option>
-            <option value="Яблучно-Грушевий">Яблучно-Грушевий</option>
             <option value="Ванільний">Ванільний</option>
             <option value="Грушевий">Грушевий</option>
             <option value="Яблучний">Яблучний</option>
+            <option value="Яблучно-Грушевий">Яблучно-Грушевий</option>
           </select>
           <span className={style.label}>КОЛЬОРИ</span>
           <label className={`${style.optionCard} ${style.optionClickStyle}`}>

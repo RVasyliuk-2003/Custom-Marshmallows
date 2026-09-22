@@ -12,7 +12,7 @@ const sizeContainer = [
     size: 18,
     name: "Класичний",
     category: "Букети",
-    description: "Найпопулярніший розмір",
+    description: "Класика",
     price: 1100,
   },
   {
@@ -28,7 +28,7 @@ const sizeContainer = [
     size: 25,
     name: "Великий",
     category: "Букети",
-    description: "Урочистий привід",
+    description: "Найпопулярніший розмір",
     price: 1800,
   },
   {
@@ -36,7 +36,7 @@ const sizeContainer = [
     size: 30,
     name: "Максі",
     category: "Букети",
-    description: "Весілля, ювілей",
+    description: "Урочистий привід",
     price: 2400,
   },
   {

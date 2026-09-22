@@ -17,7 +17,7 @@ const CatalogScroll = () => {
           <FadeUp as="h2" duration={1} xOffset={-30}>
             ОБЕРИ НАСТРІЙ <br /> БУКЕТА
           </FadeUp>
-          <p className={style["flip-p"]}> Гортай праворуч →</p>
+          <p className={style["flip-p"]}> Гортай ліворуч →</p>
           <div className={style.scrollContainer}>
             {bouquetDesigns.slice(0, 5).map((desEll) => {
               const minSize = desEll.availableSizes
