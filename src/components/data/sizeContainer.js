@@ -1,14 +1,6 @@
 const sizeContainer = [
   {
     id: 1,
-    size: 10,
-    name: "Шкільний",
-    category: "Букети",
-    description: "або — одна хризантема 500 грн ",
-    price: 350,
-  },
-  {
-    id: 2,
     size: 16,
     name: "Компактний",
     category: "Букети",
@@ -16,7 +8,7 @@ const sizeContainer = [
     price: 1000,
   },
   {
-    id: 3,
+    id: 2,
     size: 18,
     name: "Класичний",
     category: "Букети",
@@ -24,7 +16,7 @@ const sizeContainer = [
     price: 1100,
   },
   {
-    id: 4,
+    id: 3,
     size: 20,
     name: "Пишний",
     category: "Букети",
@@ -32,7 +24,7 @@ const sizeContainer = [
     price: 1400,
   },
   {
-    id: 5,
+    id: 4,
     size: 25,
     name: "Великий",
     category: "Букети",
@@ -40,7 +32,7 @@ const sizeContainer = [
     price: 1800,
   },
   {
-    id: 6,
+    id: 5,
     size: 30,
     name: "Максі",
     category: "Букети",
@@ -48,7 +40,7 @@ const sizeContainer = [
     price: 2400,
   },
   {
-    id: 7,
+    id: 6,
     size: "?",
     name: "Індивідуальний",
     category: "Індивідуальний",
@@ -57,7 +49,7 @@ const sizeContainer = [
     isCustom: true,
   },
   {
-    id: 8,
+    id: 7,
     size: 1,
     unit: "шт",
     name: "Окрема завитка",

@@ -102,17 +102,6 @@ const Gallery = () => {
           <div className={style.filters}>
             <button
               style={
-                sizeFilt === 10
-                  ? { color: "var(--paper)", backgroundColor: "var(--ink)" }
-                  : null
-              }
-              onClick={(e) => setSizeFilt(10)}
-              className={`${style.categoryClick} ${style.sizeClick}`}
-            >
-              10
-            </button>
-            <button
-              style={
                 sizeFilt === 16
                   ? { color: "var(--paper)", backgroundColor: "var(--ink)" }
                   : null
