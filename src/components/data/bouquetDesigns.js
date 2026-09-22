@@ -182,7 +182,8 @@ const bouquetDesigns = [
     availableSizes: [16, 18, 20, 25, 30],
   },
   {
-    id:     name: "Ніжний тюльпановий",
+    id: 34,
+    name: "Ніжний тюльпановий",
     type: "Букет",
     photo: "imgZepfy133.webp",
     availableSizes: [16, 18, 20, 25, 30],
