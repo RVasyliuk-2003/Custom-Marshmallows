@@ -79,9 +79,9 @@ const Catalog = () => {
           {filtersCategory.map((ell) => (
             <Link
               to={
-                ell.id === 8
+                ell.id === 7
                   ? "/gallery/0/Завиток"
-                  : ell.id === 7
+                  : ell.id === 6
                     ? "/orderMain"
                     : `/gallery/${ell.size}/Букет`
               }
