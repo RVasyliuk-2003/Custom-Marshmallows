@@ -8,7 +8,7 @@ const OrderCurl = () => {
   const { cu } = useParams();
   const curl = bouquetDesigns.find((ell) => ell.id === Number(cu));
 
-  const [count, setCount] = useState(6);
+  const [count, setCount] = useState(9);
   const [packaging, setPackaging] = useState("Стандарт");
   const [flavor, setFlavor] = useState("Оберіть смак");
 
@@ -135,7 +135,7 @@ ${
           <div className={style.qty}>
             <button
               onClick={() => {
-                if (count > 6) {
+                if (count > 9) {
                   setCount(count - 1);
                   return;
                 }
@@ -168,7 +168,7 @@ ${
               />
               <div>
                 <h4 className={style.optionTitle}>Стандарт</h4>
-                <span className={style.optionText}>Плівка, Стрічка</span>
+                <span className={style.optionText}>Коробка, Стрічка</span>
               </div>
             </div>
 
@@ -188,9 +188,7 @@ ${
               />
               <div>
                 <h4 className={style.optionTitle}>Подарункове</h4>
-                <span className={style.optionText}>
-                  Крафт-папір, більше декору
-                </span>
+                <span className={style.optionText}>Крафт-папір, Плівка</span>
               </div>
             </div>
 
