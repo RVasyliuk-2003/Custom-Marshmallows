@@ -94,6 +94,11 @@ const Gallery = () => {
           </div>
 
           <p className={style.filtTabl}>РОЗМІР</p>
+          <p className={style.hintText}>
+            Ціна залежить від розміру, а не від дизайну — кожен букет можна
+            зробити в будь-якому розмірі
+          </p>
+
           <div className={style.filters}>
             <button
               style={

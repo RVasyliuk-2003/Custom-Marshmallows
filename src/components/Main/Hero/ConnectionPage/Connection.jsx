@@ -23,7 +23,7 @@ const Connection = () => {
             duration={0.7}
             delay={0.3}
             yOffset={15}
-            href="https://t.me/ZefirkaOlena"
+            href="https://instagram.com/olenavasyliuk69/"
             target="_blank"
             rel="noopener noreferrer"
             className={`btn ${style.styleBtn1}`}
@@ -36,7 +36,7 @@ const Connection = () => {
             duration={0.7}
             delay={0.6}
             yOffset={15}
-            href="https://telegram.me/ZefirkaOlena/"
+            href="https://t.me/ZefirkaOlena"
             target="_blank"
             rel="noopener noreferrer"
             className={`btn btn-outline ${style.styleBtn2}`}

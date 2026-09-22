@@ -180,3 +180,10 @@
   font-size: 20px;
   cursor: pointer;
 }
+
+.hintText {
+  font-size: 11px;
+  color: var(--ink-soft);
+  margin: 4px 0 10px;
+  line-height: 1.4;
+}
