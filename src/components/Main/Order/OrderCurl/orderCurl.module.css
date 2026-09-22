@@ -73,6 +73,7 @@
   border: 2px solid var(--ink);
   font-weight: 800;
   font-size: 14px;
+  color: black;
 }
 
 .optionCard {
