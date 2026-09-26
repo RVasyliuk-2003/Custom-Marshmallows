@@ -1,13 +1,17 @@
 .navContainer {
+  position: sticky;
   display: flex;
   justify-content: space-between;
   align-items: center;
 
+  top: 0px;
   padding: 16px 18px;
-  position: relative;
+  height: 60px;
 
   box-sizing: border-box;
   background-color: white;
+  border-bottom: 1px solid wheat;
+  z-index: 1000;
 }
 
 .NavLogoBox {
