@@ -1,5 +1,6 @@
 import style from "./footer.module.css";
 import logo from "./../../assets/logo.png";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -31,7 +32,12 @@ const Footer = () => {
             <a href="tel:+380637751384">📞</a>
           </div>
 
-          <div className={style.footBottom}>© 2026 Зефірка</div>
+          <div className={style.policyBox}>
+            <p className={style.footBottom}>© 2026 Зефірка</p>
+            <Link className={style.policyLink} to="/PrivacyPage">
+              Політика конфіденційності
+            </Link>
+          </div>
         </div>
       </div>
     </footer>

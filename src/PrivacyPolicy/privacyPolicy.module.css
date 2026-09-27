@@ -1,0 +1,95 @@
+.container {
+  width: 100%;
+  min-height: 100vh;
+  padding: 40px 20px;
+  background-color: #f9f9fb;
+  color: #2c3e50;
+  display: flex;
+  justify-content: center;
+}
+
+.content {
+  max-width: 800px;
+  width: 100%;
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.backLink {
+  display: inline-block;
+  margin-bottom: 24px;
+  color: #3498db;
+  text-decoration: none;
+  font-weight: 500;
+  transition: opacity 0.2s ease;
+}
+
+.backLink:hover {
+  opacity: 0.8;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #1a1a1a;
+}
+
+.updated {
+  font-size: 0.875rem;
+  color: #7f8c8d;
+  margin-bottom: 32px;
+}
+
+.section {
+  margin-bottom: 28px;
+  line-height: 1.6;
+}
+
+.section h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #2c3e50;
+}
+
+.section p {
+  margin-bottom: 12px;
+  color: #4a5568;
+}
+
+.section ul {
+  padding-left: 20px;
+  margin-bottom: 12px;
+}
+
+.section li {
+  margin-bottom: 8px;
+  color: #4a5568;
+}
+
+.contactsList {
+  list-style: none;
+  padding-left: 0 !important;
+}
+
+.contactsList a {
+  color: #3498db;
+  text-decoration: none;
+}
+
+.contactsList a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 640px) {
+  .content {
+    padding: 24px 16px;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+}

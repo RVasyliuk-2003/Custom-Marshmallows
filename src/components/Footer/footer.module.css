@@ -43,10 +43,23 @@
   }
 }
 
-.footBottom {
+.policyBox {
   margin-top: 18px;
   padding-top: 14px;
+
+  display: flex;
+  justify-content: space-between;
+
   border-top: 1px dashed rgba(251, 241, 225, 0.25);
+}
+
+.footBottom {
   font-size: 11px;
   color: rgba(251, 241, 225, 0.5);
+}
+
+.policyLink {
+  text-decoration: none;
+  color: rgba(251, 241, 225, 0.5);
+  font-size: 12px;
 }

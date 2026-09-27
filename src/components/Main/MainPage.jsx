@@ -15,6 +15,8 @@ import ScrollToTop from "../ScrollToTop/ScrollToTop";
 
 import { Route, Routes } from "react-router-dom";
 
+import PrivacyPage from "../../PrivacyPolicy/PrivacyPage";
+
 const MainPage = () => {
   return (
     <>
@@ -35,6 +37,8 @@ const MainPage = () => {
           <Route path="/Contact" element={<Contact />} />
 
           <Route path="*" element={<NotFound />} />
+
+          <Route path="/PrivacyPage" element={<PrivacyPage />} />
         </Routes>
       </main>
     </>
