@@ -21,10 +21,6 @@
 
 ---
 
-<p align="center">
-  <img src="docs/hero.jpg" alt="Zefirka — handmade marshmallow flower bouquets" width="100%">
-</p>
-
 ## 📸 Screenshots
 
 <table>
@@ -159,8 +155,8 @@
 Clone the repository and install dependencies:
 
 ```bash
-git clone YOUR_REPOSITORY_URL
-cd Zefirka
+git clone https://github.com/RVasyliuk-2003/Custom-Marshmallows.git
+cd Custom-Marshmallows
 npm install
 ```
 
